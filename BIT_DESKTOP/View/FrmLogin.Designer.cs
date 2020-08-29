@@ -30,9 +30,9 @@
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.btnAcessar = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnAcessar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -60,24 +60,6 @@
             this.materialLabel2.Size = new System.Drawing.Size(54, 19);
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Senha:";
-            // 
-            // btnAcessar
-            // 
-            this.btnAcessar.AutoSize = true;
-            this.btnAcessar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnAcessar.Depth = 0;
-            this.btnAcessar.FlatAppearance.BorderSize = 2;
-            this.btnAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAcessar.Location = new System.Drawing.Point(224, 322);
-            this.btnAcessar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnAcessar.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnAcessar.Name = "btnAcessar";
-            this.btnAcessar.Primary = false;
-            this.btnAcessar.Size = new System.Drawing.Size(72, 36);
-            this.btnAcessar.TabIndex = 4;
-            this.btnAcessar.Text = "Acessar";
-            this.btnAcessar.UseVisualStyleBackColor = true;
-            this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
             // 
             // txtEmail
             // 
@@ -109,15 +91,28 @@
             this.txtSenha.TabIndex = 6;
             this.txtSenha.UseSystemPasswordChar = false;
             // 
+            // btnAcessar
+            // 
+            this.btnAcessar.Depth = 0;
+            this.btnAcessar.Location = new System.Drawing.Point(224, 326);
+            this.btnAcessar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnAcessar.Name = "btnAcessar";
+            this.btnAcessar.Primary = true;
+            this.btnAcessar.Size = new System.Drawing.Size(114, 39);
+            this.btnAcessar.TabIndex = 7;
+            this.btnAcessar.Text = "Acessar";
+            this.btnAcessar.UseVisualStyleBackColor = true;
+            this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.btnAcessar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.btnAcessar);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Name = "FrmLogin";
@@ -132,8 +127,8 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private MaterialSkin.Controls.MaterialFlatButton btnAcessar;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
+        private MaterialSkin.Controls.MaterialRaisedButton btnAcessar;
     }
 }
