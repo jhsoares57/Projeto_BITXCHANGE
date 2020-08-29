@@ -1,6 +1,7 @@
 ﻿using BIT_LOGIN.Model;
 using BIT_LOGIN.Negocio;
 using Library.Utils;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,17 @@ namespace BIT_DESKTOP.View
         public FrmLogin()
         {
             InitializeComponent();
+
+            // Criando um material theme manager e adicionando o formulário
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            // Definindo um esquema de Cor para formulário com tom Azul
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Yellow400, Primary.Yellow400,
+                Primary.Yellow500, Accent.Yellow400,
+                TextShade.BLACK
+            );
         }
 
         

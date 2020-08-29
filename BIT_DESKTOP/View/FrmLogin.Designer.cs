@@ -30,9 +30,9 @@
         {
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
             this.btnAcessar = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // materialLabel1
@@ -61,26 +61,14 @@
             this.materialLabel2.TabIndex = 1;
             this.materialLabel2.Text = "Senha:";
             // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(224, 209);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(291, 20);
-            this.txtEmail.TabIndex = 2;
-            // 
-            // txtSenha
-            // 
-            this.txtSenha.Location = new System.Drawing.Point(224, 281);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(291, 20);
-            this.txtSenha.TabIndex = 3;
-            // 
             // btnAcessar
             // 
             this.btnAcessar.AutoSize = true;
             this.btnAcessar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnAcessar.Depth = 0;
-            this.btnAcessar.Location = new System.Drawing.Point(281, 322);
+            this.btnAcessar.FlatAppearance.BorderSize = 2;
+            this.btnAcessar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAcessar.Location = new System.Drawing.Point(224, 322);
             this.btnAcessar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAcessar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAcessar.Name = "btnAcessar";
@@ -91,19 +79,50 @@
             this.btnAcessar.UseVisualStyleBackColor = true;
             this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
             // 
+            // txtEmail
+            // 
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(224, 220);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(180, 23);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // txtSenha
+            // 
+            this.txtSenha.Depth = 0;
+            this.txtSenha.Hint = "";
+            this.txtSenha.Location = new System.Drawing.Point(224, 281);
+            this.txtSenha.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '\0';
+            this.txtSenha.SelectedText = "";
+            this.txtSenha.SelectionLength = 0;
+            this.txtSenha.SelectionStart = 0;
+            this.txtSenha.Size = new System.Drawing.Size(180, 23);
+            this.txtSenha.TabIndex = 6;
+            this.txtSenha.UseSystemPasswordChar = false;
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnAcessar);
+            this.ControlBox = false;
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.btnAcessar);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.materialLabel1);
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,8 +132,8 @@
 
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtSenha;
         private MaterialSkin.Controls.MaterialFlatButton btnAcessar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
     }
 }
