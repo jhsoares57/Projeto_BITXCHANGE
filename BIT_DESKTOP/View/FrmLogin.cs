@@ -38,7 +38,7 @@ namespace BIT_DESKTOP.View
 
                 usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text));
 
-                if (usuario != null)
+                if (usuario.Email != null)
                 {
                     this.Hide();
                     FrmPrincipal inicial = new FrmPrincipal();
@@ -46,7 +46,7 @@ namespace BIT_DESKTOP.View
                 }
                 else
                 {
-                    throw new Exception("Usuario Incorreto");
+                    MessageBox.Show ("Usuario Incorreto ou senha incorreta", "Mensagem do Sistema");
                 }
             }
             catch (Exception ex)

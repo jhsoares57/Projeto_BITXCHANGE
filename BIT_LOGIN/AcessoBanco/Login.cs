@@ -43,8 +43,8 @@ namespace BIT_LOGIN.AcessoBanco
             {
                 //L = new DadosLogin();
                 //U.IdUsuario = Convert.ToInt32(dr["ID_USUARIO"]);
-                L.Email = Convert.ToString(dr["NM_USUARIO"]);
-                L.Senha = Convert.ToString(dr["SENHA_USUARIO"]);
+                L.Email = Convert.ToString(dr["USU_STR_EMAIL"]);
+                L.Senha = Convert.ToString(dr["USU_STR_SENHA"]);
                 //U.DsUsuario = Convert.ToString(dr["DS_USUARIO"]);
 
 
