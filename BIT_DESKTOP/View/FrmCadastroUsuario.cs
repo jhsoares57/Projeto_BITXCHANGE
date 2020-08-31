@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MaterialSkin;
+using MaterialSkin.Animations;
+using MaterialSkin.Controls;
 
 namespace BIT_DESKTOP.View
 {
