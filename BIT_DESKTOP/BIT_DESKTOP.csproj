@@ -78,6 +78,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\FrmCadastroUsuario.resx">
+      <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
