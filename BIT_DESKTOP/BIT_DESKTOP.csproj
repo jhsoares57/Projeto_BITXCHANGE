@@ -110,6 +110,10 @@
       <Project>{b77cb4bc-a379-41e0-9e43-8a8ad4a7bc8b}</Project>
       <Name>BIT_LOGIN</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{82c25e18-5a9e-419a-86d1-b9cf6314a743}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
