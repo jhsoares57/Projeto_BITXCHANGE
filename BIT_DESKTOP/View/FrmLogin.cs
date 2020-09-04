@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace BIT_DESKTOP.View
 {
-    public partial class FrmLogin : MaterialForm
+    public partial class FrmLogin : Form
     {
         public FrmLogin()
         {
@@ -23,12 +23,12 @@ namespace BIT_DESKTOP.View
 
             // Criando um material theme manager e adicionando o formulário
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             // Definindo um esquema de Cor para formulário com tom Azul
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Yellow400, Primary.Yellow400,
-                Primary.Yellow500, Accent.Yellow400,
+                Primary.Orange500, Primary.Orange500,
+                Primary.Orange500, Accent.Orange700,
                 TextShade.BLACK
             );
         }

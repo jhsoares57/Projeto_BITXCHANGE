@@ -14,7 +14,7 @@ namespace BLL
     {
         public ConnectionFactory cf = new ConnectionFactory();
 
-        public void cadastrarUsuario(string nome, string email, string senha, string cpf, string sexo)
+        public void cadastrarUsuario(string nome, string email, string senha, string cpf, string sexo, string tipo)
         {
             try
             {
@@ -74,7 +74,7 @@ namespace BLL
                 cf.Comando.Parameters.AddWithValue("USU_STR_CPF", cpf);
                 cf.Comando.CommandType = CommandType.Text;
                 cf.Comando.CommandText = query.ToString();
-                return cf.Comando.ExecuteReader(query);
+                return cf.Comando.ExecuteReader();
             }
             catch (Exception ex)
             {

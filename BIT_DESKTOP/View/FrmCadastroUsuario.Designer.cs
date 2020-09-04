@@ -64,7 +64,6 @@
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(125, 20);
             this.txtCpf.TabIndex = 1;
-            this.txtCpf.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtNascimento
             // 
@@ -72,7 +71,6 @@
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(125, 20);
             this.txtNascimento.TabIndex = 1;
-            this.txtNascimento.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtEmail
             // 
@@ -80,7 +78,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(125, 20);
             this.txtEmail.TabIndex = 1;
-            this.txtEmail.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtSenha
             // 
