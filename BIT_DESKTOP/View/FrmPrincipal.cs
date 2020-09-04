@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace BIT_DESKTOP.View
 {
-    public partial class FrmPrincipal : MaterialForm
+    public partial class FrmPrincipal : Form
     {
         public FrmPrincipal()
         {

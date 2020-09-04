@@ -67,5 +67,10 @@ namespace BIT_DESKTOP.View
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

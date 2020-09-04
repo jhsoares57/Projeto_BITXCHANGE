@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BtnSair = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,7 +124,7 @@
             this.btnAcessar.ForeColor = System.Drawing.Color.Orange;
             this.btnAcessar.Location = new System.Drawing.Point(126, 302);
             this.btnAcessar.Name = "btnAcessar";
-            this.btnAcessar.Size = new System.Drawing.Size(167, 42);
+            this.btnAcessar.Size = new System.Drawing.Size(180, 42);
             this.btnAcessar.TabIndex = 9;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = false;
@@ -159,12 +160,25 @@
             this.panel2.Size = new System.Drawing.Size(319, 100);
             this.panel2.TabIndex = 12;
             // 
+            // BtnSair
+            // 
+            this.BtnSair.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnSair.ForeColor = System.Drawing.Color.Orange;
+            this.BtnSair.Location = new System.Drawing.Point(126, 350);
+            this.BtnSair.Name = "BtnSair";
+            this.BtnSair.Size = new System.Drawing.Size(180, 42);
+            this.BtnSair.TabIndex = 12;
+            this.BtnSair.Text = "Sair";
+            this.BtnSair.UseVisualStyleBackColor = false;
+            this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
+            // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 404);
             this.ControlBox = false;
+            this.Controls.Add(this.BtnSair);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAcessar);
@@ -196,5 +210,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button BtnSair;
     }
 }
