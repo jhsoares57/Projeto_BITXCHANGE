@@ -111,6 +111,10 @@
       <Project>{7f1357dd-0b21-4dac-91b3-1ed1f2a53e8a}</Project>
       <Name>BIT_ENUMS</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BIT_EXCEPTION\BIT_EXCEPTION.csproj">
+      <Project>{86e1268d-d1bb-4f6d-840a-7002e40d6157}</Project>
+      <Name>BIT_EXCEPTION</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIT_LOGIN\BIT_LOGIN.csproj">
       <Project>{b77cb4bc-a379-41e0-9e43-8a8ad4a7bc8b}</Project>
       <Name>BIT_LOGIN</Name>

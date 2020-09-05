@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_MODEL", "BIT_MODEL\BIT_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_DAL", "BIT_DAL\BIT_DAL.csproj", "{E51520C7-29D6-491D-AFE8-AE3135F871BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_EXCEPTION", "BIT_EXCEPTION\BIT_EXCEPTION.csproj", "{86E1268D-D1BB-4F6D-840A-7002E40D6157}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{E51520C7-29D6-491D-AFE8-AE3135F871BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E51520C7-29D6-491D-AFE8-AE3135F871BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E51520C7-29D6-491D-AFE8-AE3135F871BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

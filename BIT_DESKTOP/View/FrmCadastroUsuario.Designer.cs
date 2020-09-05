@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCadastrar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.txtCpf = new System.Windows.Forms.TextBox();
-            this.txtNascimento = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -50,6 +48,8 @@
             this.txtConfirmaSenha = new System.Windows.Forms.TextBox();
             this.btnFechar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.txtNome = new System.Windows.Forms.TextBox();
+            this.txtCpf = new System.Windows.Forms.MaskedTextBox();
+            this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -58,7 +58,7 @@
             this.btnCadastrar.Depth = 0;
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(581, 257);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCadastrar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Primary = true;
@@ -68,32 +68,12 @@
             this.btnCadastrar.UseVisualStyleBackColor = true;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // txtCpf
-            // 
-            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCpf.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCpf.Location = new System.Drawing.Point(21, 187);
-            this.txtCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(237, 22);
-            this.txtCpf.TabIndex = 1;
-            // 
-            // txtNascimento
-            // 
-            this.txtNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNascimento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNascimento.Location = new System.Drawing.Point(21, 267);
-            this.txtNascimento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtNascimento.Name = "txtNascimento";
-            this.txtNascimento.Size = new System.Drawing.Size(237, 22);
-            this.txtNascimento.TabIndex = 2;
-            // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtEmail.Location = new System.Drawing.Point(21, 337);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(237, 22);
             this.txtEmail.TabIndex = 3;
@@ -103,7 +83,7 @@
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtSenha.Location = new System.Drawing.Point(581, 124);
-            this.txtSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(236, 22);
@@ -186,7 +166,7 @@
             this.cbxSexo.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbxSexo.FormattingEnabled = true;
             this.cbxSexo.Location = new System.Drawing.Point(311, 124);
-            this.cbxSexo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxSexo.Margin = new System.Windows.Forms.Padding(4);
             this.cbxSexo.Name = "cbxSexo";
             this.cbxSexo.Size = new System.Drawing.Size(237, 24);
             this.cbxSexo.TabIndex = 4;
@@ -198,7 +178,7 @@
             this.cbxStatus.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbxStatus.FormattingEnabled = true;
             this.cbxStatus.Location = new System.Drawing.Point(311, 186);
-            this.cbxStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxStatus.Margin = new System.Windows.Forms.Padding(4);
             this.cbxStatus.Name = "cbxStatus";
             this.cbxStatus.Size = new System.Drawing.Size(237, 24);
             this.cbxStatus.TabIndex = 5;
@@ -224,7 +204,7 @@
             this.cbxTipoUser.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cbxTipoUser.FormattingEnabled = true;
             this.cbxTipoUser.Location = new System.Drawing.Point(311, 267);
-            this.cbxTipoUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxTipoUser.Margin = new System.Windows.Forms.Padding(4);
             this.cbxTipoUser.Name = "cbxTipoUser";
             this.cbxTipoUser.Size = new System.Drawing.Size(236, 24);
             this.cbxTipoUser.TabIndex = 6;
@@ -249,7 +229,7 @@
             this.txtDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataCadastro.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtDataCadastro.Location = new System.Drawing.Point(311, 337);
-            this.txtDataCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDataCadastro.Margin = new System.Windows.Forms.Padding(4);
             this.txtDataCadastro.Name = "txtDataCadastro";
             this.txtDataCadastro.Size = new System.Drawing.Size(237, 22);
             this.txtDataCadastro.TabIndex = 7;
@@ -301,7 +281,7 @@
             this.txtConfirmaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtConfirmaSenha.Location = new System.Drawing.Point(581, 187);
-            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtConfirmaSenha.Margin = new System.Windows.Forms.Padding(4);
             this.txtConfirmaSenha.Name = "txtConfirmaSenha";
             this.txtConfirmaSenha.PasswordChar = '*';
             this.txtConfirmaSenha.Size = new System.Drawing.Size(236, 22);
@@ -313,7 +293,7 @@
             this.btnFechar.Depth = 0;
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFechar.Location = new System.Drawing.Point(581, 325);
-            this.btnFechar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFechar.Margin = new System.Windows.Forms.Padding(4);
             this.btnFechar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Primary = true;
@@ -333,12 +313,30 @@
             this.txtNome.Size = new System.Drawing.Size(237, 22);
             this.txtNome.TabIndex = 0;
             // 
+            // txtCpf
+            // 
+            this.txtCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCpf.Location = new System.Drawing.Point(21, 188);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(237, 22);
+            this.txtCpf.TabIndex = 17;
+            // 
+            // txtNascimento
+            // 
+            this.txtNascimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNascimento.Location = new System.Drawing.Point(21, 265);
+            this.txtNascimento.Name = "txtNascimento";
+            this.txtNascimento.Size = new System.Drawing.Size(237, 22);
+            this.txtNascimento.TabIndex = 18;
+            // 
             // FrmCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 386);
             this.ControlBox = false;
+            this.Controls.Add(this.txtNascimento);
+            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.materialLabel10);
             this.Controls.Add(this.txtConfirmaSenha);
@@ -357,12 +355,10 @@
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtNascimento);
-            this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.btnCadastrar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCadastroUsuario";
             this.Text = "Usuário";
             this.Load += new System.EventHandler(this.FrmCadastroUsuario_Load);
@@ -374,8 +370,6 @@
         #endregion
 
         private MaterialSkin.Controls.MaterialRaisedButton btnCadastrar;
-        private System.Windows.Forms.TextBox txtCpf;
-        private System.Windows.Forms.TextBox txtNascimento;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtSenha;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
@@ -395,5 +389,7 @@
         private System.Windows.Forms.TextBox txtConfirmaSenha;
         private MaterialSkin.Controls.MaterialRaisedButton btnFechar;
         private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.MaskedTextBox txtCpf;
+        private System.Windows.Forms.MaskedTextBox txtNascimento;
     }
 }

@@ -1,6 +1,6 @@
 ﻿using BIT_LOGIN.Model;
 using BIT_LOGIN.Negocio;
-using Library.Utils;
+using BIT_CRIPTOGRAFIA;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;

@@ -35,7 +35,7 @@ namespace BIT_DAL
                 cf.Comando.Parameters.AddWithValue("@EMAIL", U.Email);
                 cf.Comando.Parameters.AddWithValue("@SENHA", U.Senha);
                 cf.Comando.Parameters.AddWithValue("@STATUS", U.Status);
-                cf.Comando.Parameters.AddWithValue("@@TIPO", U.Tipo);
+                cf.Comando.Parameters.AddWithValue("@TIPO", U.Tipo);
                 cf.Comando.Parameters.AddWithValue("@DTCADASTRO", U.DataCadastro);
 
                 cf.Comando.Parameters.AddWithValue("@ID_OUT", 0).Direction = ParameterDirection.Output;
