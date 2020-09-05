@@ -16,6 +16,8 @@ namespace BIT_DESKTOP.View
         public FrmPrincipal()
         {
             InitializeComponent();
+            panel1.Dock = DockStyle.Top;
+            panel1.AutoSize = false;
         }
     }
 }

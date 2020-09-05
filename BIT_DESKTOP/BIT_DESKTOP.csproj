@@ -107,13 +107,21 @@
       <Project>{7db7ae5d-2d13-41f8-882d-bb14cab6dfb3}</Project>
       <Name>BIT_CRIPTOGRAFIA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BIT_ENUMS\BIT_ENUMS.csproj">
+      <Project>{7f1357dd-0b21-4dac-91b3-1ed1f2a53e8a}</Project>
+      <Name>BIT_ENUMS</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIT_LOGIN\BIT_LOGIN.csproj">
       <Project>{b77cb4bc-a379-41e0-9e43-8a8ad4a7bc8b}</Project>
       <Name>BIT_LOGIN</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BLL\BLL.csproj">
+    <ProjectReference Include="..\BIT_MODEL\BIT_MODEL.csproj">
+      <Project>{63e39ba0-d8b2-43f3-bd41-446a2b3cb6af}</Project>
+      <Name>BIT_MODEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BIT_BLL.csproj">
       <Project>{82c25e18-5a9e-419a-86d1-b9cf6314a743}</Project>
-      <Name>BLL</Name>
+      <Name>BIT_BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
