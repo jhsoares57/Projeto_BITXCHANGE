@@ -44,6 +44,29 @@ namespace BIT_DESKTOP.View
             {
                 MessageBox.Show("Senha e Confirmação de senha não conferem!!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            try
+            {
+
+                userModel.Nome = txtNome.Text;
+                userModel.Cpf = txtCpf.Text;
+                userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
+                userModel.Email = txtEmail.Text;
+                userModel.Sexo = Convert.ToInt32(cbxSexo.ValueMember).ToString();
+                userModel.Status = Convert.ToInt32(cbxStatus.ValueMember).ToString();
+                userModel.Tipo = Convert.ToInt32(cbxTipoUser.ValueMember).ToString();
+                userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
+                userModel.Senha = txtSenha.Text;
+
+
+                UserBLL.Insert(userModel);
+
+                MessageBox.Show("Usuário cadastrado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -63,29 +86,7 @@ namespace BIT_DESKTOP.View
         private void FrmCadastroUsuario_Load(object sender, EventArgs e)
         {
             CarregarEnum();
-            try
-            {
-                
-                userModel.Nome =txtNome.Text;
-                userModel.Cpf = txtCpf.Text;
-                userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
-                userModel.Email = txtEmail.Text;
-                userModel.Sexo = Convert.ToInt32(cbxSexo.ValueMember).ToString();
-                userModel.Status = Convert.ToInt32(cbxStatus.ValueMember).ToString();
-                userModel.Tipo = Convert.ToInt32(cbxTipoUser.ValueMember).ToString();
-                userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
-                userModel.Senha = txtSenha.Text;
-                
-
-                UserBLL.Insert(userModel);
-
-                MessageBox.Show("Usuário cadastrado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK,MessageBoxIcon.Information);
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
+            
         }
     }
 }
