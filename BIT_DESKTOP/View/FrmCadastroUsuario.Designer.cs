@@ -339,7 +339,8 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(214, 22);
             this.txtId.TabIndex = 17;
-            this.txtId.Text = "Não mexer esse fica invisivel";
+            this.txtId.Text = "0";
+            this.txtId.Visible = false;
             // 
             // FrmCadastroUsuario
             // 

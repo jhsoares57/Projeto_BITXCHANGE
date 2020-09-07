@@ -33,11 +33,10 @@
             this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAcessar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.BtnSair = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +79,7 @@
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
             this.txtEmail.Size = new System.Drawing.Size(180, 23);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 0;
             this.txtEmail.UseSystemPasswordChar = false;
             // 
             // txtSenha
@@ -95,7 +94,7 @@
             this.txtSenha.SelectionLength = 0;
             this.txtSenha.SelectionStart = 0;
             this.txtSenha.Size = new System.Drawing.Size(180, 23);
-            this.txtSenha.TabIndex = 6;
+            this.txtSenha.TabIndex = 1;
             this.txtSenha.UseSystemPasswordChar = false;
             // 
             // panel1
@@ -103,10 +102,19 @@
             this.panel1.BackColor = System.Drawing.Color.Orange;
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(475, 1);
+            this.panel1.Location = new System.Drawing.Point(475, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(325, 404);
+            this.panel1.Size = new System.Drawing.Size(325, 379);
             this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::BIT_DESKTOP.Properties.Resources.BITXCHANGE;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(3, 130);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(319, 100);
+            this.panel2.TabIndex = 12;
             // 
             // label2
             // 
@@ -122,10 +130,10 @@
             // 
             this.btnAcessar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnAcessar.ForeColor = System.Drawing.Color.Orange;
-            this.btnAcessar.Location = new System.Drawing.Point(126, 302);
+            this.btnAcessar.Location = new System.Drawing.Point(126, 277);
             this.btnAcessar.Name = "btnAcessar";
             this.btnAcessar.Size = new System.Drawing.Size(180, 42);
-            this.btnAcessar.TabIndex = 9;
+            this.btnAcessar.TabIndex = 2;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = false;
             this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
@@ -140,34 +148,14 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Seja bem vindo!";
             // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.LinkColor = System.Drawing.Color.Orange;
-            this.linkLabel1.Location = new System.Drawing.Point(123, 269);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(108, 13);
-            this.linkLabel1.TabIndex = 11;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Esqueci minha senha";
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::BIT_DESKTOP.Properties.Resources.BITXCHANGE;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Location = new System.Drawing.Point(3, 110);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(319, 100);
-            this.panel2.TabIndex = 12;
-            // 
             // BtnSair
             // 
             this.BtnSair.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnSair.ForeColor = System.Drawing.Color.Orange;
-            this.BtnSair.Location = new System.Drawing.Point(126, 350);
+            this.BtnSair.Location = new System.Drawing.Point(126, 325);
             this.BtnSair.Name = "BtnSair";
             this.BtnSair.Size = new System.Drawing.Size(180, 42);
-            this.BtnSair.TabIndex = 12;
+            this.BtnSair.TabIndex = 3;
             this.BtnSair.Text = "Sair";
             this.BtnSair.UseVisualStyleBackColor = false;
             this.BtnSair.Click += new System.EventHandler(this.BtnSair_Click);
@@ -176,10 +164,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 404);
+            this.ClientSize = new System.Drawing.Size(800, 377);
             this.ControlBox = false;
             this.Controls.Add(this.BtnSair);
-            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAcessar);
             this.Controls.Add(this.panel1);
@@ -208,7 +195,6 @@
         private System.Windows.Forms.Button btnAcessar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button BtnSair;
     }

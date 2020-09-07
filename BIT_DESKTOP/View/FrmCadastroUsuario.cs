@@ -199,7 +199,7 @@ namespace BIT_DESKTOP.View
 
         private void Mask()
         {
-            if(txtNome == null)
+            if(txtNome.Text == "")
             {
                 txtCpf.Text = "";
                 txtCpf.Mask = "000,000,000-00";

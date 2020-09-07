@@ -21,6 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_DAL", "BIT_DAL\BIT_DAL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_EXCEPTION", "BIT_EXCEPTION\BIT_EXCEPTION.csproj", "{86E1268D-D1BB-4F6D-840A-7002E40D6157}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCRIPTBANCO", "SCRIPTBANCO", "{F608FC29-DB5B-4ED3-97FB-D06241B24265}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\UNIP\4º SEMESTRE\PIM\SCRIPT_BANCO.sql = ..\..\..\Documents\UNIP\4º SEMESTRE\PIM\SCRIPT_BANCO.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -16,7 +16,7 @@ namespace BIT_LOGIN.AcessoBanco
         ConnectionFactory cf = new ConnectionFactory();
         DadosLogin L = new DadosLogin();
         
-        public DadosLogin FindByLogin(string nmUsuario, string senhausuario)
+        public DadosLogin FindByLogin(string nmUsuario, string senhausuario, int tipo)
         {
             //DadosLogin L = null;
 
@@ -33,6 +33,7 @@ namespace BIT_LOGIN.AcessoBanco
 
             cf.Comando.Parameters.AddWithValue("@LOGIN", nmUsuario);
             cf.Comando.Parameters.AddWithValue("@SENHA", senhausuario);
+            cf.Comando.Parameters.AddWithValue("@TIPO", tipo);
             cf.Conexao.Open();
 
 

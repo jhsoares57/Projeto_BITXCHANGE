@@ -43,12 +43,13 @@ namespace BIT_DESKTOP.View
                 return;
             }
 
+
             try
             {
                 LoginNeg uService = new LoginNeg();
                 DadosLogin usuario = new DadosLogin();
 
-                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text));
+                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text), 1);
 
                 if (usuario.Email != null)
                 {
@@ -58,7 +59,7 @@ namespace BIT_DESKTOP.View
                 }
                 else
                 {
-                    MessageBox.Show ("Usuario Incorreto ou senha incorreta", "Mensagem do Sistema");
+                    MessageBox.Show ("Usuário | senha incorreta ou não tem acesso a plataforma desktop", "Mensagem do Sistema");
                 }
             }
             catch (Exception ex)
