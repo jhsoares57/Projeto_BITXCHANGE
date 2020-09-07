@@ -50,6 +50,7 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.txtNascimento = new System.Windows.Forms.MaskedTextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnCadastrar
@@ -319,7 +320,7 @@
             this.txtCpf.Location = new System.Drawing.Point(21, 188);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(237, 22);
-            this.txtCpf.TabIndex = 17;
+            this.txtCpf.TabIndex = 1;
             // 
             // txtNascimento
             // 
@@ -327,7 +328,18 @@
             this.txtNascimento.Location = new System.Drawing.Point(21, 265);
             this.txtNascimento.Name = "txtNascimento";
             this.txtNascimento.Size = new System.Drawing.Size(237, 22);
-            this.txtNascimento.TabIndex = 18;
+            this.txtNascimento.TabIndex = 2;
+            // 
+            // txtId
+            // 
+            this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtId.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtId.Location = new System.Drawing.Point(21, 71);
+            this.txtId.Margin = new System.Windows.Forms.Padding(4);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(214, 22);
+            this.txtId.TabIndex = 17;
+            this.txtId.Text = "Não mexer esse fica invisivel";
             // 
             // FrmCadastroUsuario
             // 
@@ -335,6 +347,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 386);
             this.ControlBox = false;
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.txtNascimento);
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.btnFechar);
@@ -391,5 +404,6 @@
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.MaskedTextBox txtNascimento;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

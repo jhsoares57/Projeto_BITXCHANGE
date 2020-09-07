@@ -19,5 +19,12 @@ namespace BIT_DESKTOP.View
             panel1.Dock = DockStyle.Top;
             panel1.AutoSize = false;
         }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            FrmListaUsuario user = new FrmListaUsuario();
+            user.MdiParent = this;
+            user.Show();
+        }
     }
 }

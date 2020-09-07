@@ -26,5 +26,27 @@ namespace BIT_BLL
             }
             return salvou;
         }
+
+        public bool AlterarUsuario(UsuarioModel U)
+        {
+            bool alterou = false;
+            new UsuarioDAL().alterarUsuario(U);
+
+            //Se o ID for maior que zero, indica que o dado foi salvo
+            if (U.Id > 0)
+            {
+                alterou = true;
+            }
+            return alterou;
+        }
+
+        public DataTable SelecionarUsuario()
+        {
+            return new UsuarioDAL().ListarUsuario();
+        }
+        public UsuarioModel SelecionarPorID(int id)
+        {
+            return new UsuarioDAL().SelecionarPorID(id);
+        }
     }
 }

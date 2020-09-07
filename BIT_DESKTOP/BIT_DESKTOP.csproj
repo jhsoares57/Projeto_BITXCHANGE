@@ -57,6 +57,12 @@
     <Compile Include="View\FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmListaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmListaUsuario.Designer.cs">
+      <DependentUpon>FrmListaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <EmbeddedResource Include="View\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmListaUsuario.resx">
+      <DependentUpon>FrmListaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

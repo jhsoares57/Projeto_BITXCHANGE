@@ -23,7 +23,11 @@ namespace BIT_DESKTOP.View
     {
         UsuarioBLL UserBLL = new UsuarioBLL();
         UsuarioModel userModel = new UsuarioModel();
-        ExceptionErro exc = new ExceptionErro();
+        public static int cod;
+
+        private Form f;
+
+        public Form F { get => f; set => f = value; }
         public FrmCadastroUsuario()
         {
             InitializeComponent();
@@ -124,22 +128,43 @@ namespace BIT_DESKTOP.View
                 {
                     tipo = 2;
                 }
+                int cod = Convert.ToInt32(txtId.Text);
+                if (cod > 0)
+                {
+                    userModel.Id = cod;
+                    userModel.Nome = txtNome.Text;
+                    userModel.Cpf = txtCpf.Text;
+                    userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
+                    userModel.Email = txtEmail.Text;
+                    userModel.Sexo = sexo;
+                    userModel.Status = status;
+                    userModel.Tipo = tipo;
+                    userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
+                    userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
 
-                
-                userModel.Nome = txtNome.Text;
-                userModel.Cpf = txtCpf.Text;
-                userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
-                userModel.Email = txtEmail.Text;
-                userModel.Sexo = sexo;
-                userModel.Status = status;
-                userModel.Tipo = tipo;
-                userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
-                userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
+
+                    UserBLL.AlterarUsuario(userModel);
+
+                    MessageBox.Show("Usuário atualizado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    userModel.Nome = txtNome.Text;
+                    userModel.Cpf = txtCpf.Text;
+                    userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
+                    userModel.Email = txtEmail.Text;
+                    userModel.Sexo = sexo;
+                    userModel.Status = status;
+                    userModel.Tipo = tipo;
+                    userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
+                    userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
 
 
-                UserBLL.Insert(userModel);
+                    UserBLL.Insert(userModel);
 
-                MessageBox.Show("Usuário cadastrado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Usuário cadastrado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
             }
             catch (Exception ex)
             {
@@ -151,6 +176,8 @@ namespace BIT_DESKTOP.View
         private void btnFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+            FrmListaUsuario listUser = new FrmListaUsuario();
+            listUser.CarregarUsuario();
         }
 
         private void CarregarEnum()
@@ -172,13 +199,61 @@ namespace BIT_DESKTOP.View
 
         private void Mask()
         {
-            txtCpf.Text = "";
-            txtCpf.Mask = "000,000,000-00";
+            if(txtNome == null)
+            {
+                txtCpf.Text = "";
+                txtCpf.Mask = "000,000,000-00";
 
-            txtNascimento.Text = "";
-            txtNascimento.Mask = "00/00/0000";
+                txtNascimento.Text = "";
+                txtNascimento.Mask = "00/00/0000";
 
-            txtDataCadastro.Text = DateTime.Today.ToString("dd/MM/yyyy");
+                txtDataCadastro.Text = DateTime.Today.ToString("dd/MM/yyyy");
+            }
+            
+        }
+
+        public void editarUsuario(int id)
+        {
+            int cod = 0;
+            UsuarioModel U = new UsuarioBLL().SelecionarPorID(id);
+
+            if(U.Sexo == 1)
+            {
+               cbxSexo.Text = "Masculino";
+            }
+            else
+            {
+                cbxSexo.Text = "Feminino";
+            }
+
+            if(U.Status == 1)
+            {
+                cbxStatus.Text = "Ativo";
+            }
+            else
+            {
+                cbxStatus.Text = "Inativo";
+            }
+
+            if(U.Tipo == 1)
+            {
+                cbxTipoUser.Text = "Desktop";
+            }
+            else
+            {
+                cbxTipoUser.Text = "Mobile";
+            }
+
+            txtId.Text = Convert.ToInt32(U.Id).ToString();
+            txtNome.Text = U.Nome.ToString();
+            txtCpf.Text = U.Cpf.ToString();
+            txtNascimento.Text = U.DataNascimento.Date.ToString("dd/MM/yyyy");
+            //txtHoraAgendamento.Text = a.HoraAgendamento.Date.ToString("HH:mm");
+            txtEmail.Text = U.Email.ToString();
+            txtDataCadastro.Text = U.DataCadastro.Date.ToString("dd/MM/yyyy");
+
+            //Alterar nome do botão
+            btnCadastrar.Text = "Atualizar";
         }
     }
 }
