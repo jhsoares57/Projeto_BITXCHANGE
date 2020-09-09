@@ -26,5 +26,12 @@ namespace BIT_DESKTOP.View
             user.MdiParent = this;
             user.Show();
         }
+
+        private void btnRelDiario_Click(object sender, EventArgs e)
+        {
+            View.Relatorio.FrmRelDiario RelDir = new Relatorio.FrmRelDiario();
+            RelDir.MdiParent = this;
+            RelDir.Show();
+        }
     }
 }
