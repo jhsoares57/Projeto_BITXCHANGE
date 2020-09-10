@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCRIPTBANCO", "SCRIPTBANCO"
 		..\..\..\Documents\UNIP\4º SEMESTRE\PIM\SCRIPT_BANCO.sql = ..\..\..\Documents\UNIP\4º SEMESTRE\PIM\SCRIPT_BANCO.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_WEB", "BIT_WEB\BIT_WEB.csproj", "{BCDC733E-847C-4211-A4B7-AD8DA0340D31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86E1268D-D1BB-4F6D-840A-7002E40D6157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCDC733E-847C-4211-A4B7-AD8DA0340D31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCDC733E-847C-4211-A4B7-AD8DA0340D31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCDC733E-847C-4211-A4B7-AD8DA0340D31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCDC733E-847C-4211-A4B7-AD8DA0340D31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
