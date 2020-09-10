@@ -10,8 +10,10 @@ namespace BIT_LOGIN.Model
     {
         private string email;
         private string senha;
+        private int tipo;
 
         public string Email { get => email; set => email = value; }
         public string Senha { get => senha; set => senha = value; }
+        public int Tipo { get => tipo; set => tipo = value; }
     }
 }

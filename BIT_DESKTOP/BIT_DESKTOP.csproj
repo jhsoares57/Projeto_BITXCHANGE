@@ -57,6 +57,12 @@
     <Compile Include="View\FrmCadastroUsuario.Designer.cs">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmListaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmListaUsuario.Designer.cs">
+      <DependentUpon>FrmListaUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,12 @@
     <Compile Include="View\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Relatorio\FrmRelDiario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatorio\FrmRelDiario.Designer.cs">
+      <DependentUpon>FrmRelDiario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,15 +89,22 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmListaUsuario.resx">
+      <DependentUpon>FrmListaUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatorio\FrmRelDiario.resx">
+      <DependentUpon>FrmRelDiario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -106,14 +125,41 @@
       <Project>{7db7ae5d-2d13-41f8-882d-bb14cab6dfb3}</Project>
       <Name>BIT_CRIPTOGRAFIA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BIT_ENUMS\BIT_ENUMS.csproj">
+      <Project>{7f1357dd-0b21-4dac-91b3-1ed1f2a53e8a}</Project>
+      <Name>BIT_ENUMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIT_EXCEPTION\BIT_EXCEPTION.csproj">
+      <Project>{86e1268d-d1bb-4f6d-840a-7002e40d6157}</Project>
+      <Name>BIT_EXCEPTION</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIT_LOGIN\BIT_LOGIN.csproj">
       <Project>{b77cb4bc-a379-41e0-9e43-8a8ad4a7bc8b}</Project>
       <Name>BIT_LOGIN</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{82c25e18-5a9e-419a-86d1-b9cf6314a743}</Project>
-      <Name>BLL</Name>
+    <ProjectReference Include="..\BIT_MODEL\BIT_MODEL.csproj">
+      <Project>{63e39ba0-d8b2-43f3-bd41-446a2b3cb6af}</Project>
+      <Name>BIT_MODEL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BLL\BIT_BLL.csproj">
+      <Project>{82c25e18-5a9e-419a-86d1-b9cf6314a743}</Project>
+      <Name>BIT_BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BITXCHANGE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BitCoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dolar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eterum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Real.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

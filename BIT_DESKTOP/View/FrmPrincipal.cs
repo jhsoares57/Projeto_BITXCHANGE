@@ -11,11 +11,27 @@ using System.Windows.Forms;
 
 namespace BIT_DESKTOP.View
 {
-    public partial class FrmPrincipal : MaterialForm
+    public partial class FrmPrincipal : Form
     {
         public FrmPrincipal()
         {
             InitializeComponent();
+            panel1.Dock = DockStyle.Top;
+            panel1.AutoSize = false;
+        }
+
+        private void materialRaisedButton1_Click(object sender, EventArgs e)
+        {
+            FrmListaUsuario user = new FrmListaUsuario();
+            user.MdiParent = this;
+            user.Show();
+        }
+
+        private void btnRelDiario_Click(object sender, EventArgs e)
+        {
+            View.Relatorio.FrmRelDiario RelDir = new Relatorio.FrmRelDiario();
+            RelDir.MdiParent = this;
+            RelDir.Show();
         }
     }
 }

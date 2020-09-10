@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Utils
+namespace BIT_CRIPTOGRAFIA
 {
     public class Criptografia
     {

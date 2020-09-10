@@ -1,6 +1,6 @@
 ﻿using BIT_LOGIN.Model;
 using BIT_LOGIN.Negocio;
-using Library.Utils;
+using BIT_CRIPTOGRAFIA;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace BIT_DESKTOP.View
 {
-    public partial class FrmLogin : MaterialForm
+    public partial class FrmLogin : Form
     {
         public FrmLogin()
         {
@@ -23,12 +23,12 @@ namespace BIT_DESKTOP.View
 
             // Criando um material theme manager e adicionando o formulário
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             // Definindo um esquema de Cor para formulário com tom Azul
             materialSkinManager.ColorScheme = new ColorScheme(
-                Primary.Yellow400, Primary.Yellow400,
-                Primary.Yellow500, Accent.Yellow400,
+                Primary.Orange500, Primary.Orange500,
+                Primary.Orange500, Accent.Orange700,
                 TextShade.BLACK
             );
         }
@@ -43,12 +43,13 @@ namespace BIT_DESKTOP.View
                 return;
             }
 
+
             try
             {
                 LoginNeg uService = new LoginNeg();
                 DadosLogin usuario = new DadosLogin();
 
-                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text));
+                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text), 1);
 
                 if (usuario.Email != null)
                 {
@@ -58,7 +59,7 @@ namespace BIT_DESKTOP.View
                 }
                 else
                 {
-                    MessageBox.Show ("Usuario Incorreto ou senha incorreta", "Mensagem do Sistema");
+                    MessageBox.Show ("Usuário | senha incorreta ou não tem acesso a plataforma desktop", "Mensagem do Sistema");
                 }
             }
             catch (Exception ex)
@@ -66,6 +67,11 @@ namespace BIT_DESKTOP.View
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

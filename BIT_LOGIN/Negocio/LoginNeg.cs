@@ -10,10 +10,10 @@ namespace BIT_LOGIN.Negocio
 {
      public class LoginNeg
     {
-        public DadosLogin FindByLogin(string nmUsuario, string senhaUsuario)
+        public DadosLogin FindByLogin(string nmUsuario, string senhaUsuario, int tipo)
         {
             Login uDAL = new Login();
-            return uDAL.FindByLogin(nmUsuario, senhaUsuario);
+            return uDAL.FindByLogin(nmUsuario, senhaUsuario,tipo);
         }
     }
 }

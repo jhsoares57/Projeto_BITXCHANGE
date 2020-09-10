@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{82C25E18-5A9E-419A-86D1-B9CF6314A743}</ProjectGuid>
+    <ProjectGuid>{63E39BA0-D8B2-43F3-BD41-446A2B3CB6AF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>BIT_MODEL</RootNamespace>
+    <AssemblyName>BIT_MODEL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BIT_ACESSABANCO\BIT_ACESSABANCO.csproj">
-      <Project>{78c6380a-bb16-4a4f-af11-8f631d1fd10e}</Project>
-      <Name>BIT_ACESSABANCO</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
