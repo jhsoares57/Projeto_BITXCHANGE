@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelDiario));
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
@@ -39,12 +40,14 @@
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
-            this.lblDataAtual = new MaterialSkin.Controls.MaterialLabel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnGerarPDF = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialDivider6 = new MaterialSkin.Controls.MaterialDivider();
             this.btnfechar = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgvListarTransacoes = new System.Windows.Forms.DataGridView();
+            this.txtData = new System.Windows.Forms.DateTimePicker();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListarTransacoes)).BeginInit();
             this.SuspendLayout();
             // 
             // materialDivider1
@@ -184,30 +187,18 @@
             this.materialLabel6.TabIndex = 10;
             this.materialLabel6.Text = "materialLabel6";
             // 
-            // lblDataAtual
+            // btnGerarPDF
             // 
-            this.lblDataAtual.AutoSize = true;
-            this.lblDataAtual.Depth = 0;
-            this.lblDataAtual.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblDataAtual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblDataAtual.Location = new System.Drawing.Point(664, 167);
-            this.lblDataAtual.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblDataAtual.Name = "lblDataAtual";
-            this.lblDataAtual.Size = new System.Drawing.Size(108, 19);
-            this.lblDataAtual.TabIndex = 11;
-            this.lblDataAtual.Text = "materialLabel7";
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(668, 201);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(95, 23);
-            this.materialRaisedButton1.TabIndex = 12;
-            this.materialRaisedButton1.Text = "Gerar PDF";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.btnGerarPDF.Depth = 0;
+            this.btnGerarPDF.Location = new System.Drawing.Point(668, 201);
+            this.btnGerarPDF.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnGerarPDF.Name = "btnGerarPDF";
+            this.btnGerarPDF.Primary = true;
+            this.btnGerarPDF.Size = new System.Drawing.Size(95, 23);
+            this.btnGerarPDF.TabIndex = 12;
+            this.btnGerarPDF.Text = "Gerar PDF";
+            this.btnGerarPDF.UseVisualStyleBackColor = true;
+            this.btnGerarPDF.Click += new System.EventHandler(this.btnGerarPDF_Click);
             // 
             // materialDivider6
             // 
@@ -233,26 +224,49 @@
             this.btnfechar.UseVisualStyleBackColor = true;
             this.btnfechar.Click += new System.EventHandler(this.btnfechar_Click);
             // 
-            // dataGridView1
+            // dgvListarTransacoes
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 246);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 150);
-            this.dataGridView1.TabIndex = 15;
+            this.dgvListarTransacoes.AllowUserToOrderColumns = true;
+            this.dgvListarTransacoes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvListarTransacoes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvListarTransacoes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvListarTransacoes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListarTransacoes.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvListarTransacoes.Location = new System.Drawing.Point(12, 246);
+            this.dgvListarTransacoes.Name = "dgvListarTransacoes";
+            this.dgvListarTransacoes.Size = new System.Drawing.Size(776, 150);
+            this.dgvListarTransacoes.TabIndex = 15;
+            // 
+            // txtData
+            // 
+            this.txtData.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txtData.Location = new System.Drawing.Point(668, 175);
+            this.txtData.MinDate = new System.DateTime(2020, 1, 1, 0, 0, 0, 0);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(96, 20);
+            this.txtData.TabIndex = 20;
+            this.txtData.CloseUp += new System.EventHandler(this.txtData_CloseUp);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // FrmRelDiario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtData);
+            this.Controls.Add(this.dgvListarTransacoes);
             this.Controls.Add(this.btnfechar);
             this.Controls.Add(this.materialDivider6);
-            this.Controls.Add(this.materialRaisedButton1);
-            this.Controls.Add(this.lblDataAtual);
+            this.Controls.Add(this.btnGerarPDF);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
             this.Controls.Add(this.materialLabel4);
@@ -266,7 +280,7 @@
             this.Controls.Add(this.materialDivider1);
             this.Name = "FrmRelDiario";
             this.Load += new System.EventHandler(this.FrmRelDiario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListarTransacoes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,10 +299,12 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel4;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
-        private MaterialSkin.Controls.MaterialLabel lblDataAtual;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton btnGerarPDF;
         private MaterialSkin.Controls.MaterialDivider materialDivider6;
         private MaterialSkin.Controls.MaterialRaisedButton btnfechar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListarTransacoes;
+        private System.Windows.Forms.DateTimePicker txtData;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
