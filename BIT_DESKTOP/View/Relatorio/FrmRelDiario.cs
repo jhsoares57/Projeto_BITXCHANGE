@@ -17,6 +17,13 @@ namespace BIT_DESKTOP.View.Relatorio
     public partial class FrmRelDiario : MaterialForm
     {
         TransferenciaBLL TransBLL = new TransferenciaBLL();
+        public static decimal total;
+        public static string moeda;
+        public static decimal bit;
+        public static decimal real;
+        public static decimal etherum;
+        public static decimal dolar;
+
         public FrmRelDiario()
         {
             InitializeComponent();
@@ -53,6 +60,47 @@ namespace BIT_DESKTOP.View.Relatorio
         {
             DateTime DataInicial = Convert.ToDateTime(txtData.Text);
             dgvListarTransacoes.DataSource = TransBLL.ListarRelatorioTransacoes(DataInicial);
+
+            carregarTotalMoeda();
+        }
+
+        private void carregarTotalMoeda()
+        {
+            total = 0;
+            foreach (DataGridViewRow linha in dgvListarTransacoes.Rows)
+            {
+                string moeda = Convert.ToString(linha.Cells[4].Value);
+                if( moeda == "BTC")
+                {
+                    bit += Convert.ToDecimal(linha.Cells[3].Value);
+
+                    lblBitCoin.Text = Convert.ToString(bit);
+                }
+                if (moeda == "R$")
+                {
+
+                    real += Convert.ToDecimal(linha.Cells[3].Value);
+
+                    lblreal.Text = Convert.ToString(real);
+                }
+                if (moeda == "ETH")
+                {
+
+                    etherum += Convert.ToDecimal(linha.Cells[3].Value);
+
+                    lblETHERUN.Text = Convert.ToString(etherum);
+                }
+                if (moeda == "USD")
+                {
+
+                    dolar += Convert.ToDecimal(linha.Cells[3].Value);
+
+                    lblDolar.Text = Convert.ToString(dolar);
+                }
+
+            }
+
+           
         }
 
         private void txtData_CloseUp(object sender, EventArgs e)
@@ -65,7 +113,7 @@ namespace BIT_DESKTOP.View.Relatorio
             this.printDocument.DefaultPageSettings.Landscape = true;
             DGVPrinter print = new DGVPrinter();
             print.Title = "Transações Diarias"; //Titulo da Página
-            print.SubTitle = String.Format("Data de geração: {0}", DateTime.Now.Date);
+            print.SubTitle = String.Format("Data de geração: {0}", DateTime.Today);
             print.PageSettings.Landscape = true;
             print.PorportionalColumns = true;
             print.PageNumberInHeader = false;
