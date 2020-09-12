@@ -29,20 +29,35 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRelDiario = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnRelMensal = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.Controls.Add(this.btnRelMensal);
             this.panel1.Controls.Add(this.btnRelDiario);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Location = new System.Drawing.Point(1, -2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(798, 53);
             this.panel1.TabIndex = 2;
+            // 
+            // btnRelDiario
+            // 
+            this.btnRelDiario.Depth = 0;
+            this.btnRelDiario.Location = new System.Drawing.Point(171, 14);
+            this.btnRelDiario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRelDiario.Name = "btnRelDiario";
+            this.btnRelDiario.Primary = true;
+            this.btnRelDiario.Size = new System.Drawing.Size(148, 30);
+            this.btnRelDiario.TabIndex = 1;
+            this.btnRelDiario.Text = "Relatorio Diario";
+            this.btnRelDiario.UseVisualStyleBackColor = true;
+            this.btnRelDiario.Click += new System.EventHandler(this.btnRelDiario_Click);
             // 
             // materialRaisedButton1
             // 
@@ -57,18 +72,18 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
-            // btnRelDiario
+            // btnRelMensal
             // 
-            this.btnRelDiario.Depth = 0;
-            this.btnRelDiario.Location = new System.Drawing.Point(403, 14);
-            this.btnRelDiario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRelDiario.Name = "btnRelDiario";
-            this.btnRelDiario.Primary = true;
-            this.btnRelDiario.Size = new System.Drawing.Size(148, 30);
-            this.btnRelDiario.TabIndex = 1;
-            this.btnRelDiario.Text = "Relatorio Diario";
-            this.btnRelDiario.UseVisualStyleBackColor = true;
-            this.btnRelDiario.Click += new System.EventHandler(this.btnRelDiario_Click);
+            this.btnRelMensal.Depth = 0;
+            this.btnRelMensal.Location = new System.Drawing.Point(373, 14);
+            this.btnRelMensal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRelMensal.Name = "btnRelMensal";
+            this.btnRelMensal.Primary = true;
+            this.btnRelMensal.Size = new System.Drawing.Size(148, 30);
+            this.btnRelMensal.TabIndex = 2;
+            this.btnRelMensal.Text = "Relatorio Mensal";
+            this.btnRelMensal.UseVisualStyleBackColor = true;
+            this.btnRelMensal.Click += new System.EventHandler(this.btnRelMensal_Click);
             // 
             // FrmPrincipal
             // 
@@ -92,5 +107,6 @@
         private System.Windows.Forms.Panel panel1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton btnRelDiario;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRelMensal;
     }
 }

@@ -14,5 +14,10 @@ namespace BLL
         {
             return new TransferenciaDAL().ListarRelatorioTransacoes(DataInicial);
         }
+
+        public DataTable ListarRelatorioTransacoesMensal(DateTime DataInicial, DateTime DataFinal)
+        {
+            return new TransferenciaDAL().ListarRelatorioTransacoesMensal(DataInicial,DataFinal);
+        }
     }
 }

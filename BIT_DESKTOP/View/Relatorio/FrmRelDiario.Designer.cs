@@ -125,12 +125,12 @@
             // 
             this.lblreal.AutoSize = true;
             this.lblreal.Depth = 0;
-            this.lblreal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblreal.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblreal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.lblreal.Location = new System.Drawing.Point(282, 136);
             this.lblreal.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblreal.Name = "lblreal";
-            this.lblreal.Size = new System.Drawing.Size(36, 18);
+            this.lblreal.Size = new System.Drawing.Size(36, 19);
             this.lblreal.TabIndex = 6;
             this.lblreal.Text = "0,00";
             // 

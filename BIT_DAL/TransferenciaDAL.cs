@@ -33,5 +33,28 @@ namespace BIT_DAL
 
             return dt;
         }
+
+        public DataTable ListarRelatorioTransacoesMensal(DateTime DataInicial, DateTime DataFinal)
+        {
+            cf = new ConnectionFactory();
+            string query = "USP_RELATORIO_TRANSACOES_MENSAL";
+
+            cf.Comando = cf.Conexao.CreateCommand();
+
+            cf.Comando.CommandType = CommandType.StoredProcedure;
+            cf.Comando.CommandText = query.ToString();
+
+            cf.Comando.Parameters.AddWithValue("@DATAINCIAL", DataInicial);
+            cf.Comando.Parameters.AddWithValue("@DATAFINAL", DataFinal);
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cf.Comando);
+
+            cf.Conexao.Open();
+            da.Fill(dt);
+            cf.Conexao.Close();
+
+            return dt;
+        }
     }
 }

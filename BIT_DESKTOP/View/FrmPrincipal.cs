@@ -33,5 +33,12 @@ namespace BIT_DESKTOP.View
             RelDir.MdiParent = this;
             RelDir.Show();
         }
+
+        private void btnRelMensal_Click(object sender, EventArgs e)
+        {
+            View.Relatorio.FrmRelMensal RelMen = new Relatorio.FrmRelMensal();
+            RelMen.MdiParent = this;
+            RelMen.Show();
+        }
     }
 }
