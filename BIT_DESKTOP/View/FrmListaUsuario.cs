@@ -93,5 +93,18 @@ namespace BIT_DESKTOP.View
                 MessageBox.Show("Selecione um usuário","Mensagem do sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
+
+        private void txtPesquisaUsuario_TextChanged(object sender, EventArgs e)
+        {
+            if(txtPesquisaUsuario.Text != "")
+            {
+                dgvCarregarUsuario.DataSource = Userbll.FiltarUsuario(txtPesquisaUsuario.Text);
+            }
+            else
+            {
+                CarregarUsuario();
+            }
+            
+        }
     }
 }

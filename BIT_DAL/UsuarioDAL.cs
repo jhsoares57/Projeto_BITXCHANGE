@@ -183,5 +183,26 @@ namespace BIT_DAL
             //Retornando a lista já carregada.
             return User;
         }
+
+        public DataTable FiltarUsuario( string nomeUsuario)
+        {
+            cf = new ConnectionFactory();
+            string query = "USP_FILTRAR_USER";
+
+            cf.Comando = cf.Conexao.CreateCommand();
+            cf.Comando.CommandType = CommandType.StoredProcedure;
+            cf.Comando.CommandText = query.ToString();
+
+            cf.Comando.Parameters.AddWithValue("@NOME", nomeUsuario);
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cf.Comando);
+
+            cf.Conexao.Open();
+            da.Fill(dt);
+            cf.Conexao.Close();
+
+            return dt;
+        }
     }
 }

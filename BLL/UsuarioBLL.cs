@@ -48,5 +48,10 @@ namespace BIT_BLL
         {
             return new UsuarioDAL().SelecionarPorID(id);
         }
+
+        public DataTable FiltarUsuario(string nomeUsuario)
+        {
+            return new UsuarioDAL().FiltarUsuario(nomeUsuario);
+        }
     }
 }

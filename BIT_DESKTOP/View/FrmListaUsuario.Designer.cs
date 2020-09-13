@@ -33,6 +33,8 @@
             this.btnExtrato = new MaterialSkin.Controls.MaterialRaisedButton();
             this.dgvCarregarUsuario = new System.Windows.Forms.DataGridView();
             this.btnFechar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.txtPesquisaUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarregarUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +81,10 @@
             this.dgvCarregarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCarregarUsuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCarregarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarregarUsuario.Location = new System.Drawing.Point(12, 132);
+            this.dgvCarregarUsuario.Enabled = false;
+            this.dgvCarregarUsuario.Location = new System.Drawing.Point(12, 184);
             this.dgvCarregarUsuario.Name = "dgvCarregarUsuario";
-            this.dgvCarregarUsuario.Size = new System.Drawing.Size(776, 306);
+            this.dgvCarregarUsuario.Size = new System.Drawing.Size(776, 254);
             this.dgvCarregarUsuario.TabIndex = 3;
             this.dgvCarregarUsuario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarregarUsuario_CellClick);
             // 
@@ -98,12 +101,46 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(12, 151);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(80, 19);
+            this.materialLabel1.TabIndex = 5;
+            this.materialLabel1.Text = "Pesquisar:";
+            // 
+            // txtPesquisaUsuario
+            // 
+            this.txtPesquisaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPesquisaUsuario.Depth = 0;
+            this.txtPesquisaUsuario.Hint = "";
+            this.txtPesquisaUsuario.Location = new System.Drawing.Point(98, 147);
+            this.txtPesquisaUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtPesquisaUsuario.Name = "txtPesquisaUsuario";
+            this.txtPesquisaUsuario.PasswordChar = '\0';
+            this.txtPesquisaUsuario.SelectedText = "";
+            this.txtPesquisaUsuario.SelectionLength = 0;
+            this.txtPesquisaUsuario.SelectionStart = 0;
+            this.txtPesquisaUsuario.Size = new System.Drawing.Size(204, 23);
+            this.txtPesquisaUsuario.TabIndex = 6;
+            this.txtPesquisaUsuario.UseSystemPasswordChar = false;
+            this.txtPesquisaUsuario.TextChanged += new System.EventHandler(this.txtPesquisaUsuario_TextChanged);
+            // 
             // FrmListaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.txtPesquisaUsuario);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.dgvCarregarUsuario);
             this.Controls.Add(this.btnExtrato);
@@ -115,6 +152,7 @@
             this.Load += new System.EventHandler(this.FrmListaUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarregarUsuario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,5 +163,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnExtrato;
         private System.Windows.Forms.DataGridView dgvCarregarUsuario;
         private MaterialSkin.Controls.MaterialRaisedButton btnFechar;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtPesquisaUsuario;
     }
 }
