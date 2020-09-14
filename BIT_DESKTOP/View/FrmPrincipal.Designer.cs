@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInicio = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnRelMensal = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRelDiario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.btnRelMensal = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
+            this.panel1.BackColor = System.Drawing.Color.Orange;
+            this.panel1.Controls.Add(this.btnInicio);
             this.panel1.Controls.Add(this.btnRelMensal);
             this.panel1.Controls.Add(this.btnRelDiario);
             this.panel1.Controls.Add(this.materialRaisedButton1);
@@ -46,10 +49,36 @@
             this.panel1.Size = new System.Drawing.Size(798, 53);
             this.panel1.TabIndex = 2;
             // 
+            // btnInicio
+            // 
+            this.btnInicio.Depth = 0;
+            this.btnInicio.Location = new System.Drawing.Point(17, 14);
+            this.btnInicio.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Primary = true;
+            this.btnInicio.Size = new System.Drawing.Size(148, 30);
+            this.btnInicio.TabIndex = 3;
+            this.btnInicio.Text = "Início";
+            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+            // 
+            // btnRelMensal
+            // 
+            this.btnRelMensal.Depth = 0;
+            this.btnRelMensal.Location = new System.Drawing.Point(353, 14);
+            this.btnRelMensal.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRelMensal.Name = "btnRelMensal";
+            this.btnRelMensal.Primary = true;
+            this.btnRelMensal.Size = new System.Drawing.Size(148, 30);
+            this.btnRelMensal.TabIndex = 2;
+            this.btnRelMensal.Text = "Relatorio Mensal";
+            this.btnRelMensal.UseVisualStyleBackColor = true;
+            this.btnRelMensal.Click += new System.EventHandler(this.btnRelMensal_Click);
+            // 
             // btnRelDiario
             // 
             this.btnRelDiario.Depth = 0;
-            this.btnRelDiario.Location = new System.Drawing.Point(171, 14);
+            this.btnRelDiario.Location = new System.Drawing.Point(188, 14);
             this.btnRelDiario.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRelDiario.Name = "btnRelDiario";
             this.btnRelDiario.Primary = true;
@@ -62,7 +91,7 @@
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(589, 14);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(520, 14);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
@@ -71,19 +100,6 @@
             this.materialRaisedButton1.Text = "Usuário";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
-            // 
-            // btnRelMensal
-            // 
-            this.btnRelMensal.Depth = 0;
-            this.btnRelMensal.Location = new System.Drawing.Point(373, 14);
-            this.btnRelMensal.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnRelMensal.Name = "btnRelMensal";
-            this.btnRelMensal.Primary = true;
-            this.btnRelMensal.Size = new System.Drawing.Size(148, 30);
-            this.btnRelMensal.TabIndex = 2;
-            this.btnRelMensal.Text = "Relatorio Mensal";
-            this.btnRelMensal.UseVisualStyleBackColor = true;
-            this.btnRelMensal.Click += new System.EventHandler(this.btnRelMensal_Click);
             // 
             // FrmPrincipal
             // 
@@ -108,5 +124,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton btnRelDiario;
         private MaterialSkin.Controls.MaterialRaisedButton btnRelMensal;
+        private MaterialSkin.Controls.MaterialRaisedButton btnInicio;
     }
 }

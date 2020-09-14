@@ -1,4 +1,5 @@
-﻿using MaterialSkin.Controls;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,18 @@ namespace BIT_DESKTOP.View
             InitializeComponent();
             panel1.Dock = DockStyle.Top;
             panel1.AutoSize = false;
+
+
+            // Criando um material theme manager e adicionando o formulário
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            //materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            //Definindo um esquema de Cor para formulário com tom laranja
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Orange500, Primary.Orange500,
+                Primary.Orange500, Accent.Orange700,
+                TextShade.BLACK
+            );
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -39,6 +52,13 @@ namespace BIT_DESKTOP.View
             View.Relatorio.FrmRelMensal RelMen = new Relatorio.FrmRelMensal();
             RelMen.MdiParent = this;
             RelMen.Show();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            View.FrmInicio Incio = new FrmInicio();
+            Incio.MdiParent = this;
+            Incio.Show();
         }
     }
 }
