@@ -95,7 +95,7 @@
 button {
     width: 28rem;
     height: 6.2rem;
-    border: 0.1rem solid rgba(0,0,0);
+    border: 0.1rem solid rgb(0,0,0);
     text-transform: uppercase;
     background-color: var(--color-secundaria);
     cursor: pointer;
@@ -110,7 +110,6 @@ button {
     }
 
     .page-header {
-        grid-column-start: 1.5;
         height: 100vh;
         grid-column-end: 3;
         padding: 50% 0;
