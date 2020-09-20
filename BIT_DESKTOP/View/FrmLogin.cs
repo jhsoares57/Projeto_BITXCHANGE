@@ -49,17 +49,30 @@ namespace BIT_DESKTOP.View
                 LoginNeg uService = new LoginNeg();
                 DadosLogin usuario = new DadosLogin();
 
-                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text), 1);
+                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text), 1,null);
 
                 if (usuario.Email != null)
                 {
-                    this.Hide();
-                    FrmPrincipal inicial = new FrmPrincipal();
-                    inicial.Show();
+                    if(usuario.Tipo == 1)
+                    {
+                        this.Hide();
+                        FrmPrincipal inicial = new FrmPrincipal();
+                        inicial.NomeUser(usuario.Nome);
+                        inicial.Show();
+                       
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário não tem acesso ao modulo dektop!!", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    
                 }
                 else
                 {
-                    MessageBox.Show ("Usuário | senha incorreta ou não tem acesso a plataforma desktop", "Mensagem do Sistema");
+                    MessageBox.Show ("Usuário ou senha incorreta !!", "Mensagem do Sistema",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    txtEmail.Clear();
+                    txtSenha.Clear();
+                    txtEmail.Focus();
                 }
             }
             catch (Exception ex)

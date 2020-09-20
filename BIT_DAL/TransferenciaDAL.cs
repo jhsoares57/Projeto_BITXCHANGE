@@ -56,5 +56,26 @@ namespace BIT_DAL
 
             return dt;
         }
+
+        public DataTable ListarUltimasTransacoesMensal()
+        {
+            cf = new ConnectionFactory();
+            string query = "USP_ULTIMAS_TRANSACOES";
+
+            cf.Comando = cf.Conexao.CreateCommand();
+
+            cf.Comando.CommandType = CommandType.StoredProcedure;
+            cf.Comando.CommandText = query.ToString();
+
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cf.Comando);
+
+            cf.Conexao.Open();
+            da.Fill(dt);
+            cf.Conexao.Close();
+
+            return dt;
+        }
     }
 }

@@ -16,14 +16,14 @@ namespace BIT_LOGIN.AcessoBanco
         ConnectionFactory cf = new ConnectionFactory();
         DadosLogin L = new DadosLogin();
         
-        public DadosLogin FindByLogin(string nmUsuario, string senhausuario, int tipo)
+        public DadosLogin FindByLogin(string nmUsuario, string senhausuario, int tipo, string DescUser)
         {
             //DadosLogin L = null;
 
             cf = new ConnectionFactory();
 
             // string query = "SELECT NM_USUARIO,SENHA_USUARIO   FROM LOGINN ";
-            string query = "USP_USUARIOS_SEL ";
+            string query = "USP_USUARIOS_SEL";
 
             cf.Comando = cf.Conexao.CreateCommand();
 
@@ -33,7 +33,6 @@ namespace BIT_LOGIN.AcessoBanco
 
             cf.Comando.Parameters.AddWithValue("@LOGIN", nmUsuario);
             cf.Comando.Parameters.AddWithValue("@SENHA", senhausuario);
-            cf.Comando.Parameters.AddWithValue("@TIPO", tipo);
             cf.Conexao.Open();
 
 
@@ -43,10 +42,11 @@ namespace BIT_LOGIN.AcessoBanco
             if (dr.Read())
             {
                 //L = new DadosLogin();
-                //U.IdUsuario = Convert.ToInt32(dr["ID_USUARIO"]);
+                
                 L.Email = Convert.ToString(dr["USU_STR_EMAIL"]);
                 L.Senha = Convert.ToString(dr["USU_STR_SENHA"]);
-                //U.DsUsuario = Convert.ToString(dr["DS_USUARIO"]);
+                L.Nome = Convert.ToString(dr["USU_STR_NOME"]);
+                L.Tipo = Convert.ToInt32(dr["USU_STR_TIPO"]);
 
 
             }

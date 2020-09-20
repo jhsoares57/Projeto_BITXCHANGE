@@ -19,5 +19,10 @@ namespace BLL
         {
             return new TransferenciaDAL().ListarRelatorioTransacoesMensal(DataInicial,DataFinal);
         }
+
+        public DataTable ListarUltimasTransacoes()
+        {
+            return new TransferenciaDAL().ListarUltimasTransacoesMensal();
+        }
     }
 }

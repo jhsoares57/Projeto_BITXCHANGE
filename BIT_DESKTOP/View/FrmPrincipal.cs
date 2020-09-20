@@ -33,6 +33,22 @@ namespace BIT_DESKTOP.View
             );
         }
 
+        Label lblnome = new Label();
+        public void NomeUser(string user)
+        {
+            string nome = user;
+           
+            lblnome.Text = nome;
+        }
+
+        private void FInicio()
+        {
+            FrmInicio IncioF = new FrmInicio();
+            IncioF.MdiParent = this;
+            IncioF.NomeUser(lblnome.Text);
+            IncioF.Show();
+        }
+
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             FrmListaUsuario user = new FrmListaUsuario();
@@ -59,6 +75,11 @@ namespace BIT_DESKTOP.View
             View.FrmInicio Incio = new FrmInicio();
             Incio.MdiParent = this;
             Incio.Show();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            FInicio();
         }
     }
 }
