@@ -17,6 +17,7 @@ namespace BIT_DESKTOP.View
     {
         UsuarioBLL Userbll = new UsuarioBLL();
         public static int ID;
+        public static string NOME;
         public FrmListaUsuario()
         {
             InitializeComponent();
@@ -86,6 +87,7 @@ namespace BIT_DESKTOP.View
             try
             {
                 ID = Convert.ToInt32(dgvCarregarUsuario.Rows[e.RowIndex].Cells[0].Value.ToString());
+                NOME = Convert.ToString(dgvCarregarUsuario.Rows[e.RowIndex].Cells[1].Value.ToString());
             }
             catch (Exception)
             {
@@ -105,6 +107,38 @@ namespace BIT_DESKTOP.View
                 CarregarUsuario();
             }
             
+        }
+
+        private void btnExtrato_Click(object sender, EventArgs e)
+        {
+            //Relatorio.FrmExtratoUsuario Extrato = new Relatorio.FrmExtratoUsuario();
+            //Extrato.MdiParent = this.MdiParent;
+            //Extrato.Show();
+            ExtratoUsuario();
+        }
+
+        private void ExtratoUsuario()
+        {
+            try
+            {
+                View.Relatorio.FrmExtratoUsuario Extrato = new View.Relatorio.FrmExtratoUsuario();
+                if (ID > 0)
+                {
+                    Extrato.F = this;
+                    Extrato.CarregarIdUsuario(ID,NOME);
+                    Extrato.MdiParent = this.MdiParent;
+                    Extrato.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Selecione um usuário", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using BLL;
-using DGVPrinterHelper;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -14,17 +13,22 @@ using System.Windows.Forms;
 
 namespace BIT_DESKTOP.View.Relatorio
 {
-    public partial class FrmRelMensal : MaterialForm
+    public partial class FrmExtratoUsuario : MaterialForm
     {
 
-        TransacaoBLL TransBLL = new TransacaoBLL();
-        public static decimal total;
+        TransacaoBLL transacao = new TransacaoBLL();
+
+        private Form f;
+
+        public Form F { get => f; set => f = value; }
+
         public static string moeda;
         public static decimal bit;
         public static decimal real;
         public static decimal etherum;
         public static decimal dolar;
-        public FrmRelMensal()
+
+        public FrmExtratoUsuario()
         {
             InitializeComponent();
 
@@ -40,42 +44,19 @@ namespace BIT_DESKTOP.View.Relatorio
                 );
         }
 
-        private void FrmRelDiario_Load(object sender, EventArgs e)
+
+        public void CarregarIdUsuario(int id, string nome)
         {
-            CarregarDataAtual();
-            CarregarGrid();
-        }
+           dgvExtrato.DataSource = transacao.ListarExtratoUserBLL(id);
+            lblNomeUser.Text = nome;
+            
 
-        private void CarregarDataAtual()
-        {
-            dtDataFinal.Text = DateTime.Today.ToString("dd/MM/yyyy");
-        }
-
-        private void btnfechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        public void CarregarGrid()
-        {
-            DateTime DataInicial = Convert.ToDateTime(dtDataInicial.Text);
-            DateTime DataFinal = Convert.ToDateTime(dtDataFinal.Text);
-            dgvListarTransacoes.DataSource = TransBLL.ListarRelatorioTransacoesMensal(DataInicial,DataFinal);
-
-            carregarTotalMoeda();
-        }
-
-        private void LimparVariaveis() {
-            dolar = 0;
-            real = 0;
-            etherum = 0;
-            bit = 0;
         }
 
         private void carregarTotalMoeda()
         {
-            total = 0;
-            foreach (DataGridViewRow linha in dgvListarTransacoes.Rows)
+          
+            foreach (DataGridViewRow linha in dgvExtrato.Rows)
             {
                 string moeda = Convert.ToString(linha.Cells[4].Value);
                 if (moeda == "BTC")
@@ -111,28 +92,24 @@ namespace BIT_DESKTOP.View.Relatorio
 
         }
 
-       
-        private void btnGerarPDF_Click(object sender, EventArgs e)
+        private void btnFechar_Click(object sender, EventArgs e)
         {
-            this.printDocument.DefaultPageSettings.Landscape = true;
-            DGVPrinter print = new DGVPrinter();
-            print.Title = "Transações Mensal"; //Titulo da Página
-            print.SubTitle = String.Format("Data de geração: {0}", DateTime.Today.ToString("dd/MM/yyyy"));
-            print.PageSettings.Landscape = true;
-            print.PorportionalColumns = true;
-            print.PageNumberInHeader = false;
-            print.HeaderCellAlignment = StringAlignment.Near;
-            print.Footer = "BitXchange";
-            print.DocName = "TransacaoMensal_BitExchange";
-
-
-            print.PrintDataGridView(dgvListarTransacoes);
+            this.Close();
         }
 
-        private void dtDataFinal_CloseUp(object sender, EventArgs e)
+        private void FrmExtratoUsuario_Load(object sender, EventArgs e)
         {
-            LimparVariaveis();
-            CarregarGrid();            
+            carregarTotalMoeda();
+        }
+
+        private void dgvExtrato_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DateTime data = Convert.ToDateTime(dgvExtrato.Rows[e.RowIndex].Cells[0].Value.ToString());
+            lblData.Text = data.ToString("dd/MM/yyyy");
+            lblProtocolo.Text = dgvExtrato.Rows[e.RowIndex].Cells[1].Value.ToString();
+            lblTipotransacao.Text = dgvExtrato.Rows[e.RowIndex].Cells[2].Value.ToString();
+            lblMoeda.Text = dgvExtrato.Rows[e.RowIndex].Cells[4].Value.ToString();
+            lblValor.Text = dgvExtrato.Rows[e.RowIndex].Cells[3].Value.ToString();
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BIT_DAL
 {
-    public class TransferenciaDAL
+    public class TransacaoDAL
     {
         ConnectionFactory cf = new ConnectionFactory();
         public DataTable ListarRelatorioTransacoes(DateTime DataInicial)
@@ -66,6 +66,28 @@ namespace BIT_DAL
 
             cf.Comando.CommandType = CommandType.StoredProcedure;
             cf.Comando.CommandText = query.ToString();
+
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cf.Comando);
+
+            cf.Conexao.Open();
+            da.Fill(dt);
+            cf.Conexao.Close();
+
+            return dt;
+        }
+
+        public DataTable ListarExtratouserDAL(int id)
+        {
+            cf = new ConnectionFactory();
+            string query = "USP_EXTRATO_USUARIO";
+
+            cf.Comando = cf.Conexao.CreateCommand();
+
+            cf.Comando.CommandType = CommandType.StoredProcedure;
+            cf.Comando.CommandText = query.ToString();
+            cf.Comando.Parameters.AddWithValue("@USUARIO", id);
 
 
             DataTable dt = new DataTable();

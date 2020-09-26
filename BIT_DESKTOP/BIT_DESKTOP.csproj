@@ -82,6 +82,12 @@
     <Compile Include="View\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Relatorio\FrmExtratoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatorio\FrmExtratoUsuario.Designer.cs">
+      <DependentUpon>FrmExtratoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Relatorio\FrmRelDiario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatorio\FrmExtratoUsuario.resx">
+      <DependentUpon>FrmExtratoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Relatorio\FrmRelDiario.resx">
       <DependentUpon>FrmRelDiario.cs</DependentUpon>

@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CotacaoBLL.cs" />
-    <Compile Include="TransferenciaBLL.cs" />
+    <Compile Include="TransacaoBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

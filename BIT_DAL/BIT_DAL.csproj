@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CotacaoDAL.cs" />
-    <Compile Include="TransferenciaDAL.cs" />
+    <Compile Include="TransacaoDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
