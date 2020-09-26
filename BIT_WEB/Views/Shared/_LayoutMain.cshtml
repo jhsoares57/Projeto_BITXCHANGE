@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITXCHANGE</title>
+    <link rel="stylesheet" href="~/Content/main.css">
+    <link rel="stylesheet" href="~/Content/global.css">
+    <script src="https://kit.fontawesome.com/b5e84d0a6b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        <div class="logo">
+            <img src="~/Content/Assets/Images/logo.svg" alt="logo">
+        </div>
+        <ul class="nav-items">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Transferências</a></li>
+            <li><a href="#">Carteira</a></li>
+            <li><a href="#">Conversão</a></li>
+            <li><a href="#">Transações</a></li>
+        </ul>
+        <div class="logout-icon">
+            <a href="~/Views/Home/SignIn.cshtml">
+                <span class="fas fa-power-off"></span>
+            </a>
+        </div>
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        <div class="logout">
+            <a href="~/Views/Home/SignIn.cshtml"><span class="fas fa-power-off"></span></a>
+        </div>
+    </nav>
+    <script src="~/Scripts/menu-navbar.js"></script>
+    @RenderBody()
+</body>
+</html>
