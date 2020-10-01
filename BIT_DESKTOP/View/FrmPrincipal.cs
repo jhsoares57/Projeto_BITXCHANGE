@@ -34,10 +34,13 @@ namespace BIT_DESKTOP.View
         }
 
         Label lblnome = new Label();
-        public void NomeUser(string user)
+        Label lblidUser = new Label();
+        public void NomeUser(string user, int id)
         {
             string nome = user;
-           
+            int idUser = id;
+
+            lblidUser.Text = Convert.ToInt32(idUser).ToString();
             lblnome.Text = nome;
         }
 
@@ -80,6 +83,14 @@ namespace BIT_DESKTOP.View
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             FInicio();
+        }
+
+        private void btnBackup_Click(object sender, EventArgs e)
+        {
+            View.backup.FrmListaBackup back = new View.backup.FrmListaBackup();
+            back.MdiParent = this;
+            back.dadosUser(lblnome.Text, Convert.ToInt32(lblidUser.Text));
+            back.Show();
         }
     }
 }

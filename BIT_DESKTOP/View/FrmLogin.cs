@@ -57,7 +57,7 @@ namespace BIT_DESKTOP.View
                     {
                         this.Hide();
                         FrmPrincipal inicial = new FrmPrincipal();
-                        inicial.NomeUser(usuario.Nome);
+                        inicial.NomeUser(usuario.Nome,usuario.Id);
                         inicial.Show();
                        
                     }

@@ -11,20 +11,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BIT_DESKTOP.View.backup
+namespace BIT_BACKUP_SERVER
 {
-    public partial class FrmBackup : MaterialForm
-
+    public partial class FrmPrincipal : MaterialForm
     {
         ExecBackup backup = new ExecBackup();
+        ExecRestore restore = new ExecRestore();
         RetornaDatabase retornaDatabase = new RetornaDatabase();
-        public FrmBackup()
+        public FrmPrincipal()
         {
             InitializeComponent();
 
             // Criando um material theme manager e adicionando o formulário
             MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             // Definindo um esquema de Cor para formulário com tom Azul
             materialSkinManager.ColorScheme = new ColorScheme(
@@ -33,16 +33,7 @@ namespace BIT_DESKTOP.View.backup
                 TextShade.BLACK);
         }
 
-        Label lblidUser = new Label();
-        public void dadosUser(string nomeUser, int idUser)
-        {
-            string nome = nomeUser;
-            int id = idUser;
-
-            lblidUser.Text = Convert.ToInt32(idUser).ToString();
-
-            txtUser.Text = nomeUser;
-        }
+        #region Botões
 
         private void btnDirBackup_Click(object sender, EventArgs e)
         {
@@ -50,23 +41,36 @@ namespace BIT_DESKTOP.View.backup
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 txtDiretorioBackup.Text = dlg.SelectedPath;
-                btnprocessarBackup.Enabled = true;
+
             }
 
         }
 
         private void btnprocessarBackup_Click(object sender, EventArgs e)
         {
-            tmBack.Enabled = true;
-            prgBackup.Visible = true;
-            
+            if(rdbtBackup.Checked == true)
+            {
+                tmBack.Enabled = true;
+                prgBackup.Visible = true;
+            }
+            else
+            {
+                tmRestore.Enabled = true;
+                prgBackup.Visible = true;
+            }
+
+
+
+
 
         }
+        #endregion
+
+        #region Backup
+
 
         private void progress()
         {
-
-
             if (prgBackup.Value < 100)
             {
                 prgBackup.Value = prgBackup.Value + 1;
@@ -80,7 +84,7 @@ namespace BIT_DESKTOP.View.backup
                         DateTime date = DateTime.Today;
                         string database = txtDatabase.Text;
                         string diretorio = txtDiretorioBackup.Text;
-                        int idUser = Convert.ToInt32(lblidUser.Text);
+                        int idUser = Convert.ToInt32(1);
                         backup.Backups(diretorio);
                         backup.GravarLogBackup(date, database, diretorio, "F", idUser);
 
@@ -92,13 +96,14 @@ namespace BIT_DESKTOP.View.backup
                     {
                         MessageBox.Show("Selecione um diretorio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                    tmBack.Enabled = false;
                 }
                 catch (Exception ex)
                 {
                     DateTime date = DateTime.Today;
                     string database = txtDatabase.Text;
                     string diretorio = txtDiretorioBackup.Text;
-                    int idUser = Convert.ToInt32(lblidUser.Text);
+                    int idUser = Convert.ToInt32(1);
                     backup.GravarLogBackup(date, database, diretorio, "E", idUser);
 
                     tmBack.Enabled = false;
@@ -108,18 +113,72 @@ namespace BIT_DESKTOP.View.backup
                     MessageBox.Show(message);
                 }
                 Visible = (false);
-                tmBack.Enabled = false;
             }
+            
         }
 
         private void tmBack_Tick(object sender, EventArgs e)
         {
             progress();
+            
+        }
+        #endregion
+
+        #region Restore
+        private void progresRestore()
+        {
+            if (prgBackup.Value < 100)
+            {
+                prgBackup.Value = prgBackup.Value + 1;
+            }
+            if (prgBackup.Value == 100)
+            {
+                try
+                {
+                    if (txtDiretorioBackup.Text != string.Empty)
+                    {
+                        string diretorio = txtDiretorioBackup.Text;
+                        
+                        restore.Restore(diretorio);
+                        
+                        MessageBox.Show("Backup restaurado com sucesso!!!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        tmBack.Enabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Selecione um diretorio", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    tmBack.Enabled = false;
+                }
+                catch (Exception ex)
+                {
+                    DateTime date = DateTime.Today;
+                    string database = txtDatabase.Text;
+                    string diretorio = txtDiretorioBackup.Text;
+                    int idUser = 1;
+                    backup.GravarLogBackup(date, database, diretorio, "E", idUser);
+
+                    tmBack.Enabled = false;
+
+                    string message = Convert.ToString(ex);
+
+                    MessageBox.Show(message);
+                }
+                Visible = (false);
+            }
+
+        }
+        private void tmRestore_Tick(object sender, EventArgs e)
+        {
+            progresRestore();
         }
 
-        private void FrmBackup_Load(object sender, EventArgs e)
+        #endregion
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            txtDatabase.Text = retornaDatabase.RetornaBaseConnectiomString();
+           txtDatabase.Text = retornaDatabase.RetornaBaseConnectiomString();
         }
     }
 }

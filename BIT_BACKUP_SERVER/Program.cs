@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BIT_DESKTOP
+namespace BIT_BACKUP_SERVER
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace BIT_DESKTOP
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.FrmLogin());
+            Application.Run(new FrmPrincipal());
         }
     }
 }
