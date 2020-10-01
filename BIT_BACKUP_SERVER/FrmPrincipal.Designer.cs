@@ -232,7 +232,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmPrincipal";
-            this.Text = "Form1";
+            this.Text = "Backup e Restauração - Executar no servidor";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

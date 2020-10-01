@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using BIT_BACKUP;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,7 @@ namespace BIT_DESKTOP.View.backup
 {
     public partial class FrmListaBackup : MaterialForm
     {
+        ListarBackup listaBackup = new ListarBackup();
         public FrmListaBackup()
         {
             InitializeComponent();
@@ -44,6 +46,11 @@ namespace BIT_DESKTOP.View.backup
             Gerar.MdiParent = this.MdiParent;
             Gerar.dadosUser(lblnome.Text, Convert.ToInt32(lblidUser.Text));
             Gerar.Show();
+        }
+
+        private void FrmListaBackup_Load(object sender, EventArgs e)
+        {
+          dgvListaBackup.DataSource =  listaBackup.ListarUltimosBackups();
         }
     }
 }
