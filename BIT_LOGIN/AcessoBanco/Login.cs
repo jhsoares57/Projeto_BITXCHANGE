@@ -16,7 +16,7 @@ namespace BIT_LOGIN.AcessoBanco
         ConnectionFactory cf = new ConnectionFactory();
         DadosLogin L = new DadosLogin();
         
-        public DadosLogin FindByLogin(string nmUsuario, string senhausuario, int tipo, string DescUser)
+        public DadosLogin FindByLogin(string nmUsuario, string senhausuario)
         {
             //DadosLogin L = null;
 

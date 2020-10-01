@@ -49,7 +49,7 @@ namespace BIT_DESKTOP.View
                 LoginNeg uService = new LoginNeg();
                 DadosLogin usuario = new DadosLogin();
 
-                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text), 1,null);
+                usuario = uService.FindByLogin(txtEmail.Text, Criptografia.GerarMD5(txtSenha.Text));
 
                 if (usuario.Email != null)
                 {
