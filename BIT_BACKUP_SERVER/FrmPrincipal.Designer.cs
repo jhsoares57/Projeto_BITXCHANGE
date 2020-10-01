@@ -41,8 +41,8 @@
             this.tmBack = new System.Windows.Forms.Timer(this.components);
             this.tmRestore = new System.Windows.Forms.Timer(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rdbtBackup = new MaterialSkin.Controls.MaterialRadioButton();
             this.rdbtRestore = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rdbtBackup = new MaterialSkin.Controls.MaterialRadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -103,6 +103,7 @@
             // txtDatabase
             // 
             this.txtDatabase.Depth = 0;
+            this.txtDatabase.Enabled = false;
             this.txtDatabase.Hint = "";
             this.txtDatabase.Location = new System.Drawing.Point(33, 60);
             this.txtDatabase.MouseState = MaterialSkin.MouseState.HOVER;
@@ -131,6 +132,7 @@
             // txtDiretorioBackup
             // 
             this.txtDiretorioBackup.Depth = 0;
+            this.txtDiretorioBackup.Enabled = false;
             this.txtDiretorioBackup.Hint = "";
             this.txtDiretorioBackup.Location = new System.Drawing.Point(28, 108);
             this.txtDiretorioBackup.MouseState = MaterialSkin.MouseState.HOVER;
@@ -188,23 +190,6 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Ação";
             // 
-            // rdbtBackup
-            // 
-            this.rdbtBackup.AutoSize = true;
-            this.rdbtBackup.Depth = 0;
-            this.rdbtBackup.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rdbtBackup.Location = new System.Drawing.Point(6, 12);
-            this.rdbtBackup.Margin = new System.Windows.Forms.Padding(0);
-            this.rdbtBackup.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rdbtBackup.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rdbtBackup.Name = "rdbtBackup";
-            this.rdbtBackup.Ripple = true;
-            this.rdbtBackup.Size = new System.Drawing.Size(75, 30);
-            this.rdbtBackup.TabIndex = 0;
-            this.rdbtBackup.TabStop = true;
-            this.rdbtBackup.Text = "Backup";
-            this.rdbtBackup.UseVisualStyleBackColor = true;
-            // 
             // rdbtRestore
             // 
             this.rdbtRestore.AutoSize = true;
@@ -221,6 +206,23 @@
             this.rdbtRestore.TabStop = true;
             this.rdbtRestore.Text = "Restauração";
             this.rdbtRestore.UseVisualStyleBackColor = true;
+            // 
+            // rdbtBackup
+            // 
+            this.rdbtBackup.AutoSize = true;
+            this.rdbtBackup.Depth = 0;
+            this.rdbtBackup.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rdbtBackup.Location = new System.Drawing.Point(6, 12);
+            this.rdbtBackup.Margin = new System.Windows.Forms.Padding(0);
+            this.rdbtBackup.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rdbtBackup.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rdbtBackup.Name = "rdbtBackup";
+            this.rdbtBackup.Ripple = true;
+            this.rdbtBackup.Size = new System.Drawing.Size(75, 30);
+            this.rdbtBackup.TabIndex = 0;
+            this.rdbtBackup.TabStop = true;
+            this.rdbtBackup.Text = "Backup";
+            this.rdbtBackup.UseVisualStyleBackColor = true;
             // 
             // FrmPrincipal
             // 

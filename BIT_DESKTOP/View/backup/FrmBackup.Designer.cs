@@ -46,6 +46,7 @@
             // txtDiretorioBackup
             // 
             this.txtDiretorioBackup.Depth = 0;
+            this.txtDiretorioBackup.Enabled = false;
             this.txtDiretorioBackup.Hint = "";
             this.txtDiretorioBackup.Location = new System.Drawing.Point(28, 108);
             this.txtDiretorioBackup.MouseState = MaterialSkin.MouseState.HOVER;
@@ -141,6 +142,7 @@
             // txtUser
             // 
             this.txtUser.Depth = 0;
+            this.txtUser.Enabled = false;
             this.txtUser.Hint = "";
             this.txtUser.Location = new System.Drawing.Point(223, 60);
             this.txtUser.MouseState = MaterialSkin.MouseState.HOVER;
@@ -169,6 +171,7 @@
             // txtDatabase
             // 
             this.txtDatabase.Depth = 0;
+            this.txtDatabase.Enabled = false;
             this.txtDatabase.Hint = "";
             this.txtDatabase.Location = new System.Drawing.Point(33, 60);
             this.txtDatabase.MouseState = MaterialSkin.MouseState.HOVER;
