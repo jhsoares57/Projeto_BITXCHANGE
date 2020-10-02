@@ -10,14 +10,13 @@ namespace BIT_WEB.Controllers
 {
     public class LoginController : Controller
     {
+        // GET: Login
         public ActionResult Index()
         {
-
-            ViewBag.Login = new LoginNeg();
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public void Login()
         {
             var login = new DadosLogin();

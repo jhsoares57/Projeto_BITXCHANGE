@@ -15,9 +15,9 @@ namespace BIT_WEB
 
 
             routes.MapRoute(
-              "login_novo",
-              "Home/SignUp",
-              new { controller = "LoginController", action = "SignUp" }
+              "Login",
+              "Home/Login",
+              new { controller = "Login", action = "Login" }
             );
 
 
