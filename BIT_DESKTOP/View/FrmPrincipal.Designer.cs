@@ -33,6 +33,7 @@
             this.btnRelMensal = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnRelDiario = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBackup = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,6 +41,7 @@
             // 
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.Orange;
+            this.panel1.Controls.Add(this.btnBackup);
             this.panel1.Controls.Add(this.btnInicio);
             this.panel1.Controls.Add(this.btnRelMensal);
             this.panel1.Controls.Add(this.btnRelDiario);
@@ -101,6 +103,19 @@
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
             this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
+            // btnBackup
+            // 
+            this.btnBackup.Depth = 0;
+            this.btnBackup.Location = new System.Drawing.Point(665, 14);
+            this.btnBackup.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Primary = true;
+            this.btnBackup.Size = new System.Drawing.Size(122, 30);
+            this.btnBackup.TabIndex = 4;
+            this.btnBackup.Text = "Backup";
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,5 +141,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnRelDiario;
         private MaterialSkin.Controls.MaterialRaisedButton btnRelMensal;
         private MaterialSkin.Controls.MaterialRaisedButton btnInicio;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBackup;
     }
 }

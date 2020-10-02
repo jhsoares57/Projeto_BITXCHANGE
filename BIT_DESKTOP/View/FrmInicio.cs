@@ -15,7 +15,7 @@ namespace BIT_DESKTOP.View
 {
     public partial class FrmInicio : MaterialForm
     {
-        TransferenciaBLL TransBLL = new TransferenciaBLL();
+        TransacaoBLL TransBLL = new TransacaoBLL();
         CotacaoBLL CotBLL = new CotacaoBLL();
 
 

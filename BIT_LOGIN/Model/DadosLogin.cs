@@ -8,6 +8,7 @@ namespace BIT_LOGIN.Model
 {
     public class DadosLogin
     {
+        private int id;
         private string email;
         private string senha;
         private int tipo;
@@ -17,5 +18,6 @@ namespace BIT_LOGIN.Model
         public string Senha { get => senha; set => senha = value; }
         public int Tipo { get => tipo; set => tipo = value; }
         public string Nome { get => nome; set => nome = value; }
+        public int Id { get => id; set => id = value; }
     }
 }

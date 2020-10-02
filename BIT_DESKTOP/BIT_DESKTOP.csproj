@@ -52,6 +52,18 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\DGVPrinter.cs" />
+    <Compile Include="View\backup\FrmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\backup\FrmBackup.Designer.cs">
+      <DependentUpon>FrmBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\backup\FrmListaBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\backup\FrmListaBackup.Designer.cs">
+      <DependentUpon>FrmListaBackup.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmCadastroUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,12 @@
     <Compile Include="View\FrmPrincipal.Designer.cs">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Relatorio\FrmExtratoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Relatorio\FrmExtratoUsuario.Designer.cs">
+      <DependentUpon>FrmExtratoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Relatorio\FrmRelDiario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +122,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\backup\FrmBackup.resx">
+      <DependentUpon>FrmBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\backup\FrmListaBackup.resx">
+      <DependentUpon>FrmListaBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmCadastroUsuario.resx">
       <DependentUpon>FrmCadastroUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Relatorio\FrmExtratoUsuario.resx">
+      <DependentUpon>FrmExtratoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Relatorio\FrmRelDiario.resx">
       <DependentUpon>FrmRelDiario.cs</DependentUpon>
@@ -140,6 +167,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BIT_BACKUP\BIT_BACKUP.csproj">
+      <Project>{872aba7d-4e90-44f8-95b1-049cde781e65}</Project>
+      <Name>BIT_BACKUP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIT_CRIPTOGRAFIA\BIT_CRIPTOGRAFIA.csproj">
       <Project>{7db7ae5d-2d13-41f8-882d-bb14cab6dfb3}</Project>
       <Name>BIT_CRIPTOGRAFIA</Name>

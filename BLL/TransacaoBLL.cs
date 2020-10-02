@@ -8,21 +8,26 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class TransferenciaBLL
+    public class TransacaoBLL
     {
         public DataTable ListarRelatorioTransacoes(DateTime DataInicial)
         {
-            return new TransferenciaDAL().ListarRelatorioTransacoes(DataInicial);
+            return new TransacaoDAL().ListarRelatorioTransacoes(DataInicial);
         }
 
         public DataTable ListarRelatorioTransacoesMensal(DateTime DataInicial, DateTime DataFinal)
         {
-            return new TransferenciaDAL().ListarRelatorioTransacoesMensal(DataInicial,DataFinal);
+            return new TransacaoDAL().ListarRelatorioTransacoesMensal(DataInicial,DataFinal);
         }
 
         public DataTable ListarUltimasTransacoes()
         {
-            return new TransferenciaDAL().ListarUltimasTransacoesMensal();
+            return new TransacaoDAL().ListarUltimasTransacoesMensal();
+        }
+
+        public DataTable ListarExtratoUserBLL(int id)
+        {
+            return new TransacaoDAL().ListarExtratouserDAL(id);
         }
     }
 }

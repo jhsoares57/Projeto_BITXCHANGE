@@ -214,7 +214,6 @@ namespace BIT_DESKTOP.View
 
         public void editarUsuario(int id)
         {
-            int cod = 0;
             UsuarioModel U = new UsuarioBLL().SelecionarPorID(id);
 
             if(U.Sexo == 1)

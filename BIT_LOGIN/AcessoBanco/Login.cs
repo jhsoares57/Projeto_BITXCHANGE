@@ -16,7 +16,7 @@ namespace BIT_LOGIN.AcessoBanco
         ConnectionFactory cf = new ConnectionFactory();
         DadosLogin L = new DadosLogin();
         
-        public DadosLogin FindByLogin(string nmUsuario, string senhausuario, int tipo, string DescUser)
+        public DadosLogin FindByLogin(string nmUsuario, string senhausuario)
         {
             //DadosLogin L = null;
 
@@ -42,7 +42,7 @@ namespace BIT_LOGIN.AcessoBanco
             if (dr.Read())
             {
                 //L = new DadosLogin();
-                
+                L.Id = Convert.ToInt32(dr["USU_INT_ID"]);
                 L.Email = Convert.ToString(dr["USU_STR_EMAIL"]);
                 L.Senha = Convert.ToString(dr["USU_STR_SENHA"]);
                 L.Nome = Convert.ToString(dr["USU_STR_NOME"]);

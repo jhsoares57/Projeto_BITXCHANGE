@@ -16,7 +16,7 @@ namespace BIT_DESKTOP.View.Relatorio
 {
     public partial class FrmRelDiario : MaterialForm
     {
-        TransferenciaBLL TransBLL = new TransferenciaBLL();
+        TransacaoBLL TransBLL = new TransacaoBLL();
         public static decimal total;
         public static string moeda;
         public static decimal bit;
@@ -119,8 +119,8 @@ namespace BIT_DESKTOP.View.Relatorio
             print.PageNumberInHeader = false;
             print.HeaderCellAlignment = StringAlignment.Near;
             print.Footer = "BitXchange";
+            print.DocName = "TransacaoDiario_BitExchange";
 
-            
             print.PrintDataGridView(dgvListarTransacoes);
         }
     }

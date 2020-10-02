@@ -13,6 +13,14 @@ namespace BIT_WEB
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
+            routes.MapRoute(
+              "Login",
+              "Home/Login",
+              new { controller = "Login", action = "Login" }
+            );
+
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

@@ -75,13 +75,13 @@
             this.btnExtrato.TabIndex = 2;
             this.btnExtrato.Text = "Extrato";
             this.btnExtrato.UseVisualStyleBackColor = true;
+            this.btnExtrato.Click += new System.EventHandler(this.btnExtrato_Click);
             // 
             // dgvCarregarUsuario
             // 
             this.dgvCarregarUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCarregarUsuario.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvCarregarUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCarregarUsuario.Enabled = false;
             this.dgvCarregarUsuario.Location = new System.Drawing.Point(12, 184);
             this.dgvCarregarUsuario.Name = "dgvCarregarUsuario";
             this.dgvCarregarUsuario.Size = new System.Drawing.Size(776, 254);
