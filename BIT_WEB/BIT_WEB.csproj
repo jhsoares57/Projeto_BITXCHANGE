@@ -152,14 +152,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\_LayoutSignInUp.cshtml" />
-    <Content Include="Views\Home\SignIn.cshtml" />
+    <Content Include="Views\Login\SignIn.cshtml" />
     <Content Include="Views\Home\SignUp.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -170,6 +169,10 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BIT_CRIPTOGRAFIA\BIT_CRIPTOGRAFIA.csproj">
+      <Project>{7db7ae5d-2d13-41f8-882d-bb14cab6dfb3}</Project>
+      <Name>BIT_CRIPTOGRAFIA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIT_LOGIN\BIT_LOGIN.csproj">
       <Project>{b77cb4bc-a379-41e0-9e43-8a8ad4a7bc8b}</Project>
       <Name>BIT_LOGIN</Name>
