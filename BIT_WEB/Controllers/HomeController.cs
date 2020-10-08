@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BIT_BLL;
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,6 +12,13 @@ namespace BIT_WEB.Controllers
     {
         public ActionResult Index()
         {
+            int ID = 1;
+            var User = new UsuarioBLL();
+            var home = User.SelecionarPorID(ID);
+            ViewBag.Home = home;
+
+            ViewBag.Transacoes = new TransacaoBLL().Lista(ID);
+
             return View();
         }
 
@@ -22,6 +31,8 @@ namespace BIT_WEB.Controllers
         {
             return View();
         }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

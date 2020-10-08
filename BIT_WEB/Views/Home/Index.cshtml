@@ -1,9 +1,13 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    BIT_MODEL.UsuarioModel home = ViewBag.Home;
+    List<BLL.TransacaoBLL> transacao = ViewBag.Transacoes;
 }
 
 
-<p class="welcome-text">Seja bem vindo, <strong>Cliente</strong>!</p>
+
+
+<p class="welcome-text">Seja bem vindo, <strong>@home.Nome</strong>!</p>
 <div class="cards">
     <div class="card">
         <div class="name-coin">
@@ -69,6 +73,35 @@
 </div>
 <div class="last-transactions">
     <div class="header-transactions">
+
+        <div>
+            <table class="table">
+                <tr>
+                    <td>Data</td>
+                    <td>Protocolo</td>
+                    <td>Tipo</td>
+                    <td>Valor</td>
+                    <td>Moeda</td>
+                    <td></td>
+                </tr>
+                @foreach (var t in transacao)
+                {
+                    <tr>
+                        <td>@t.DataTransacao</td>
+                        <td>@t.Protocolo</td>
+                        <td>@t.Tipo</td>
+                        <td>@t.Valor</td>
+                        <td>@t.Moeda</td>
+                        @*Exibe dentro da tabela o conteudo formatado*@
+                        @*<td>@Html.Raw(p.Conteudo)</td>*@
+                        <td>
+                        
+                    </tr>
+                }
+            </table>
+        </div>
+
+
         <p>Últimas Transações</p>
         <a href="#welcome-text"><span class="fas fa-plus"></span></a>
     </div>
