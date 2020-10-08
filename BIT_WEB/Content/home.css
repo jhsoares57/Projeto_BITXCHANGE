@@ -48,6 +48,7 @@ body {
 .last-transactions {
     padding: 2rem;
     margin: 3.2rem 0;
+    width: 60%;
 }
 
 .header-transactions {
@@ -73,7 +74,7 @@ body {
 
 .info-transaction {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
     justify-content: space-between;
     padding: 3rem 0;
     font-size: 1.6rem;
