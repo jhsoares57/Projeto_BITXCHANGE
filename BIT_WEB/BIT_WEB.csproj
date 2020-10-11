@@ -149,11 +149,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\_LayoutSignInUp.cshtml" />
     <Content Include="Views\Login\SignIn.cshtml" />
-    <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\Cadastro\SignUp.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +165,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Cambio\Cambio.cshtml" />
+    <Content Include="Views\Deposito\Deposito.cshtml" />
+    <Content Include="Views\Transacoes\Transacoes.cshtml" />
+    <Content Include="Views\Transferencia\Transferencia.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BIT_CRIPTOGRAFIA\BIT_CRIPTOGRAFIA.csproj">
