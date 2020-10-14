@@ -103,7 +103,7 @@ namespace BIT_DAL
         public DataTable Lista(int id)
         {
             cf = new ConnectionFactory();
-            string query = "USP_EXTRATO_USUARIO";
+            string query = "USP_EXTRATO_USUARIO_3";
 
             cf.Comando = cf.Conexao.CreateCommand();
 

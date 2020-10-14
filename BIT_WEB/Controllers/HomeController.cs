@@ -15,6 +15,17 @@ namespace BIT_WEB.Controllers
             int ID = 1;
             var User = new UsuarioBLL();
             var home = User.SelecionarPorID(ID);
+            var cotacao = new CotacaoBLL();
+            var CotDolar = cotacao.LevantarCotacao(1);
+            var CotReal = cotacao.LevantarCotacao(2);
+            var CotETH = cotacao.LevantarCotacao(3);
+            var CotBit = cotacao.LevantarCotacao(4);
+
+            ViewBag.CotDolar = CotDolar;
+            ViewBag.Cotreal = CotReal;
+            ViewBag.CotETH = CotETH;
+            ViewBag.CotBit = CotBit;
+
             ViewBag.Home = home;
 
             ViewBag.Transacoes = new TransacaoBLL().Lista(ID);

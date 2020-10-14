@@ -26,6 +26,12 @@ namespace BIT_WEB
              new { controller = "Home", action = "Index", id = UrlParameter.Optional }
            );
 
+            routes.MapRoute(
+             "transacoes",
+             "transacoes",
+             new { controller = "Transacoes", action = "Transacoes", id = UrlParameter.Optional }
+           );
+
 
             routes.MapRoute(
                 name: "Default",

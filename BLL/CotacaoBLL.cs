@@ -1,4 +1,5 @@
 ﻿using BIT_DAL;
+using BIT_MODEL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,6 +14,11 @@ namespace BLL
         public DataTable ListarCotacaoMoedaBLL()
         {
             return new CotacaoDAL().ListarCotacaoMoeda();
+        }
+
+        public MoedaModel LevantarCotacao(int id)
+        {
+            return new CotacaoDAL().LevantarCotacao(id);
         }
     }
 }
