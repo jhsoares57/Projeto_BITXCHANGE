@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarteiraModel.cs" />
     <Compile Include="MoedaModel.cs" />
     <Compile Include="TransacaoModel.cs" />
     <Compile Include="UsuarioModel.cs" />

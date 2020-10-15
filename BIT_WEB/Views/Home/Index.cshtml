@@ -6,152 +6,153 @@
     BIT_MODEL.MoedaModel real = ViewBag.CotReal;
     BIT_MODEL.MoedaModel Ethe = ViewBag.CotETH;
     BIT_MODEL.MoedaModel Bit = ViewBag.CotBit;
+    BIT_MODEL.CarteiraModel BitSaldo = ViewBag.SaldoBit;
+    BIT_MODEL.CarteiraModel RealSaldo = ViewBag.SaldoReal;
+    BIT_MODEL.CarteiraModel EthSaldo = ViewBag.SaldoEth;
+    BIT_MODEL.CarteiraModel DolarSaldo = ViewBag.SaldoDolar;
 }
 
-
-
-
-<p class="welcome-text">Seja bem vindo, <strong>@home.Nome</strong>!</p>
-<div class="cards">
-    <div class="card">
-        <div class="name-coin">
-            Bitcoin
-        </div>
-
-        <div class="icon-coin">
-            <img src="~/Content/Assets/Images/bitcoin.svg" alt="">
-        </div>
-
-        <div class="balance-coin">
-            @Bit.Valor
-        </div>
-
-        <div class="balance-coin">
-            <h6> Cotação</h6>
-            <h6 id="CotBit">@Bit.Valor</h6>
-        </div>
-
-
-    </div>
-
-    <div class="card">
-        <div class="name-coin">
-            Real
-        </div>
-
-        <div class="icon-coin">
-            <img src="~/Content/Assets/Images/real.svg" alt="">
-        </div>
-
-        <div class="balance-coin">
-            @real.Valor
-        </div>
-
-        
-    </div>
-
-    <div class="card">
-        <div class="name-coin">
-            Ethereum
-        </div>
-
-        <div class="icon-coin">
-            <img src="~/Content/Assets/Images/ethereum.svg" alt="">
-        </div>
-
-        <div class="balance-coin">
-            35.0000
-        </div>
-
-        <div class="balance-coin">
-            <h6>Cotação</h6>
-            <h6 id="CotETH"> @Ethe.Valor</h6>
-        </div>
-
-
-
-    </div>
-
-    <div class="card">
-        <div class="name-coin">
-            Dólar
-        </div>
-
-        <div class="icon-coin">
-            <img src="~/Content/Assets/Images/dolar.svg" alt="">
-        </div>
-
-        <div class="balance-coin">
-            @Dolar.Valor
-        </div>
-
-        <div class="balance-coin">
-            <h6>Cotação:</h6>
-            <h6 id="cotDolar">@Dolar.Valor</h6>
-            <br />
-        </div>
-
-
-    </div>
-</div>
-<div class="last-transactions">
-    <div class="header-transactions">
-        <p>Últimas Transações</p>
-        <a href="/transacoes"><span class="fas fa-plus"></span></a>
-    </div>
-
-
-    @foreach (var t in transacao)
-    {
-        <div class="info-transaction">
-            <div class="date-transaction">
-                <p>@t.DataTransacao</p>
+    <p class="welcome-text">Seja bem vindo, <strong>@home.Nome</strong>!</p>
+    <div class="cards">
+        <div class="card">
+            <div class="name-coin">
+                Bitcoin
             </div>
 
-            <div class="protocol-transaction">
-                <p>@t.Protocolo</p>
+            <div class="icon-coin">
+                <img src="~/Content/Assets/Images/bitcoin.svg" alt="">
             </div>
 
-            <div class="type-transaction">
-                <p>@t.Tipo</p>
+            <div class="balance-coin">
+                @BitSaldo.SaldoCart
             </div>
 
-            <div class="value-transaction payment">
-                <p>@t.Valor</p>
+            <div class="balance-coin">
+                <h6> Cotação</h6>
+                <h6 id="CotBit">@Bit.Valor</h6>
             </div>
 
-            <div class="coin-transaction">
-                <p>@t.Moeda</p>
-            </div>
+
         </div>
-    }
-</div>
 
-<div class="last-quotes">
-    <div class="header-quotes">
-        <p>Últimas Cotações</p>
-        <p>Atualizado em: 02/06/20 | 19:08</p>
+        <div class="card">
+            <div class="name-coin">
+                Real
+            </div>
+
+            <div class="icon-coin">
+                <img src="~/Content/Assets/Images/real.svg" alt="">
+            </div>
+
+            <div class="balance-coin">
+                @RealSaldo.SaldoCart
+            </div>
+
+
+        </div>
+
+        <div class="card">
+            <div class="name-coin">
+                Ethereum
+            </div>
+
+            <div class="icon-coin">
+                <img src="~/Content/Assets/Images/ethereum.svg" alt="">
+            </div>
+
+            <div class="balance-coin">
+                @EthSaldo.SaldoCart
+            </div>
+
+            <div class="balance-coin">
+                <h6>Cotação</h6>
+                <h6 id="CotETH"> @Ethe.Valor</h6>
+            </div>
+
+
+
+        </div>
+
+        <div class="card">
+            <div class="name-coin">
+                Dólar
+            </div>
+
+            <div class="icon-coin">
+                <img src="~/Content/Assets/Images/dolar.svg" alt="">
+            </div>
+
+            <div class="balance-coin">
+                @DolarSaldo.SaldoCart
+            </div>
+
+            <div class="balance-coin">
+                <h6>Cotação:</h6>
+                <h6 id="cotDolar">@Dolar.Valor</h6>
+                <br />
+            </div>
+
+
+        </div>
     </div>
-    <div class="input-quote">
-        <div class="real-quote">
-            <legend>Real</legend>
-            <input type="number" name="real" id="real" placeholder="Insira um valor"><br />
-            <button type="submit" onclick="Calc()">Atualizar</button>
+    <div class="last-transactions">
+        <div class="header-transactions">
+            <p>Últimas Transações</p>
+            <a href="/transacoes"><span class="fas fa-plus"></span></a>
         </div>
 
-        <div class="coin-quote">
-            <legend>Dólar</legend>
-            <p id="dolar_Simu">0,00</p>
-        </div>
 
-        <div class="coin-quote">
-            <legend>Bitcoin</legend>
-            <p id="BitCoin_Simu">0,00</p>
-        </div>
+        @foreach (var t in transacao)
+        {
+            <div class="info-transaction">
+                <div class="date-transaction">
+                    <p>@t.DataTransacao</p>
+                </div>
 
-        <div class="coin-quote">
-            <legend>Ethereum</legend>
-            <p id="eth_Simu">0,00</p>
+                <div class="protocol-transaction">
+                    <p>@t.Protocolo</p>
+                </div>
+
+                <div class="type-transaction">
+                    <p>@t.Tipo</p>
+                </div>
+
+                <div class="value-transaction payment">
+                    <p>@t.Valor</p>
+                </div>
+
+                <div class="coin-transaction">
+                    <p>@t.Moeda</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="last-quotes">
+        <div class="header-quotes">
+            <p>Últimas Cotações</p>
+            <p>Atualizado em: 02/06/20 | 19:08</p>
+        </div>
+        <div class="input-quote">
+            <div class="real-quote">
+                <legend>Real</legend>
+                <input type="number" name="real" id="real" placeholder="Insira um valor"><br />
+                <button type="submit" onclick="Calc()">Atualizar</button>
+            </div>
+
+            <div class="coin-quote">
+                <legend>Dólar</legend>
+                <p id="dolar_Simu">0,00</p>
+            </div>
+
+            <div class="coin-quote">
+                <legend>Bitcoin</legend>
+                <p id="BitCoin_Simu">0,00</p>
+            </div>
+
+            <div class="coin-quote">
+                <legend>Ethereum</legend>
+                <p id="eth_Simu">0,00</p>
+            </div>
         </div>
     </div>
-</div>
