@@ -10,10 +10,11 @@ namespace BIT_WEB.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+
+        public ActionResult Index(int ID)
         {
             //Buscando dados do UsuarioBLLrio logado
-            int ID = 1;
+            //int ID = 1;
             var User = new UsuarioBLL();
             var home = User.SelecionarPorID(ID);
             ViewBag.Home = home;

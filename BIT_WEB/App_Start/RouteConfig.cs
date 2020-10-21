@@ -22,7 +22,7 @@ namespace BIT_WEB
 
             routes.MapRoute(
              "principal",
-             "principal",
+             "principal/{id}",
              new { controller = "Home", action = "Index", id = UrlParameter.Optional }
            );
 
@@ -31,6 +31,12 @@ namespace BIT_WEB
              "transacoes",
              new { controller = "Transacoes", action = "Transacoes", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+            "Transferencia",
+            "Transferencia/{id}",
+            new { controller = "Transferencia", action = "Transferencia", id = UrlParameter.Optional }
+          );
 
 
             routes.MapRoute(

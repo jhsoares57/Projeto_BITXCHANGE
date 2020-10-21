@@ -29,29 +29,34 @@ namespace BIT_WEB.Controllers
 
         [HttpGet]
         [ValidateInput (false)]
-        public void Login()
+        //[Authorize]
+        public RedirectToRouteResult Login()
         {
             try
             {
-                var login = new DadosLogin();
+
                 var loginNeg = new LoginNeg();
 
 
-                login.Email = Request["email"];
-                login.Senha = Request["senha"];
+                var Email = Request["email"];
+                var Senha = Request["senha"];
 
-                string senha = Criptografia.GerarMD5(login.Senha);
+                string senha = Criptografia.GerarMD5(Senha);
 
-                if (loginNeg.FindByLogin(login.Email, senha).Tipo == 2)
+                var result = loginNeg.FindByLogin(Email, senha);
+
+                if(result.Tipo == 2)
                 {
-                  
-                    Response.RedirectToRoute("principal");
+                    return RedirectToRoute("principal", new { id = result.Id });
+                    
                 }
                 else
                 {
                     TempData["Erro"] = "Verifique seu usuário e senha!";
-                    Response.Redirect("/Login");
+                    return RedirectToAction("");
+                    // Login
                 }
+
             }
             catch (Exception)
             {

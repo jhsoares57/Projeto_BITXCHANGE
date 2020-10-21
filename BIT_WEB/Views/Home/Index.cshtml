@@ -1,6 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
-    BIT_MODEL.UsuarioModel home = ViewBag.Home;
+    BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
     List<BLL.TransacaoBLL> transacao = ViewBag.Transacoes;
     BIT_MODEL.MoedaModel Dolar = ViewBag.CotDolar;
     BIT_MODEL.MoedaModel real = ViewBag.CotReal;
@@ -12,7 +12,7 @@
     BIT_MODEL.CarteiraModel DolarSaldo = ViewBag.SaldoDolar;
 }
 
-    <p class="welcome-text">Seja bem vindo, <strong>@home.Nome</strong>!</p>
+    <p class="welcome-text">Seja bem vindo, <strong>@UsuarioDados.Nome</strong>!</p>
     <div class="cards">
         <div class="card">
             <div class="name-coin">
