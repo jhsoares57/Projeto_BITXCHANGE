@@ -58,10 +58,8 @@ namespace BIT_WEB.Controllers
         }
 
 
-        public ActionResult About()
+        public ActionResult Transferencia()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

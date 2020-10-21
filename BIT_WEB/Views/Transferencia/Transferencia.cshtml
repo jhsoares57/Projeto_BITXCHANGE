@@ -2,20 +2,67 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
-    <form action="" method="post">
-        <input type="text" name="name-receiver" id="name-receiver">
-        <input type="number" name="document-receiver" id="document-receiver">
-        <input type="number" name="value-transfer" id="value">
-        <select name="type-coin" id="type-coin">
-            <option value="ethereum">ethereum</option>
-            <option value="dolar">dolar</option>
-            <option value="real">real</option>
-            <option value="bitcoin">bitcoin</option>
-        </select>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
-        <input type="text" name="subtotal" id="subtotal">
-        <div class="final-value">
-
-
+<header>
+    <div class="balance-summary">
+        <div class="coin" id="bitcoin">
+            <img src="../assets/images/bitcoin.svg" alt="bitcoin">
+            <p>valor</p>
         </div>
-    </form>
+
+        <div class="coin" id="real">
+            <img src="../assets/images/real.svg" alt="real">
+            <p>valor</p>
+        </div>
+
+        <div class="coin" id="ether">
+            <img src="../assets/images/ethereum.svg" alt="ether">
+            <p>valor</p>
+        </div>
+
+        <div class="coin" id="dolar">
+            <img src="../assets/images/dolar.svg" alt="dolar">
+            <p>valor</p>
+        </div>
+    </div>
+</header>
+
+<legend>Insira os dados corretamente</legend>
+<form id="form" action="" method="post">
+
+    <div class="first-row">
+        <span>
+            <p>Nome do Destinatário</p>
+            <input type="text" name="name-receiver" id="name-receiver" required>
+        </span>
+
+        <span>
+            <p>CPF do Destinatáiro</p>
+            <input type="number" name="document-receiver" id="document-receiver" required>
+        </span>
+    </div>
+
+    <div class="second-row">
+        <p>Valor e moeda</p>
+        <input type="number" name="value-transfer" id="value" required>
+        <select name="type-coin" id="type-coin" required>
+            <option value="ethereum">Ethereum</option>
+            <option value="dolar">Dóla</option>
+            <option value="real">Real</option>
+            <option value="bitcoin">Bitcoin</option>
+        </select>
+        <p>Descrição</p>
+        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="third-row">
+        <p>Valor final</p>
+        <div class="final-value">
+            <!-- valor final -->
+        </div>
+        <p>*O custo de cada transação é equivalente a 1,5% do valor total</p>
+    </div>
+
+    <button type="submit">Enviar</button>
+</form>
+<script src="~/Scripts/menu-navbar.js"></script>
+

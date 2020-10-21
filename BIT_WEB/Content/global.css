@@ -12,6 +12,7 @@
   border: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Roboto';
 }
 header{
   background-color: var(--color-primaria);

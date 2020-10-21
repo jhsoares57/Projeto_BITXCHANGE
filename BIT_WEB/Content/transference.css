@@ -1,0 +1,115 @@
+﻿legend {
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3.2rem 6.4rem;
+    line-height: 4rem;
+}
+
+form {
+    padding: 0 6.4rem;
+    margin: 2.4rem 0;
+}
+
+p {
+    font-size: 2rem;
+}
+
+input {
+    height: 4rem;
+}
+
+input,
+textarea {
+    border: 0.1rem solid black;
+    margin: 2.4rem 0;
+    width: 100%;
+    padding: 2rem;
+}
+
+textarea {
+    height: 12rem;
+}
+
+.second-row {
+    position: relative;
+}
+
+    .second-row input {
+        width: 45%;
+    }
+
+    .second-row select {
+        position: absolute;
+        right: 0;
+        margin-top: 2.4rem;
+        border: 0.1rem solid black;
+        width: 45%;
+        height: 4rem;
+        padding-left: 2rem;
+    }
+
+.third-row .final-value {
+    border: 0.1rem solid black;
+    height: 4rem;
+    line-height: 4rem;
+    padding-left: 2rem;
+    margin-top: 2.4rem;
+}
+
+.third-row p:last-child {
+    color: red;
+    font-size: 1.2rem;
+}
+
+button {
+    width: 100%;
+    margin-top: 3.2rem;
+    border: 0.1rem solid black;
+    height: 5rem;
+    background: var(--color-primaria);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+header {
+    display: none;
+}
+
+@media(min-width: 1000px) {
+    header {
+        background: white;
+        display: initial;
+        margin: 2.4rem 0;
+    }
+
+        header .balance-summary {
+            padding: 2rem 6.4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            border-bottom: 0.1rem solid rgba(0, 0, 0, 0.4);
+        }
+
+            header .balance-summary .coin {
+                display: flex;
+                line-height: 8rem;
+                justify-content: center;
+            }
+
+    .coin img {
+        margin-right: 2rem;
+    }
+
+    .coin p {
+        font-size: 2.8rem;
+    }
+
+    form {
+        margin: 0 auto;
+        margin-bottom: 6.4rem;
+    }
+
+    .first-row input {
+        width: 100%;
+    }
+}

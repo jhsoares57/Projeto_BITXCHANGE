@@ -135,6 +135,7 @@
     <Content Include="Content\main.css" />
     <Content Include="Content\signIn.css" />
     <Content Include="Content\signUp.css" />
+    <Content Include="Content\transference.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
