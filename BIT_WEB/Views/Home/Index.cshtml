@@ -13,6 +13,8 @@
 }
 
     <p class="welcome-text">Seja bem vindo, <strong>@UsuarioDados.Nome</strong>!</p>
+    <p id="IdUser"> @UsuarioDados.Id</p>
+<input type="hidden"  />
     <div class="cards">
         <div class="card">
             <div class="name-coin">
@@ -98,7 +100,7 @@
     <div class="last-transactions">
         <div class="header-transactions">
             <p>Últimas Transações</p>
-            <a href="/transacoes"><span class="fas fa-plus"></span></a>
+            <a href="/transacoes/@UsuarioDados.Id"><span class="fas fa-plus"></span></a>
         </div>
 
 

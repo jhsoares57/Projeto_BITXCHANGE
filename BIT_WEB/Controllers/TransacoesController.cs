@@ -23,8 +23,12 @@ namespace BIT_WEB.Controllers
             ViewBag.CotBit = CotBit;
         }
 
-        public ActionResult Transacoes()
+        public ActionResult Transacoes(int id)
         {
+
+            //Listando as ultimas transações do usuário
+            ViewBag.Transacoes = new TransacaoBLL().ListaTodasTransacoes(id);
+
             return View();
         }
     }

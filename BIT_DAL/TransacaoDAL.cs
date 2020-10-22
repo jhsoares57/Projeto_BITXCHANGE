@@ -121,5 +121,27 @@ namespace BIT_DAL
                 return table;
             
         }
+
+        public DataTable ListaTodasTransacoes(int id)
+        {
+            cf = new ConnectionFactory();
+            string query = "USP_EXTRATO_USUARIO";
+
+            cf.Comando = cf.Conexao.CreateCommand();
+
+            cf.Comando.CommandType = CommandType.StoredProcedure;
+            cf.Comando.CommandText = query.ToString();
+            cf.Comando.Parameters.AddWithValue("@USUARIO", id);
+
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = cf.Comando;
+
+            DataTable table = new DataTable();
+            cf.Conexao.Open();
+            adapter.Fill(table);
+            return table;
+
+        }
     }
 }

@@ -28,7 +28,7 @@ namespace BIT_WEB
 
             routes.MapRoute(
              "transacoes",
-             "transacoes",
+             "transacoes/{id}",
              new { controller = "Transacoes", action = "Transacoes", id = UrlParameter.Optional }
            );
 

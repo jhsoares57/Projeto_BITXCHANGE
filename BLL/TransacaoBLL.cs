@@ -64,5 +64,25 @@ namespace BLL
             return lista;
         }
 
+        public List<TransacaoBLL> ListaTodasTransacoes(int id)
+        {
+
+            var list = new List<TransacaoBLL>();
+            var Trans = new BIT_DAL.TransacaoDAL();
+
+            foreach (DataRow row in Trans.ListaTodasTransacoes(id).Rows)
+            {
+                var transacaoMdel = new TransacaoBLL();
+                transacaoMdel.DataTransacao = Convert.ToDateTime(row["DATA"]);
+                transacaoMdel.Protocolo = row["PROTOCOLO"].ToString();
+                transacaoMdel.Tipo = row["TIPO"].ToString();
+                transacaoMdel.Valor = Convert.ToDecimal(row["VALOR"]);
+                transacaoMdel.Moeda = row["MOEDA"].ToString();
+
+                list.Add(transacaoMdel);
+
+            }
+            return list;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    List<BLL.TransacaoBLL> transacao = ViewBag.Transacoes;
 }
 
     <div class="last-transactions">
@@ -8,7 +9,32 @@
             <a href="#welcome-text"><span class="fas fa-plus"></span></a>
         </div>
 
-        <div class="info-transaction">
+        @foreach (var t in transacao)
+        {
+            <div class="info-transaction">
+                <div class="date-transaction">
+                    <p>@t.DataTransacao</p>
+                </div>
+
+                <div class="protocol-transaction">
+                    <p>@t.Protocolo</p>
+                </div>
+
+                <div class="type-transaction">
+                    <p>@t.Tipo</p>
+                </div>
+
+                <div class="value-transaction payment">
+                    <p>@t.Valor</p>
+                </div>
+
+                <div class="coin-transaction">
+                    <p>@t.Moeda</p>
+                </div>
+            </div>
+        }
+
+        @*<div class="info-transaction">
             <div class="date-transaction">
                 <p>31/05/2020</p>
             </div>
@@ -28,9 +54,9 @@
             <div class="coin-transaction">
                 <p>USD</p>
             </div>
-        </div>
+        </div>*@
 
-        <div class="info-transaction">
+        @*<div class="info-transaction">
             <div class="date-transaction">
                 <p>20/05/2020</p>
             </div>
@@ -64,7 +90,7 @@
             <div class="coin-transaction">
                 <p>ETH</p>
             </div>
-        </div>
+        </div>*@
 
 
     </div>

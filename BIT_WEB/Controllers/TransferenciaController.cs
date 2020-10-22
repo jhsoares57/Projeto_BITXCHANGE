@@ -9,7 +9,7 @@ namespace BIT_WEB.Controllers
     public class TransferenciaController : Controller
     {
         // GET: Transferencia
-        public ActionResult Transferencia()
+        public ActionResult Transferencia(int id)
         {
             return View();
         }
