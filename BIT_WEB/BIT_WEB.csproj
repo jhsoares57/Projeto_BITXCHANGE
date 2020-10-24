@@ -122,6 +122,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\TransacoesController.cs" />
     <Compile Include="Controllers\TransferenciaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -155,7 +156,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_LayoutSignInUp.cshtml" />
     <Content Include="Views\Login\SignIn.cshtml" />
-    <Content Include="Views\Cadastro\SignUp.cshtml" />
+    <Content Include="Views\Register\SignUp.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
   </ItemGroup>
   <ItemGroup>

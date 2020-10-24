@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutSignInUp.cshtml";
+}
+
+@Styles.Render("~/Content/signUp.css")
+<legend>Crie sua conta</legend>
+<form action="SignUp" method="post" class="register-content">
+
+    <div class="register-text">
+        <p>Já tem uma conta? <a href="/Home/SignIn">Entre</a></p>
+    </div>
+
+    <div class="first-row">
+        <div class="input-block">
+            <fieldset>
+                <label for="nome"></label>
+                <input type="text" name="name" id="name" placeholder="Nome">
+            </fieldset>
+        </div>
+
+        <div class="input-block">
+            <fieldset>
+                <label for="sobrenome"></label>
+                <input type="text" name="last-name" id="last-name" placeholder="Sobrenome">
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="second-row">
+        <div class="input-block">
+            <fieldset>
+                <label for="sexo">Selecione seu gênero:</label>
+
+                <select name="gender" id="gender">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </fieldset>
+        </div>
+
+        <div class="input-block">
+            <fieldset>
+                <label for="cpf"></label>
+                <input type="number" min="0" max="9999999999999" name="number-doc" id="number-doc" placeholder="Nº do Documento">
+                <!-- bverificar a necessidade de min e max -->
+            </fieldset>
+        </div>
+
+        <div class="input-block">
+            <fieldset>
+                <label for="dataNascimento"></label>
+                <input type="number" name="birth" id="birth" placeholder="Data de Nascimento" onfocus="(this.type='date')">
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="third-row">
+        <div class="input-block">
+            <fieldset>
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="E-mail">
+            </fieldset>
+        </div>
+
+        <div class="input-block">
+            <fieldset>
+                <label for="senha"></label>
+                <input type="password" name="password" id="password" placeholder="Senha">
+            </fieldset>
+        </div>
+
+        <div class="input-block">
+            <fieldset>
+                <input type="password" name="vf-password" id="vf-password" placeholder="Confirme sua senha">
+            </fieldset>
+        </div>
+    </div>
+
+    <button type="submit">Cadastrar</button>
+
+</form>

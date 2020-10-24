@@ -11,7 +11,8 @@ namespace BIT_ENUMS
         public enum EnumSexo
         {
             Masculino = 1,
-            Feminino = 2
+            Feminino = 2,
+            Outros = 3
         }
 
         public enum EnumStatus
