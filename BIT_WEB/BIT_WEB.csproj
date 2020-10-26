@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.8</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -131,17 +133,111 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Assets\Images\logo.svg" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\global.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\signIn.css" />
     <Content Include="Content\signUp.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="Content\transference.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bulma\css\bulma-rtl.css" />
+    <Content Include="Scripts\bulma\css\bulma-rtl.min.css" />
+    <Content Include="Scripts\bulma\css\bulma.css" />
+    <Content Include="Scripts\bulma\css\bulma.min.css" />
+    <Content Include="Scripts\Confirmar-transferencia.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\menu-navbar.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
     <Content Include="Scripts\simular-conversao-home.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\toastr-mensagem-bit.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -163,16 +259,110 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="packages.config" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Cambio\Cambio.cshtml" />
     <Content Include="Views\Deposito\Deposito.cshtml" />
     <Content Include="Views\Transacoes\Transacoes.cshtml" />
     <Content Include="Views\Transferencia\Transferencia.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\bulma\bulma.sass" />
+    <Content Include="Scripts\bulma\CHANGELOG.md" />
+    <Content Include="Scripts\bulma\LICENSE" />
+    <Content Include="Scripts\bulma\package.json" />
+    <Content Include="Scripts\bulma\README.md" />
+    <Content Include="Scripts\bulma\css\bulma-rtl.css.map" />
+    <Content Include="Scripts\bulma\css\bulma.css.map" />
+    <Content Include="Scripts\bulma\sass\.DS_Store" />
+    <Content Include="Scripts\bulma\sass\base\generic.sass" />
+    <Content Include="Scripts\bulma\sass\base\helpers.sass" />
+    <Content Include="Scripts\bulma\sass\base\minireset.sass" />
+    <Content Include="Scripts\bulma\sass\base\_all.sass" />
+    <Content Include="Scripts\bulma\sass\components\breadcrumb.sass" />
+    <Content Include="Scripts\bulma\sass\components\card.sass" />
+    <Content Include="Scripts\bulma\sass\components\dropdown.sass" />
+    <Content Include="Scripts\bulma\sass\components\level.sass" />
+    <Content Include="Scripts\bulma\sass\components\media.sass" />
+    <Content Include="Scripts\bulma\sass\components\menu.sass" />
+    <Content Include="Scripts\bulma\sass\components\message.sass" />
+    <Content Include="Scripts\bulma\sass\components\modal.sass" />
+    <Content Include="Scripts\bulma\sass\components\navbar.sass" />
+    <Content Include="Scripts\bulma\sass\components\pagination.sass" />
+    <Content Include="Scripts\bulma\sass\components\panel.sass" />
+    <Content Include="Scripts\bulma\sass\components\tabs.sass" />
+    <Content Include="Scripts\bulma\sass\components\_all.sass" />
+    <Content Include="Scripts\bulma\sass\elements\box.sass" />
+    <Content Include="Scripts\bulma\sass\elements\button.sass" />
+    <Content Include="Scripts\bulma\sass\elements\container.sass" />
+    <Content Include="Scripts\bulma\sass\elements\content.sass" />
+    <Content Include="Scripts\bulma\sass\elements\form.sass" />
+    <Content Include="Scripts\bulma\sass\elements\icon.sass" />
+    <Content Include="Scripts\bulma\sass\elements\image.sass" />
+    <Content Include="Scripts\bulma\sass\elements\notification.sass" />
+    <Content Include="Scripts\bulma\sass\elements\other.sass" />
+    <Content Include="Scripts\bulma\sass\elements\progress.sass" />
+    <Content Include="Scripts\bulma\sass\elements\table.sass" />
+    <Content Include="Scripts\bulma\sass\elements\tag.sass" />
+    <Content Include="Scripts\bulma\sass\elements\title.sass" />
+    <Content Include="Scripts\bulma\sass\elements\_all.sass" />
+    <Content Include="Scripts\bulma\sass\form\checkbox-radio.sass" />
+    <Content Include="Scripts\bulma\sass\form\file.sass" />
+    <Content Include="Scripts\bulma\sass\form\input-textarea.sass" />
+    <Content Include="Scripts\bulma\sass\form\select.sass" />
+    <Content Include="Scripts\bulma\sass\form\shared.sass" />
+    <Content Include="Scripts\bulma\sass\form\tools.sass" />
+    <Content Include="Scripts\bulma\sass\form\_all.sass" />
+    <Content Include="Scripts\bulma\sass\grid\columns.sass" />
+    <Content Include="Scripts\bulma\sass\grid\tiles.sass" />
+    <Content Include="Scripts\bulma\sass\grid\_all.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\color.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\flexbox.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\float.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\other.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\overflow.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\position.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\spacing.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\typography.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\visibility.sass" />
+    <Content Include="Scripts\bulma\sass\helpers\_all.sass" />
+    <Content Include="Scripts\bulma\sass\layout\footer.sass" />
+    <Content Include="Scripts\bulma\sass\layout\hero.sass" />
+    <Content Include="Scripts\bulma\sass\layout\section.sass" />
+    <Content Include="Scripts\bulma\sass\layout\_all.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\.DS_Store" />
+    <Content Include="Scripts\bulma\sass\utilities\animations.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\controls.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\derived-variables.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\functions.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\initial-variables.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\mixins.sass" />
+    <Content Include="Scripts\bulma\sass\utilities\_all.sass" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BIT_CRIPTOGRAFIA\BIT_CRIPTOGRAFIA.csproj">
@@ -187,16 +377,27 @@
       <Project>{63e39ba0-d8b2-43f3-bd41-446a2b3cb6af}</Project>
       <Name>BIT_MODEL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BIT_PROTOCOLO\BIT_PROTOCOLO.csproj">
+      <Project>{a866bcfd-a48a-4812-8759-d0538d6d7203}</Project>
+      <Name>BIT_PROTOCOLO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BLL\BIT_BLL.csproj">
       <Project>{82c25e18-5a9e-419a-86d1-b9cf6314a743}</Project>
       <Name>BIT_BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

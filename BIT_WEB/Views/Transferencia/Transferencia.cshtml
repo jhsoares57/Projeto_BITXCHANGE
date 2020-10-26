@@ -1,33 +1,57 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    BIT_MODEL.CarteiraModel BitSaldo = ViewBag.SaldoBit;
+    BIT_MODEL.CarteiraModel RealSaldo = ViewBag.SaldoReal;
+    BIT_MODEL.CarteiraModel EthSaldo = ViewBag.SaldoEth;
+    BIT_MODEL.CarteiraModel DolarSaldo = ViewBag.SaldoDolar;
+    BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
 }
+
+
 
 <header>
     <div class="balance-summary">
         <div class="coin" id="bitcoin">
-            <img src="../assets/images/bitcoin.svg" alt="bitcoin">
-            <p>valor</p>
+            <img src="~/Content/assets/images/bitcoin.svg" alt="bitcoin">
+            <p>@BitSaldo.SaldoCart</p>
         </div>
 
         <div class="coin" id="real">
-            <img src="../assets/images/real.svg" alt="real">
-            <p>valor</p>
+            <img src="~/Content/assets/images/real.svg" alt="real">
+            <p>@RealSaldo.SaldoCart</p>
         </div>
 
         <div class="coin" id="ether">
-            <img src="../assets/images/ethereum.svg" alt="ether">
-            <p>valor</p>
+            <img src="~/Content/assets/images/ethereum.svg" alt="ether">
+            <p>@EthSaldo.SaldoCart</p>
         </div>
 
         <div class="coin" id="dolar">
-            <img src="../assets/images/dolar.svg" alt="dolar">
-            <p>valor</p>
+            <img src="~/Content/assets/images/dolar.svg" alt="dolar">
+            <p>@DolarSaldo.SaldoCart</p>
         </div>
     </div>
 </header>
 
+@if (TempData["Sucesso"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-warning">
+        <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
+        <br />
+        <p size="3" align="center"><b>@TempData["Sucesso"]</b></p>
+    </div>
+}
+@if (TempData["erro"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-danger">
+        <p size="3" align="center"><b>@TempData["erro"]</b></p>
+    </div>
+}
+
 <legend>Insira os dados corretamente</legend>
-<form id="form" action="" method="post">
+<form id="form" action="@UsuarioDados.Id/Transferir" method="post" onsubmit="ValidaTransferencia(event)">
 
     <div class="first-row">
         <span>
@@ -37,7 +61,7 @@
 
         <span>
             <p>CPF do Destinatáiro</p>
-            <input type="number" name="document-receiver" id="document-receiver" required>
+            <input name="document-receiver" id="document-receiver" required>
         </span>
     </div>
 
@@ -45,24 +69,29 @@
         <p>Valor e moeda</p>
         <input type="number" name="value-transfer" id="value" required>
         <select name="type-coin" id="type-coin" required>
-            <option value="ethereum">Ethereum</option>
-            <option value="dolar">Dóla</option>
-            <option value="real">Real</option>
-            <option value="bitcoin">Bitcoin</option>
+            <option value="3">Ethereum</option>
+            <option value="4">Dóla</option>
+            <option value="2">Real</option>
+            <option value="1">Bitcoin</option>
         </select>
         <p>Descrição</p>
-        <textarea name="description" id="description" cols="30" rows="10"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
     </div>
 
     <div class="third-row">
         <p>Valor final</p>
-        <div class="final-value">
+        @*<div class="final-value">
             <!-- valor final -->
-        </div>
+            @*<input  name="Value-end" id="Value-end" required>*@
+        @*</div>*@
+        <input name="Value-end" id="Value-end" class="final-value" required>
         <p>*O custo de cada transação é equivalente a 1,5% do valor total</p>
     </div>
 
-    <button type="submit">Enviar</button>
+    <button type="submit" id="save">Enviar</button>
 </form>
 <script src="~/Scripts/menu-navbar.js"></script>
+<script src="~/Scripts/Confirmar-transferencia.js"></script>
+<script src="~/Scripts/toastr-mensagem-bit.js"></script>
+
 

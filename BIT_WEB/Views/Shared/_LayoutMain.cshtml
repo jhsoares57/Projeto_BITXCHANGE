@@ -12,6 +12,8 @@
     @{
         BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
     }
+
+
 </head>
 <body>
     <nav>
@@ -43,5 +45,8 @@
     <script src="~/Scripts/menu-navbar.js"></script>
     <script src="~/Scripts/simular-conversao-home.js"></script>
     @RenderBody()
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
