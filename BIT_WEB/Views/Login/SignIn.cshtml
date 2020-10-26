@@ -4,32 +4,38 @@
 
 @Styles.Render("~/Content/signIn.css")
 
-
-    <div class="login-content">
-        <div class="login-text">
-            <strong>
-                <p>Seja bem-vindo!</p>
-            </strong>
-            <p>Não possui uma conta? <strong><a href="/Register/SignUp"> Cadastre-se</a></strong></p>
-        </div>
-
-        <form action="/Login/Login">
-            <div class="input-block">
-                <fieldset>
-                    <label for="email"></label>
-                    <input type="text" name="email" class="input-text" id="email" placeholder="E-mail">
-                </fieldset>
-            </div>
-            <div class="input-block">
-                <fieldset>
-                    <label for="senha"></label>
-                    <input type="password" name="senha" class="input-text" id="senha" placeholder="Senha">
-                </fieldset>
-            </div>
-            <div class="bottom-content">
-                <p>Esqueci minha senha</p>
-
-                <button type="submit">Acessar</button>
-            </div>
-        </form>
+<div class="login-content">
+    <div class="login-text">
+        <strong>
+            <p>Seja bem-vindo!</p>
+        </strong>
+        <p>Não possui uma conta? <strong><a href="/Register/SignUp"> Cadastre-se</a></strong></p>
     </div>
+
+    <form action="/Login/Login">
+        <div class="input-block">
+            <fieldset>
+                <label for="email"></label>
+                <input type="text" name="email" class="input-text" id="email" placeholder="E-mail">
+            </fieldset>
+        </div>
+        <div class="input-block">
+            <fieldset>
+                <label for="senha"></label>
+                <input type="password" name="senha" class="input-text" id="senha" placeholder="Senha">
+            </fieldset>
+        </div>
+        <div class="bottom-content">
+            <p>Esqueci minha senha</p>
+
+            <button type="submit">Acessar</button>
+        </div>
+        @if (TempData["erro"] != null)
+        {
+            <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+            <div class="notification is-danger">
+                <p size="3" align="center"><b>@TempData["erro"]</b></p>
+            </div>
+        }
+    </form>
+</div>

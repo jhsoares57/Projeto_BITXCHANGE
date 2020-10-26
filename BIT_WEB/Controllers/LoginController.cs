@@ -52,17 +52,18 @@ namespace BIT_WEB.Controllers
                 }
                 else
                 {
-                    TempData["Erro"] = "Verifique seu usuário e senha!";
-                    return RedirectToAction("");
+                    TempData["erro"] = "Verifique seu usuário e senha!";
+                    return RedirectToActionPermanent("");
 
                     // Login
                 }
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                TempData["erro"] = "Erro: "+ex;
+                return RedirectToRoute("");
             }
 
         }
