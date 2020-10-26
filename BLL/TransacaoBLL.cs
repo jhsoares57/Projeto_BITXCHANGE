@@ -1,4 +1,5 @@
 ﻿using BIT_DAL;
+using BIT_MODEL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -83,6 +84,20 @@ namespace BLL
 
             }
             return list;
+        }
+
+        public bool InserirTransaferencia(TransacaoModel T)
+        {
+            bool salvou = false;
+            new TransacaoDAL().InserirTransaferencia(T);
+
+            //Se o ID for maior que zero, indica que o dado foi salvo
+            if (T.Id > 0)
+            {
+                salvou = true;
+            }
+
+            return salvou;
         }
     }
 }

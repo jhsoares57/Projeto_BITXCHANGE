@@ -48,6 +48,11 @@ namespace BIT_WEB
             "Transferencia/{id}",
             new { controller = "Transferencia", action = "Transferencia", id = UrlParameter.Optional }
           );
+            routes.MapRoute(
+            "Transferir",
+            "Transferencia/{id}/Transferir",
+            new { controller = "Transferencia", action = "Transferir", id = UrlParameter.Optional }
+          );
 
 
             routes.MapRoute(
