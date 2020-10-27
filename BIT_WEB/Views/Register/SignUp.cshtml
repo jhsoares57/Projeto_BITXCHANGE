@@ -86,5 +86,12 @@
     </div>
 
     <button type="submit">Cadastrar</button>
+    @if (TempData["alerta"] != null)
+    {
+        <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+        <div class="notification is-danger">
+            <p size="3" align="center"><b>@TempData["alerta"]</b></p>
+        </div>
+    }
 
 </form>

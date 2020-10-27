@@ -37,8 +37,8 @@ namespace BIT_WEB.Controllers
                 }
                 else
                 {
-                    TempData["Erro"] = "Senhas não conferem!";
-                    //return RedirectToRoute("Register");
+                    TempData["alerta"] = "Senhas não conferem!";
+                    return RedirectToRoute("Register");
                 }
                 
                 U.Status = 1;
