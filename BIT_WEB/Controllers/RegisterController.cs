@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using BIT_MODEL;
 using BIT_BLL;
+using BIT_CRIPTOGRAFIA;
 
 
 namespace BIT_WEB.Controllers
@@ -29,7 +30,17 @@ namespace BIT_WEB.Controllers
                 U.Cpf = Request["number-doc"];
                 U.DataNascimento = Convert.ToDateTime(Request["birth"]);
                 //U.Sexo = Convert.ToInt32(Request["gender"]);
-                U.Senha = Request["password"];
+                
+                if(Request["password"] == Request["vf-password"])
+                {
+                    U.Senha = Criptografia.GerarMD5(Request["password"]);
+                }
+                else
+                {
+                    TempData["Erro"] = "Senhas não conferem!";
+                    //return RedirectToRoute("Register");
+                }
+                
                 U.Status = 1;
                 U.Tipo = 2;
                 U.DataCadastro = DateTime.Now;

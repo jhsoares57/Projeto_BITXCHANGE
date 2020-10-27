@@ -14,14 +14,16 @@
         <div class="input-block">
             <fieldset>
                 <label for="nome"></label>
-                <input type="text" name="name" id="name" placeholder="Nome">
+                <input type="text" name="name" id="name" placeholder="Nome" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
             </fieldset>
         </div>
 
         <div class="input-block">
             <fieldset>
                 <label for="sobrenome"></label>
-                <input type="text" name="last-name" id="last-name" placeholder="Sobrenome">
+                <input type="text" name="last-name" id="last-name" placeholder="Sobrenome" required oninvalid="this.setCustomValidity('Campo requerido')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
             </fieldset>
         </div>
     </div>
@@ -31,7 +33,8 @@
             <fieldset>
                 <label for="sexo">Selecione seu gênero:</label>
 
-                <select name="gender" id="gender">
+                <select name="gender" id="gender" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                        onchange="try{setCustomValidity('')}catch(e){}">
                     <option value="masculino">Masculino</option>
                     <option value="feminino">Feminino</option>
                     <option value="outros">Outros</option>
@@ -42,7 +45,8 @@
         <div class="input-block">
             <fieldset>
                 <label for="cpf"></label>
-                <input type="number" min="0" max="9999999999999" name="number-doc" id="number-doc" placeholder="Nº do Documento">
+                <input type="number" min="0" max="9999999999999" name="number-doc" id="number-doc" placeholder="Nº do Documento" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
                 <!-- bverificar a necessidade de min e max -->
             </fieldset>
         </div>
@@ -50,7 +54,8 @@
         <div class="input-block">
             <fieldset>
                 <label for="dataNascimento"></label>
-                <input type="number" name="birth" id="birth" placeholder="Data de Nascimento" onfocus="(this.type='date')">
+                <input type="number" name="birth" id="birth" placeholder="Data de Nascimento" onfocus="(this.type='date')" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
             </fieldset>
         </div>
     </div>
@@ -59,20 +64,23 @@
         <div class="input-block">
             <fieldset>
                 <label for="email"></label>
-                <input type="email" name="email" id="email" placeholder="E-mail">
+                <input type="email" name="email" id="email" placeholder="E-mail" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
             </fieldset>
         </div>
 
         <div class="input-block">
             <fieldset>
                 <label for="senha"></label>
-                <input type="password" name="password" id="password" placeholder="Senha">
+                <input type="password" name="password" id="password" placeholder="Senha" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
             </fieldset>
         </div>
 
         <div class="input-block">
             <fieldset>
-                <input type="password" name="vf-password" id="vf-password" placeholder="Confirme sua senha">
+                <input type="password" name="vf-password" id="vf-password" placeholder="Confirme sua senha" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                       onchange="try{setCustomValidity('')}catch(e){}">
             </fieldset>
         </div>
     </div>
