@@ -57,5 +57,8 @@
       <Name>BIT_MODEL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ScritpBanco\SCRIPT_BANCO.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
