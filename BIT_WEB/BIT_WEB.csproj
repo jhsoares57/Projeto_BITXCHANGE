@@ -140,9 +140,11 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\deposit.css" />
     <Content Include="Content\global.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\quotes.css" />
     <Content Include="Content\signIn.css" />
     <Content Include="Content\signUp.css" />
     <Content Include="Content\toastr.css" />
@@ -159,11 +161,13 @@
     <Content Include="Scripts\bulma\css\bulma.css" />
     <Content Include="Scripts\bulma\css\bulma.min.css" />
     <Content Include="Scripts\Confirmar-transferencia.js" />
+    <Content Include="Scripts\cotacao.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
     <Content Include="Scripts\menu-navbar.js" />
+    <Content Include="Scripts\payment.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />

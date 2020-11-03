@@ -2,26 +2,87 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
+<link rel="stylesheet" href="~/Content/deposit.css">
 
-<form action="index.html" method="post" class="boleto">
-    <input type="text" name="fullname" id="fullname">
-    <input type="date" name="date-payment" id="date-payment">
-    <input type="number" name="deposit" id="deposit">
-    <input type="text" name="billing-email" id="billing-email">
-    <div class="final-value">
+<div class="payment-form">
+    <h2>Selecione a forma de pagamento:</h2>
 
-    </div>
-</form>
+    <button class="btn-boleto" onclick="boletoActive()">Boleto</button>
+    <button class="btn-cartao" onclick="cartaoActive()">Cartão de Crédito</button>
+</div>
 
+<section id="boleto">
+    <form action="./index.html" method="post" id="boleto-form">
+        <div class="fullname">
+            <h2>Nome Completo</h2>
+            <input type="text" name="fullname" id="fullname" onfocus="taxa()" required>
+        </div>
 
-<form action="index.html" method="post" class="cartao">
-    <input type="text" name="cardholder-name" id="cardholder-name">
-    <input type="number" name="deposit" id="deposit">
-    <input type="number" name="card-number" id="card-number">
-    <input type="number" name="cvv" id="cvv">
-    <input type="date" name="expiration-date" id="expiration-date">
-    <div class="final-value">
+        <span>
+            <div class="date-payment">
+                <h2>Data de Pagamento</h2>
+                <input type="date" name="date-payment" id="date-payment" onfocus="taxa()" required>
+            </div>
 
+            <div class="value-deposit">
+                <h2>Valor de Depósito</h2>
+                <input type="number" name="value-deposit" id="value-deposit" onfocus="taxa()" required>
+            </div>
+        </span>
+        <div class="billing-email">
+            <h2>E-mail de Cobrança</h2>
+            <input type="text" name="billing-email" id="billing-email" onfocus="taxa()" required>
+        </div>
 
-    </div>
-</form>
+        <div class="final-value">
+            <h2>Valor Total</h2>
+            <input type="number" id="final" disabled>
+            <p>*A taxa aplicada para cada transação é equivalente a 3,99% do valor de depósito</p>
+        </div>
+
+        <button type="submit">Gerar PDF</button>
+    </form>
+</section>
+
+<section id="cartao">
+    <form action="./index.html" method="post" id="cartao-form">
+        <span class="first-row">
+
+            <div class="cardholder-name">
+                <h2>Nome do Titular</h2>
+                <input type="text" name="cardholder-name" id="cardholder-name" onfocus="taxa()" required>
+            </div>
+
+            <div class="card-number">
+                <h2>Número do Cartão</h2>
+                <input type="number" name="card-number" id="card-number" onfocus="taxa()" required>
+            </div>
+
+        </span>
+
+        <span class="second-row">
+            <div class="deposit">
+                <h2>Valor de Depósito</h2>
+                <input type="number" name="value-deposit" id="value-card" onfocus="taxa()" required>
+            </div>
+
+            <div class="cvv">
+                <h2>CVV/CVC</h2>
+                <input type="number" name="cvv" id="cvv" onfocus="taxa()" required>
+            </div>
+        </span>
+
+        <div class="expiration-date">
+            <h2>Data de Vencimento</h2>
+            <input type="date" name="expiration-date" id="expiration-date" onfocus="taxa()" required>
+        </div>
+
+        <div class="final-value">
+            <h2>Valor Total</h2>
+            <input type="number" id="final-card" disabled>
+            <p>*A taxa aplicada para cada transação é equivalente a 3,99% do valor de depósito</p>
+        </div>
+
+        <button type="submit">Concluir</button>
+    </form>
+</section>
