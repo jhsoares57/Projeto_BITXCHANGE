@@ -2,25 +2,49 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
-<select name="type-coin" id="type-coin">
-    <option value="ethereum">ethereum</option>
-    <option value="dolar">dolar</option>
-    <option value="real">real</option>
-    <option value="bitcoin">bitcoin</option>
-</select>
-<input type="number" name="" id="">
-<button type="submit"></button>
+<link rel="stylesheet" href="~/Content/quotes.css">
+<span class="span-coin">
+    <div class="coin-select">
+        <legend>Moeda</legend>
+        <select name="type-coin" id="type-coin">
+            <option value="ethereum">ethereum</option>
+            <option value="dolar">dolar</option>
+            <option value="real">real</option>
+            <option value="bitcoin">bitcoin</option>
+        </select>
+    </div>
 
-<div class="quote-coin">
-    <button></button>
+    <div class="coin-value">
+        <legend>Valor</legend>
+        <input type="number" name="value" id="value">
+    </div>
+
+    <button type="submit" id="simulation">simular</button>
+</span>
+
+<div class="quotes">
+    <div id="bitcoin" class="quote-bitcoin disable">
+        <p>Bitcoin</p>
+        <input type="number" name="btc-simulation" id="btc-simulation" disabled>
+        <button>Converter</button>
+    </div>
+
+    <div id="ether" class="quote-ether disable">
+        <p>Ethereum</p>
+        <input type="number" name="eth-simulation" id="eth-simulation" disabled>
+        <button>Converter</button>
+    </div>
+
+    <div id="dolar" class="quote-dolar disable">
+        <p>Dólar</p>
+        <input type="number" name="us-simulation" id="us-simulation" disabled>
+        <button>Converter</button>
+    </div>
+
+    <div id="real" class="quote-real disable">
+        <p>Real</p>
+        <input type="number" name="rs-simulation" id="rs-simulation" disabled>
+        <button>Converter</button>
+    </div>
 </div>
-
-<div class="quote-coin">
-    <button></button>
-</div>
-
-<div class="quote-coin">
-    <button></button>
-</div>
-
 

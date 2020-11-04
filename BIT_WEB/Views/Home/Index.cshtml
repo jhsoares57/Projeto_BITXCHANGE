@@ -11,9 +11,9 @@
     BIT_MODEL.CarteiraModel EthSaldo = ViewBag.SaldoEth;
     BIT_MODEL.CarteiraModel DolarSaldo = ViewBag.SaldoDolar;
 }
-
-   <p size="0" id="Iduser">@UsuarioDados.Id</p>
- <p class="welcome-text">Seja bem vindo, <strong>@UsuarioDados.Nome</strong>!</p>
+    <link rel="stylesheet" href="~/Content/home.css" />
+    <p class="welcome-text">Seja bem vindo, <strong>@UsuarioDados.Nome</strong>!</p>
+    <p id="IdUser"> @UsuarioDados.Id</p>
 <input type="hidden"  />
     <div class="cards">
         <div class="card">
@@ -133,7 +133,7 @@
     <div class="last-quotes">
         <div class="header-quotes">
             <p>Últimas Cotações</p>
-            <p>Atualizado em: @DateTime.Now</p>
+            <p>Atualizado em: 02/06/20 | 19:08</p>
         </div>
         <div class="input-quote">
             <div class="real-quote">
