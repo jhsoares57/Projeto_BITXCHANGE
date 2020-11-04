@@ -9,10 +9,6 @@
     <link rel="stylesheet" href="~/Content/home.css" />
     <link rel="stylesheet" href="~/Content/transference.css" />
     <script src="https://kit.fontawesome.com/b5e84d0a6b.js" crossorigin="anonymous"></script>
-    @{
-        BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
-    }
-
 
 </head>
 <body>
@@ -24,11 +20,12 @@
             <img src="~/Content/Assets/Images/logo.svg" alt="logo">
         </div>
         <ul class="nav-items">
-            <li><a href="#">Início</a></li>
+            <li><a href="/principal/1">Início</a></li>
             <li><a href="/Transferencia/1">Transferências</a></li>
             <li><a href="#">Carteira</a></li>
-            <li><a href="#">Conversão</a></li>
-            <li><a href="#">Transações</a></li>
+            @*<li><a href="javascript:IdUser(1);">Conversão</a></li>*@
+            <li><a href="/cambio/1">Conversão</a></li>
+            <li><a href="/transacoes/1">Transações</a></li>
         </ul>
         <div class="logout-icon">
             <a href="~/Home/SignIn">
@@ -44,9 +41,10 @@
     </nav>
     <script src="~/Scripts/menu-navbar.js"></script>
     <script src="~/Scripts/simular-conversao-home.js"></script>
+    <script src="~/Scripts/TesteHugo.js"></script>
     @RenderBody()
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @*@Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)*@
 </body>
 </html>

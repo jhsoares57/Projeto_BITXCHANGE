@@ -397,6 +397,7 @@ Data: 23/09/2020
 Manuten��o:
 
 Data: 25/09/2020 autor: José Hugo Descrição, ajuste para buscar a sigla da moeda
+Data: 28/10/2020 autor: José Hugo Descrição, adicionado order by na data de cadastro
 
 */
 GO
@@ -407,6 +408,7 @@ BEGIN
 SELECT VW.DATA,VW.PROTOCOLO,VW.TIPO,VW.VALOR,M.MOE_STR_DESC AS [MOEDA] FROM VW_TRANSACOES VW
 INNER JOIN TB_MOEDA M on M.MOE_INT_ID = VW.MOEDA
  WHERE USUARIO = @USUARIO
+ ORDER BY VW.DATA DESC
 END
 
 /*
@@ -416,7 +418,7 @@ autor: Jos� Hugo Soares de Barros
 Data: 12/10/2020
 
 Manuten��o:
-
+Data: 28/10/2020 autor: José Hugo Descrição, adicionado order by na data de cadastro
 
 */
 GO
@@ -427,6 +429,7 @@ BEGIN
 SELECT TOP 3 VW.DATA,VW.PROTOCOLO,VW.TIPO,VW.VALOR,M.MOE_STR_DESC AS [MOEDA] FROM VW_TRANSACOES VW
 INNER JOIN TB_MOEDA M on M.MOE_INT_ID = VW.MOEDA
  WHERE USUARIO = @USUARIO
+ ORDER BY VW.DATA DESC
 END
 
 GO
