@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
+VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_DESKTOP", "BIT_DESKTOP\BIT_DESKTOP.csproj", "{F3172E8E-D999-4A8C-95F2-43ABB1FC070A}"
 EndProject
@@ -28,6 +28,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_BACKUP_SERVER", "BIT_BACKUP_SERVER\BIT_BACKUP_SERVER.csproj", "{DF5AD16F-4598-4EFD-B543-2597852DF4DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_PROTOCOLO", "BIT_PROTOCOLO\BIT_PROTOCOLO.csproj", "{A866BCFD-A48A-4812-8759-D0538D6D7203}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIT_MOBILE.Android", "..\BIT_MOBILE\BIT_MOBILE.Android\BIT_MOBILE.Android.csproj", "{15B8DBFB-05C6-4897-8213-740C24A712C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIT_MOBILE", "..\BIT_MOBILE\BIT_MOBILE\BIT_MOBILE.csproj", "{3817E316-D24B-4228-BB1E-B1E59F76DD50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,11 +91,23 @@ Global
 		{A866BCFD-A48A-4812-8759-D0538D6D7203}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A866BCFD-A48A-4812-8759-D0538D6D7203}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A866BCFD-A48A-4812-8759-D0538D6D7203}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B8DBFB-05C6-4897-8213-740C24A712C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B8DBFB-05C6-4897-8213-740C24A712C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B8DBFB-05C6-4897-8213-740C24A712C3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{15B8DBFB-05C6-4897-8213-740C24A712C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B8DBFB-05C6-4897-8213-740C24A712C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B8DBFB-05C6-4897-8213-740C24A712C3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3817E316-D24B-4228-BB1E-B1E59F76DD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3817E316-D24B-4228-BB1E-B1E59F76DD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3817E316-D24B-4228-BB1E-B1E59F76DD50}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{3817E316-D24B-4228-BB1E-B1E59F76DD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3817E316-D24B-4228-BB1E-B1E59F76DD50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3817E316-D24B-4228-BB1E-B1E59F76DD50}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7D6D691A-11C1-4C41-980C-B141284821DF}
+		SolutionGuid = {3ACFA122-C663-4C70-8CBD-C06EAE28DF37}
 	EndGlobalSection
 EndGlobal
