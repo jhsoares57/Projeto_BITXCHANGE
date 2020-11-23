@@ -11,6 +11,7 @@ using BIT_BLL;
 
 namespace BIT_WEB.Controllers
 {
+    //[System.Web.Mvc.Authorize]
     public class TransferenciaController : Controller
     {
         // GET: Transferencia
@@ -39,7 +40,7 @@ namespace BIT_WEB.Controllers
                 DateTime data = DateTime.Today;
 
                 var prot = new GerarProtocolo();
-                var idUser = Request[""];
+                //var idUser = Request[""];
                 var NomeDestinatario = Request["name-receiver"];
                 var DocumentoDestinatario = Request["document-receiver"];
                 var DescricaoTransaferencia = Request["description"];
@@ -49,7 +50,7 @@ namespace BIT_WEB.Controllers
                 transferenciaModel.Valor = valorc;
                 transferenciaModel.Moeda = Request["type-coin"];
                 transferenciaModel.Protocolo = prot.Protocolo();
-                transferenciaModel.Usuario = 1;
+                transferenciaModel.Usuario = ID;
                 transferenciaModel.DataTransacao = data;
                 transferenciaModel.Descricao = DescricaoConcatenada;
                 var ValorFinalTransferencia = Request["Value-end"];
@@ -58,16 +59,17 @@ namespace BIT_WEB.Controllers
 
                 transacaoBLL.InserirTransaferencia(transferenciaModel);
 
-                TempData["Sucesso"] = "Protocolo gerado: "+ transferenciaModel.Protocolo;
+                TempData["Sucesso_"] = "Protocolo gerado: "+ transferenciaModel.Protocolo;
+                
 
             }
             catch (Exception ex)
             {
 
-                TempData["erro"] = "Erro: " + ex;
+                TempData["erro_"] = "Erro: " + ex;
             }
-            Response.Redirect("/Transferencia/" + ID);
 
+            Response.Redirect("/Transferencia/" + ID);
 
         }
 

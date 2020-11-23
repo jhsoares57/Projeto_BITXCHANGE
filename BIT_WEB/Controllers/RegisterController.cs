@@ -10,6 +10,7 @@ using BIT_CRIPTOGRAFIA;
 
 namespace BIT_WEB.Controllers
 {
+    //[System.Web.Mvc.Authorize]
     public class RegisterController : Controller
     {
         private UsuarioBLL repository = new UsuarioBLL();

@@ -35,7 +35,7 @@
     </div>
 </header>
 
-@if (TempData["Sucesso"] != null)
+@if (TempData["Sucesso_"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-warning">
@@ -44,7 +44,7 @@
         <p size="3" align="center"><b>@TempData["Sucesso"]</b></p>
     </div>
 }
-@if (TempData["erro"] != null)
+@if (TempData["erro_"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-danger">

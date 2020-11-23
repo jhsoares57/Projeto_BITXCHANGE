@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace BIT_WEB.Controllers
 {
+    //[System.Web.Mvc.Authorize]
     public class TransacoesController : Controller
     {
         public void Cotacao()

@@ -12,6 +12,7 @@
     BIT_MODEL.CarteiraModel DolarSaldo = ViewBag.SaldoDolar;
 }
     <link rel="stylesheet" href="~/Content/home.css" />
+    <script src="~/Scripts/simular-conversao-home.js"></script>
     <p class="welcome-text">Seja bem vindo, <strong>@UsuarioDados.Nome</strong>!</p>
     <p id="IdUser"> @UsuarioDados.Id</p>
 <input type="hidden"  />
@@ -133,7 +134,7 @@
     <div class="last-quotes">
         <div class="header-quotes">
             <p>Últimas Cotações</p>
-            <p>Atualizado em: 02/06/20 | 19:08</p>
+            <p>Atualizado em: @DateTime.Now</p>
         </div>
         <div class="input-quote">
             <div class="real-quote">
