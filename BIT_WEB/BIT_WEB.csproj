@@ -358,9 +358,25 @@
     <Content Include="Views\Recuperacao\RecuperacaoSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BIT_BACKUP\BIT_BACKUP.csproj">
+      <Project>{872aba7d-4e90-44f8-95b1-049cde781e65}</Project>
+      <Name>BIT_BACKUP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BIT_CRIPTOGRAFIA\BIT_CRIPTOGRAFIA.csproj">
       <Project>{7db7ae5d-2d13-41f8-882d-bb14cab6dfb3}</Project>
       <Name>BIT_CRIPTOGRAFIA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIT_DAL\BIT_DAL.csproj">
+      <Project>{e51520c7-29d6-491d-afe8-ae3135f871bc}</Project>
+      <Name>BIT_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIT_ENUMS\BIT_ENUMS.csproj">
+      <Project>{7f1357dd-0b21-4dac-91b3-1ed1f2a53e8a}</Project>
+      <Name>BIT_ENUMS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BIT_EXCEPTION\BIT_EXCEPTION.csproj">
+      <Project>{86e1268d-d1bb-4f6d-840a-7002e40d6157}</Project>
+      <Name>BIT_EXCEPTION</Name>
     </ProjectReference>
     <ProjectReference Include="..\BIT_LOGIN\BIT_LOGIN.csproj">
       <Project>{b77cb4bc-a379-41e0-9e43-8a8ad4a7bc8b}</Project>

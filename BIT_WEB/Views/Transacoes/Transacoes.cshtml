@@ -51,35 +51,35 @@
         {
             <div class="info-transaction">
                 <div class="date-transaction">
-                    <p>20/11/2020</p>
+                    <p>@t.DataTransacao.ToString("dd/MM/yyyy")</p>
                 </div>
 
                 <div class="hour-transaction">
-                    <p>13:37</p>
+                    <p>@t.DataTransacao.ToString("HH:mm:ss")</p>
                 </div>
 
                 <div class="protocol-transaction">
-                    <p>15987530</p>
+                    <p>@t.Protocolo</p>
                 </div>
 
                 <div class="type-transaction">
-                    <p>transferência</p>
+                    <p>@t.Tipo</p>
                 </div>
 
                 <div class="value-transaction payment">
-                    <p>170,00</p>
+                    <p>@t.Valor</p>
                 </div>
 
                 <div class="coin-transaction">
-                    <p>Dólar</p>
+                    <p>@t.Moeda</p>
                 </div>
 
                 <div class="receiver-transaction">
-                    <p>alberto augusto</p>
+                    <p>@t.Nome</p>
                 </div>
 
                 <div class="observation">
-                    <p>boleto bancário</p>
+                    <p>@t.Obs</p>
                 </div>
             </div>
         }

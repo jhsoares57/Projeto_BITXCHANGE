@@ -16,13 +16,16 @@ namespace BLL
         private decimal valor;
         private string moeda;
         private string protocolo;
+        private string nome;
+        private string obs;
 
         public DateTime DataTransacao { get => dataTransacao; set => dataTransacao = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public decimal Valor { get => valor; set => valor = value; }
         public string Moeda { get => moeda; set => moeda = value; }
         public string Protocolo { get => protocolo; set => protocolo = value; }
-
+        public string Nome { get => nome; set => nome = value; }
+        public string Obs { get => obs; set => obs = value; }
 
         public DataTable ListarRelatorioTransacoes(DateTime DataInicial)
         {
@@ -79,6 +82,8 @@ namespace BLL
                 transacaoMdel.Tipo = row["TIPO"].ToString();
                 transacaoMdel.Valor = Convert.ToDecimal(row["VALOR"]);
                 transacaoMdel.Moeda = row["MOEDA"].ToString();
+                transacaoMdel.Nome = row["NOME"].ToString();
+                transacaoMdel.Obs = row["OBSERVACAO"].ToString();
 
                 list.Add(transacaoMdel);
 

@@ -21,6 +21,7 @@ namespace BIT_MODEL
         private string status;
         private int carteira;
         private string protocolo;
+        private string numBoleto;
 
         public int Id { get => id; set => id = value; }
         public int Tipo { get => tipo; set => tipo = value; }
@@ -33,5 +34,6 @@ namespace BIT_MODEL
         public string Status { get => status; set => status = value; }
         public int Carteira { get => carteira; set => carteira = value; }
         public string Protocolo { get => protocolo; set => protocolo = value; }
+        public string NumBoleto { get => numBoleto; set => numBoleto = value; }
     }
 }
