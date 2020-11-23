@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CarteiraBLL.cs" />
     <Compile Include="CotacaoBLL.cs" />
+    <Compile Include="DepositoBLL.cs" />
     <Compile Include="TransacaoBLL.cs" />
     <Compile Include="UsuarioBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

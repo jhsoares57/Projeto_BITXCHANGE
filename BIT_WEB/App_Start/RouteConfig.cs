@@ -14,6 +14,12 @@ namespace BIT_WEB
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              "Deposito",
+              "Deposito/Deposito",
+              new { controller = "Deposito", action = "Deposito" }
+            );
+
+            routes.MapRoute(
               "SignIn",
               "Login/SignIn",
               new { controller = "Login", action = "SignIn" }

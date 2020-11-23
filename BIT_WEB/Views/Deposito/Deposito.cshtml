@@ -4,6 +4,26 @@
 
 <link rel="stylesheet" href="~/Content/deposit.css">
 
+@if (TempData["Sucesso"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-warning">
+        <p size="3" align="center"><b>Deposito realizado com sucesso!</b></p>
+        <br />
+        <p size="3" align="center"><b>@TempData["Sucesso"]</b></p>
+        <br />
+        <p size="3" align="center"><b>@TempData["Sucesso2"]</b></p>
+
+    </div>
+}
+@if (TempData["erro"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-danger">
+        <p size="3" align="center"><b>@TempData["erro"]</b></p>
+    </div>
+}
+
 <div class="payment-form">
     <h2>Selecione a forma de pagamento:</h2>
 
@@ -11,8 +31,10 @@
     <button class="btn-cartao" onclick="cartaoActive()">Cartão de Crédito</button>
 </div>
 
+
+
 <section id="boleto">
-    <form action="./index.html" method="post" id="boleto-form">
+    <form action="DepositoBoleto" method="post" id="boleto-form">
         <div class="fullname">
             <h2>Nome Completo</h2>
             <input type="text" name="fullname" id="fullname" onfocus="taxa()" required>
@@ -45,7 +67,7 @@
 </section>
 
 <section id="cartao">
-    <form action="./index.html" method="post" id="cartao-form">
+    <form action="DepositoCartao" method="post" id="cartao-form">
         <span class="first-row">
 
             <div class="cardholder-name">
@@ -84,6 +106,7 @@
         </div>
 
         <button type="submit">Concluir</button>
+
     </form>
 </section>
 <script src="~/Scripts/payment.js"></script>
