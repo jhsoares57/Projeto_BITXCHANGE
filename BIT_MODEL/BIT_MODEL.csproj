@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarteiraModel.cs" />
+    <Compile Include="ConversaoModel.cs" />
     <Compile Include="DepositoModel.cs" />
     <Compile Include="MoedaModel.cs" />
     <Compile Include="TransacaoModel.cs" />
