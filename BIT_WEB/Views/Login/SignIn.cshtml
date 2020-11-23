@@ -6,28 +6,19 @@
 
 <div class="login-content">
     <div class="login-text">
-        <strong>
-            <p>Seja bem-vindo!</p>
-        </strong>
-        <p>Não possui uma conta? <strong><a href="/Register/SignUp"> Cadastre-se</a></strong></p>
+        <h2>Seja bem-vindo!</h2>
+        <p>Não possui uma conta? <strong><a href="~/Register/SignUp"> Cadastre-se</a></strong></p>
     </div>
 
     <form action="/Login/Login">
         <div class="input-block">
-            <fieldset>
-                <label for="email"></label>
-                <input type="text" name="email" class="input-text" id="email" placeholder="E-mail">
-            </fieldset>
+            <input type="text" name="email" class="input-text" id="email" placeholder="E-mail" required>
         </div>
         <div class="input-block">
-            <fieldset>
-                <label for="senha"></label>
-                <input type="password" name="senha" class="input-text" id="senha" placeholder="Senha">
-            </fieldset>
+            <input type="password" name="senha" class="input-text" id="senha" placeholder="Senha" required>
         </div>
         <div class="bottom-content">
-            <p>Esqueci minha senha</p>
-
+            <a href="~/Views/">Esqueci minha senha</a>
             <button type="submit">Acessar</button>
         </div>
         @if (TempData["erro"] != null)

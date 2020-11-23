@@ -148,8 +148,10 @@
     <Content Include="Content\global.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\recuperation.css" />
     <Content Include="Content\signIn.css" />
     <Content Include="Content\signUp.css" />
+    <Content Include="Content\transaction.css" />
     <Content Include="Content\transference.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -352,6 +354,7 @@
     <Content Include="Scripts\bulma\sass\utilities\mixins.sass" />
     <Content Include="Scripts\bulma\sass\utilities\_all.sass" />
     <None Include="Properties\PublishProfiles\BITXCHANGE - Web Deploy.pubxml" />
+    <Content Include="Views\Recuperacao\RecuperacaoSenha.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BIT_CRIPTOGRAFIA\BIT_CRIPTOGRAFIA.csproj">

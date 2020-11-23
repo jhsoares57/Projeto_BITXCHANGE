@@ -2,95 +2,145 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
     List<BLL.TransacaoBLL> transacao = ViewBag.Transacoes;
 }
+@Styles.Render("~/Content/transaction.css")
+
 <link rel="stylesheet" href="~/Content/home.css" />
+<div class="last-transactions">
     <div class="last-transactions">
         <div class="header-transactions">
             <p>Últimas Transações</p>
-            <a href="#welcome-text"><span class="fas fa-plus"></span></a>
         </div>
+
+        <div class="legend-transaction">
+            <div class="date-transaction">
+                <p>data</p>
+            </div>
+
+            <div class="hour-transaction">
+                <p>HORA</p>
+            </div>
+
+            <div class="protocol-transaction">
+                <p>PROTOCO</p>
+            </div>
+
+            <div class="type-transaction">
+                <p>TRANSAÇÃO</p>
+            </div>
+
+            <div class="value-transaction payment">
+                <p>valor</p>
+            </div>
+
+            <div class="coin-transaction">
+                <p>MOEDA</p>
+            </div>
+
+            <div class="receiver-transaction">
+                <p>DESTINATÁRIO</p>
+            </div>
+
+            <div class="observation">
+                <p>forma de pagamento</p>
+            </div>
+        </div>
+
+
 
         @foreach (var t in transacao)
         {
             <div class="info-transaction">
                 <div class="date-transaction">
-                    <p>@t.DataTransacao</p>
+                    <p>20/11/2020</p>
+                </div>
+
+                <div class="hour-transaction">
+                    <p>13:37</p>
                 </div>
 
                 <div class="protocol-transaction">
-                    <p>@t.Protocolo</p>
+                    <p>15987530</p>
                 </div>
 
                 <div class="type-transaction">
-                    <p>@t.Tipo</p>
+                    <p>transferência</p>
                 </div>
 
                 <div class="value-transaction payment">
-                    <p>@t.Valor</p>
+                    <p>170,00</p>
                 </div>
 
                 <div class="coin-transaction">
-                    <p>@t.Moeda</p>
+                    <p>Dólar</p>
+                </div>
+
+                <div class="receiver-transaction">
+                    <p>alberto augusto</p>
+                </div>
+
+                <div class="observation">
+                    <p>boleto bancário</p>
                 </div>
             </div>
         }
 
         @*<div class="info-transaction">
-            <div class="date-transaction">
-                <p>31/05/2020</p>
-            </div>
+                <div class="date-transaction">
+                    <p>31/05/2020</p>
+                </div>
 
-            <div class="protocol-transaction">
-                <p>000000123456789</p>
-            </div>
+                <div class="protocol-transaction">
+                    <p>000000123456789</p>
+                </div>
 
-            <div class="type-transaction">
-                <p>Transferência</p>
-            </div>
+                <div class="type-transaction">
+                    <p>Transferência</p>
+                </div>
 
-            <div class="value-transaction payment">
-                <p>50,00</p>
-            </div>
+                <div class="value-transaction payment">
+                    <p>50,00</p>
+                </div>
 
-            <div class="coin-transaction">
-                <p>USD</p>
-            </div>
-        </div>*@
+                <div class="coin-transaction">
+                    <p>USD</p>
+                </div>
+            </div>*@
 
         @*<div class="info-transaction">
-            <div class="date-transaction">
-                <p>20/05/2020</p>
+                <div class="date-transaction">
+                    <p>20/05/2020</p>
+                </div>
+
+                <div class="type-transaction">
+                    <p>Depósito</p>
+                </div>
+
+                <div class="value-transaction receivement">
+                    <p>650,00</p>
+                </div>
+
+                <div class="coin-transaction">
+                    <p>R$</p>
+                </div>
             </div>
 
-            <div class="type-transaction">
-                <p>Depósito</p>
-            </div>
+            <div class="info-transaction">
+                <div class="date-transaction">
+                    <p>10/05/2020</p>
+                </div>
 
-            <div class="value-transaction receivement">
-                <p>650,00</p>
-            </div>
+                <div class="type-transaction">
+                    <p>Conversão</p>
+                </div>
 
-            <div class="coin-transaction">
-                <p>R$</p>
-            </div>
-        </div>
+                <div class="value-transaction payment">
+                    <p>1,00</p>
+                </div>
 
-        <div class="info-transaction">
-            <div class="date-transaction">
-                <p>10/05/2020</p>
-            </div>
-
-            <div class="type-transaction">
-                <p>Conversão</p>
-            </div>
-
-            <div class="value-transaction payment">
-                <p>1,00</p>
-            </div>
-
-            <div class="coin-transaction">
-                <p>ETH</p>
-            </div>
-        </div>*@
+                <div class="coin-transaction">
+                    <p>ETH</p>
+                </div>
+            </div>*@
 
 
     </div>
