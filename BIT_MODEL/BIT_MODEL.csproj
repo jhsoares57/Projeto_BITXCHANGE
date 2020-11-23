@@ -50,7 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarteiraModel.cs" />
+<<<<<<< HEAD
+    <Compile Include="DepositoModel.cs" />
+=======
     <Compile Include="ConversaoModel.cs" />
+>>>>>>> ca39678d044ff2c438d92eca2ed2ed07691c9c42
     <Compile Include="MoedaModel.cs" />
     <Compile Include="TransacaoModel.cs" />
     <Compile Include="UsuarioModel.cs" />

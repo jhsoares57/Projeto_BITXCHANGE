@@ -45,6 +45,7 @@
     <Compile Include="CarteiraDAL.cs" />
     <Compile Include="ConversaoDAL.cs" />
     <Compile Include="CotacaoDAL.cs" />
+    <Compile Include="DepositoDAL.cs" />
     <Compile Include="TransacaoDAL.cs" />
     <Compile Include="UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
