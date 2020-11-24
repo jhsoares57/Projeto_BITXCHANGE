@@ -160,6 +160,7 @@
     <Content Include="Scripts\bulma\css\bulma-rtl.min.css" />
     <Content Include="Scripts\bulma\css\bulma.css" />
     <Content Include="Scripts\bulma\css\bulma.min.css" />
+    <Content Include="Scripts\Conversao.js" />
     <Content Include="Scripts\TesteHugo.js" />
     <Content Include="Scripts\Confirmar-transferencia.js" />
     <Content Include="Scripts\esm\popper-utils.js" />

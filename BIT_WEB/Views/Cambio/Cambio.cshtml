@@ -1,50 +1,111 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    BIT_MODEL.MoedaModel Dolar = ViewBag.CotDolar;
+    BIT_MODEL.MoedaModel Ethe = ViewBag.CotETH;
+    BIT_MODEL.MoedaModel Bit = ViewBag.CotBit;
+    BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
 }
 
-<link rel="stylesheet" href="~/Content/quotes.css">
-<span class="span-coin">
-    <div class="coin-select">
-        <legend>Moeda</legend>
-        <select name="type-coin" id="type-coin">
-            <option value="ethereum">ethereum</option>
-            <option value="dolar">dolar</option>
-            <option value="real">real</option>
-            <option value="bitcoin">bitcoin</option>
-        </select>
+@if (TempData["Sucess"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-warning">
+        <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
+        <br />
+        <p size="3" align="center"><b>@TempData["Sucesso"]</b></p>
     </div>
-
-    <div class="coin-value">
-        <legend>Valor</legend>
-        <input type="number" name="value" id="value">
+}
+@if (TempData["err"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-danger">
+        <p size="3" align="center"><b>@TempData["erro"]</b></p>
     </div>
+}
 
-    <button type="submit" id="simulation">simular</button>
-</span>
-
-<div class="quotes">
-    <div id="bitcoin" class="quote-bitcoin disable">
-        <p>Bitcoin</p>
-        <input type="number" name="btc-simulation" id="btc-simulation" disabled>
-        <button>Converter</button>
-    </div>
-
-    <div id="ether" class="quote-ether disable">
-        <p>Ethereum</p>
-        <input type="number" name="eth-simulation" id="eth-simulation" disabled>
-        <button>Converter</button>
-    </div>
-
-    <div id="dolar" class="quote-dolar disable">
-        <p>Dólar</p>
-        <input type="number" name="us-simulation" id="us-simulation" disabled>
-        <button>Converter</button>
-    </div>
-
-    <div id="real" class="quote-real disable">
-        <p>Real</p>
-        <input type="number" name="rs-simulation" id="rs-simulation" disabled>
-        <button>Converter</button>
-    </div>
+<div id="cotacao" class="quote-bitcoin disable">
+    <h6 id="BitCot" disable>@Bit.Valor</h6>
+    <h6 id="EthCot" disable>@Ethe.Valor</h6>
+    <h6 id="DolarCot" disable>@Dolar.Valor</h6>
 </div>
-<script src="~/Scripts/cotacao.js"></script>
+
+<form method="post" class="register-content">
+
+
+
+    <link rel="stylesheet" href="~/Content/quotes.css">
+    <span class="span-coin">
+        <div class="coin-select">
+            <legend>Moeda Inicial</legend>
+            <select name="type-coin" id="type-coin">
+                <option value="ethereum">ethereum</option>
+                <option value="dolar">dolar</option>
+                <option value="real">real</option>
+                <option value="bitcoin">bitcoin</option>
+            </select>
+        </div>
+
+        <div class="coin-value">
+            <legend>Valor</legend>
+            <input type="number" name="value" id="value" />
+        </div>
+        <br />
+        <div class="coin-select">
+            <legend>Moeda Final</legend>
+            <select name="type-fcoin" id="type-fcoin">
+                <option value="ethereum">ethereum</option>
+                <option value="dolar">dolar</option>
+                <option value="real">real</option>
+                <option value="bitcoin">bitcoin</option>
+            </select>
+        </div>
+
+        <div class="coin-fvalue">
+            <legend>Valor</legend>
+            <input type="number" name="fvalue" id="fvalue" disabled />
+        </div>
+        <input type="button" onclick="simular2()" value="Teste" />
+        <button type="submit" id="converter">Converter</button>
+
+
+    </span>
+
+</form>
+
+
+@*<div class="quotes">
+        <form id="BitC" action="@UsuarioDados.Id/bitcoin/Cambio" method="post" onsubmit="ValidaTransferencia(event)">
+            <div id="bitcoin" class="quote-bitcoin disable">
+                <p>Bitcoin</p>
+                <input type="text" name="btc-simulation" id="btc-simulation" disabled>
+                <button type="submit">Converter</button>
+            </div>
+        </form>
+        <form id="Ethe" action="@UsuarioDados.Id/ethereum/Cambio" method="post" onsubmit="ValidaTransferencia(event)">
+            <div id="ether" class="quote-ether disable">
+                <p>Ethereum</p>
+                <input type="text" name="eth-simulation" id="eth-simulation" disabled>
+                <button>Converter</button>
+            </div>
+        </form>
+        <form id="Dolar" action="@UsuarioDados.Id/dolar/Cambio" method="post" onsubmit="ValidaTransferencia(event)">
+            <div id="dolar" class="quote-dolar disable">
+                <p>Dólar</p>
+                <input type="text" name="us-simulation" id="us-simulation" disabled>
+                <button>Converter</button>
+            </div>
+        </form>
+        <form id="Real" action="@UsuarioDados.Id/real/Cambio" method="post" onsubmit="ValidaTransferencia(event)">
+            <div id="real" class="quote-real disable">
+                <p>Real</p>
+                <input type="text" name="rs-simulation" id="rs-simulation" disabled>
+                <button>Converter</button>
+            </div>
+        </form>
+    </div>*@
+
+
+@*<script src="~/Scripts/cotacao.js">taxa</script>
+    <script src="~/Scripts/simular-cambio.js"></script>*@
+<script src="~/Scripts/Confirmar-transferencia.js"></script>
+<script src="~/Scripts/Conversao.js"></script>

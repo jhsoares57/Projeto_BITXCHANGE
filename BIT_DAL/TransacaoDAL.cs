@@ -158,7 +158,6 @@ namespace BIT_DAL
                 cf.Comando = cf.Conexao.CreateCommand();
 
                 //Abaixo os parametros que no momento da execução serão substituídos pelos valor das propriedades
-                //cf.Comando.Parameters.AddWithValue("@ID_CLINTE", c.Id);
                 cf.Comando.Parameters.AddWithValue("@TRA_STR_DESC", T.Descricao);
                 cf.Comando.Parameters.AddWithValue("@TRA_DOU_VALOR", T.Valor);
                 cf.Comando.Parameters.AddWithValue("@TRA_DT_DATATRANS", T.DataTransacao);
