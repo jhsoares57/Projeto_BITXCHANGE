@@ -3,95 +3,69 @@
 }
 
 @Styles.Render("~/Content/signUp.css")
-<legend>Crie sua conta</legend>
-<form action="SignUp" method="post" class="register-content">
-
-    <div class="register-text">
-        <p>Já tem uma conta? <a href="/Home/SignIn">Entre</a></p>
-    </div>
-
-    <div class="first-row">
-        <div class="input-block">
-            <fieldset>
-                <label for="nome"></label>
+<div class="register-container">
+    <form action="SignUp" method="post" class="register-content">
+        <div class="register-text">
+            <h2>Crie sua conta</h2>
+            <p>Já tem uma conta? <a href="~/">Entre</a></p>
+        </div>
+        <div class="first-row">
+            <div class="input-block">
                 <input type="text" name="name" id="name" placeholder="Nome" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
-            </fieldset>
-        </div>
+            </div>
 
-        <div class="input-block">
-            <fieldset>
-                <label for="sobrenome"></label>
-                <input type="text" name="last-name" id="last-name" placeholder="Sobrenome" required oninvalid="this.setCustomValidity('Campo requerido')"
+            <div class="input-block">
+                <input type="text" name="last-name" id="last-name" placeholder="Sobrenome" required oninvalid="this.setCustomValidity('Campo obrigatório)"
                        onchange="try{setCustomValidity('')}catch(e){}">
-            </fieldset>
+            </div>
         </div>
-    </div>
 
-    <div class="second-row">
-        <div class="input-block">
-            <fieldset>
-                <label for="sexo">Selecione seu gênero:</label>
-
+        <div class="second-row">
+            <div class="input-block">
                 <select name="gender" id="gender" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                         onchange="try{setCustomValidity('')}catch(e){}">
-                    <option value="masculino">Masculino</option>
-                    <option value="feminino">Feminino</option>
-                    <option value="outros">Outros</option>
+                    <option selected="true" disabled="disabled">Selecione seu sexo...</option>
+                    <option value="m">Masculino</option>
+                    <option value="f">Feminino</option>
+                    <option value="o">Outro</option>
                 </select>
-            </fieldset>
-        </div>
+            </div>
 
-        <div class="input-block">
-            <fieldset>
-                <label for="cpf"></label>
+            <div class="input-block">
                 <input type="number" min="0" max="9999999999999" name="number-doc" id="number-doc" placeholder="Nº do Documento" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
-                <!-- bverificar a necessidade de min e max -->
-            </fieldset>
-        </div>
+            </div>
 
-        <div class="input-block">
-            <fieldset>
-                <label for="dataNascimento"></label>
+            <div class="input-block">
                 <input type="number" name="birth" id="birth" placeholder="Data de Nascimento" onfocus="(this.type='date')" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
-            </fieldset>
+            </div>
         </div>
-    </div>
 
-    <div class="third-row">
-        <div class="input-block">
-            <fieldset>
-                <label for="email"></label>
+        <div class="third-row">
+            <div class="input-block">
                 <input type="email" name="email" id="email" placeholder="E-mail" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
-            </fieldset>
-        </div>
+            </div>
 
-        <div class="input-block">
-            <fieldset>
-                <label for="senha"></label>
+            <div class="input-block">
                 <input type="password" name="password" id="password" placeholder="Senha" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
-            </fieldset>
-        </div>
+            </div>
 
-        <div class="input-block">
-            <fieldset>
+            <div class="input-block">
                 <input type="password" name="vf-password" id="vf-password" placeholder="Confirme sua senha" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
-            </fieldset>
+            </div>
         </div>
-    </div>
-
-    <button type="submit">Cadastrar</button>
-    @if (TempData["alerta"] != null)
-    {
-        <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
-        <div class="notification is-danger">
-            <p size="3" align="center"><b>@TempData["alerta"]</b></p>
-        </div>
-    }
-
-</form>
+        <button type="submit">Cadastrar</button>
+        @if (TempData["alerta"] != null)
+        {
+            <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+            <div class="notification is-danger">
+                <p size="3" align="center"><b>@TempData["alerta"]</b></p>
+            </div>
+        }
+    </form>
+</div>

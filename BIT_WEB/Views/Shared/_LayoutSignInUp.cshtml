@@ -7,14 +7,18 @@
     @Styles.Render("~/Content/global.css")
 </head>
 <body>
-    <div class="page-header">
+    <div class="page-header mobile">
         <div class="logo-container">
-            <img src="~/Content/Assets/Images/logo.svg" alt="logo-bitxchange" />
-        </div>
-        <div class="header-content">
+            <img src="~/Content/Assets/Images/logo.svg" alt="logo-bitxchange">
             <p><strong> SUA SEGURANÇA É A NOSSA GARANTIA</strong></p>
         </div>
     </div>
     @RenderBody()
+    <div class="page-header desktop">
+        <div class="logo-container">
+            <img src="~/Content/Assets/Images/logo.svg" alt="logo-bitxchange">
+            <p><strong> SUA SEGURANÇA É A NOSSA GARANTIA</strong></p>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,135 @@
+﻿.page-header {
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    background-color: var(--color-primaria);
+}
+
+    .page-header .logo-container {
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        padding: 1.6rem 0;
+        display: flex;
+        margin: 0 auto;
+    }
+
+.logo-container {
+    margin-top: 3vh !important;
+}
+
+.page-header .logo-container img {
+    height: 3.8rem !important;
+}
+
+.page-header .header-content {
+    font-size: 1.8rem;
+    margin: 0 auto;
+    font-family: "Roboto";
+}
+
+.login-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto";
+    padding: 2rem 0;
+}
+
+    .login-text p {
+        font-size: 1.8rem;
+        line-height: 2.8rem;
+    }
+
+        .login-text p:first-child {
+            font-size: 3.4rem;
+            line-height: 4rem;
+        }
+
+        .login-text p a {
+            text-decoration: none;
+            color: var(--color-primaria);
+        }
+
+form {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-block {
+    display: flex;
+    margin-bottom: 3.2rem;
+}
+
+    .input-block fieldset {
+        margin: 0 auto;
+    }
+
+        .input-block fieldset input {
+            border: 0.1rem solid black;
+            width: 28rem;
+            height: 4rem;
+        }
+
+.input-text {
+    padding-left: 2rem;
+}
+
+.bottom-content {
+    display: flex;
+    flex-direction: column;
+    width: 28rem;
+    margin: 0 auto;
+}
+
+    .bottom-content p a {
+        color: var(--color-primaria);
+        left: 0;
+        font-size: 1.4rem;
+        font-family: "Roboto";
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .bottom-content button {
+        width: 100%;
+        height: 5rem;
+        border: 0.1rem solid rgba(0,0,0);
+        text-transform: uppercase;
+        font-weight: 500;
+        background-color: var(--color-secundaria);
+        cursor: pointer;
+    }
+
+@media(min-width: 700px) {
+    body {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .page-header {
+        display: block;
+        grid-column-end: 3;
+        padding: 50% 0;
+        margin: 0;
+        border: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-container {
+        margin: 0 !important;
+    }
+
+    .login-content {
+        margin: 15vh 0 0 20vw;
+        border: 0;
+        padding: 0;
+    }
+
+    .login-text {
+        padding-bottom: 6.4rem;
+    }
+}
