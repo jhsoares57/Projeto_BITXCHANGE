@@ -6,20 +6,22 @@
     BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
 }
 
-@if (TempData["Sucess"] != null)
+@if (TempData["Sucesss"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-warning">
         <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
         <br />
-        <p size="3" align="center"><b>@TempData["Sucesso"]</b></p>
+        <p size="3" align="center"><b>@TempData["Sucesss"]</b></p>
     </div>
 }
 @if (TempData["err"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-danger">
-        <p size="3" align="center"><b>@TempData["erro"]</b></p>
+        <p size="3" align="center"><b>Erro ao fazer conversão!</b></p>
+        <br />
+        <p size="3" align="center"><b>@TempData["err"]</b></p>
     </div>
 }
 
@@ -29,7 +31,7 @@
     <h6 id="DolarCot" disable>@Dolar.Valor</h6>
 </div>
 
-<form method="post" class="register-content">
+<form action="@UsuarioDados.Id/Cambio" method="post" onsubmit="ValidaTransferencia(event)" class="register-content">
 
 
 
@@ -62,8 +64,9 @@
 
         <div class="coin-fvalue">
             <legend>Valor</legend>
-            <input type="number" name="fvalue" id="fvalue" disabled />
+            <input  name="fvalue" id="fvalue" required />
         </div>
+        <br />
         <input type="button" onclick="simular2()" value="Teste" />
         <button type="submit" id="converter">Converter</button>
 

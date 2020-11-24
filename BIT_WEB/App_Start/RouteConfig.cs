@@ -69,8 +69,8 @@ namespace BIT_WEB
 
             routes.MapRoute(
            "Converter",
-           "Cambio/{id}/{moedaFin}/Cambio",
-           new { controller = "Cambio", action = "Converter", id = UrlParameter.Optional, moedaFin = UrlParameter.Optional }
+           "Cambio/{id}/Cambio",
+           new { controller = "Cambio", action = "Converter", id = UrlParameter.Optional}
          );
 
             routes.MapRoute(

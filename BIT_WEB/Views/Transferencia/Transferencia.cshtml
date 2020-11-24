@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="~/Content/transference.css" />
 
-<p size="0" id="Iduser">@UsuarioDados.Id</p>
 <header>
     <div class="balance-summary">
         <div class="coin" id="bitcoin">
@@ -41,7 +40,7 @@
     <div class="notification is-warning">
         <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
         <br />
-        <p size="3" align="center"><b>@TempData["Sucesso"]</b></p>
+        <p size="3" align="center"><b>@TempData["Sucesso_"]</b></p>
     </div>
 }
 @if (TempData["erro_"] != null)

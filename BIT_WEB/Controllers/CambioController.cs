@@ -33,7 +33,7 @@ namespace BIT_WEB.Controllers
         }
 
         [HttpPost]
-        public void Converter(int ID, string moedaFim)
+        public void Converter(int ID)
         {
             try
             {
@@ -41,11 +41,7 @@ namespace BIT_WEB.Controllers
                 var prot = new GerarProtocolo();
                 var moedaInicial = Request["type-coin"];
                 var valorInicial = Request["value"];
-                var Valor_Bit = Request["btc-simulation"];
-                var valor_ETH = Request["eth-simulation"];
-                var valor_real = Request["rs-simulation"];
-                var valor_Dolar = Request["us-simulation"];
-
+                var ValorFinal = Request["fvalue"];
 
                 int moedain = 0;
 
@@ -78,7 +74,7 @@ namespace BIT_WEB.Controllers
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
                     conversaoModel.MoedaFim = 4;
-                    conversaoModel.ValorFinal = Convert.ToDecimal(valor_Dolar);
+                    conversaoModel.ValorFinal = Convert.ToDecimal(ValorFinal);
                     conversaoModel.Protocolo = prot.Protocolo();
                     conversaoModel.Data = data;
 
@@ -92,8 +88,8 @@ namespace BIT_WEB.Controllers
                     conversaoModel.IdUsurio = 1;
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
-                    conversaoModel.MoedaFim = 1;
-                    conversaoModel.ValorFinal = Convert.ToDecimal(valor_Dolar);
+                    conversaoModel.MoedaFim = 2;
+                    conversaoModel.ValorFinal = Convert.ToDecimal(ValorFinal);
                     conversaoModel.Protocolo = prot.Protocolo();
                     conversaoModel.Data = data;
 
@@ -106,8 +102,8 @@ namespace BIT_WEB.Controllers
                     conversaoModel.IdUsurio = 1;
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
-                    conversaoModel.MoedaFim = 3;
-                    conversaoModel.ValorFinal = Convert.ToDecimal(valor_Dolar);
+                    conversaoModel.MoedaFim = 4;
+                    conversaoModel.ValorFinal = Convert.ToDecimal(ValorFinal);
                     conversaoModel.Protocolo = prot.Protocolo();
                     conversaoModel.Data = data;
 
@@ -121,7 +117,7 @@ namespace BIT_WEB.Controllers
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
                     conversaoModel.MoedaFim = 1;
-                    conversaoModel.ValorFinal = Convert.ToDecimal(valor_Dolar);
+                    conversaoModel.ValorFinal = Convert.ToDecimal(ValorFinal);
                     conversaoModel.Protocolo = prot.Protocolo();
                     conversaoModel.Data = data;
 
@@ -129,7 +125,7 @@ namespace BIT_WEB.Controllers
 
                 }
 
-                TempData["Sucess"] = "Protocolo gerado: " + conversaoModel.Protocolo;
+                TempData["Sucesss"] = "Protocolo gerado: " + conversaoModel.Protocolo;
 
             }
             catch (Exception)
