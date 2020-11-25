@@ -74,6 +74,17 @@ namespace BIT_WEB
          );
 
             routes.MapRoute(
+           "RecuperacaoSenha",
+           "RecuperacaoSenha",
+           new { controller = "Recuperacao", action = "RecuperacaoSenha" }
+         );
+            routes.MapRoute(
+           "RecuperarSenha",
+           "RecuperarSenha",
+           new { controller = "Recuperacao", action = "alterarSenha" }
+         );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Login", action = "SignIn", id = UrlParameter.Optional }

@@ -204,5 +204,53 @@ namespace BIT_DAL
 
             return dt;
         }
+
+        public void alterarSenha(UsuarioModel U)
+        {
+            try
+            {
+                string query = "SP_ALTERAR_SENHA";
+
+                //Connection Factory: Classe que gerencia o local da conexão, tendo o método responsável por obter a conexão
+                cf = new ConnectionFactory();
+
+                //CreateCommand: Inicializa o objeto SqlCommand associando o Comando com a conexão do Banco onde será executado
+                cf.Comando = cf.Conexao.CreateCommand();
+
+                //Abaixo os parametros que no momento da execução serão substituídos pelos valor das propriedades
+                
+                cf.Comando.Parameters.AddWithValue("@EMAIL", U.Email);
+                cf.Comando.Parameters.AddWithValue("@SENHA", U.Senha);
+
+                cf.Comando.Parameters.AddWithValue("@RETURN", 0).Direction = ParameterDirection.Output;
+
+                //CommandType indica que o Comando será via procedure no banco de dados
+                cf.Comando.CommandType = CommandType.StoredProcedure;
+
+                //CommandText: Propriedade do objeto command que receberá o texto do Comando a ser executado.
+                cf.Comando.CommandText = query.ToString();
+
+                //Abre a conexão 
+                cf.Conexao.Open();
+                U.Id = 0;//Define o ID inicialmente como 0.
+
+                cf.Comando.ExecuteNonQuery();//Execução do Comando no Banco de dados        
+                object o = cf.Comando.Parameters["@RETURN"].Value;
+                cf.Conexao.Close();
+
+                if (o != null)
+                {
+                    U.Id = 1;
+                }
+                else
+                {
+                    U.Id = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

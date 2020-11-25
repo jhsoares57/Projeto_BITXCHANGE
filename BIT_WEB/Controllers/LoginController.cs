@@ -27,6 +27,10 @@ namespace BIT_WEB.Controllers
         {
             return View();
         }
+        public ActionResult RecuperacaoSenha()
+        {
+            return View();
+        }
 
         [HttpGet]
         [ValidateInput (false)]

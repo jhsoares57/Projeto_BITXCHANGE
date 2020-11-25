@@ -53,5 +53,21 @@ namespace BIT_BLL
         {
             return new UsuarioDAL().FiltarUsuario(nomeUsuario);
         }
+        public bool alterarSenha(UsuarioModel U)
+        {
+            bool alterou = false;
+            new UsuarioDAL().alterarSenha(U);
+
+            //Se o ID for maior que zero, indica que o dado foi salvo
+            if (U.Id > 0)
+            {
+                alterou = true;
+            }
+            else
+            {
+                alterou = false;
+            }
+            return alterou;
+        }
     }
 }
