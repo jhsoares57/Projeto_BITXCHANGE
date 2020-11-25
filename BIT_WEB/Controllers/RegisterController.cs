@@ -46,11 +46,11 @@ namespace BIT_WEB.Controllers
                 U.Tipo = 2;
                 U.DataCadastro = DateTime.Now;
 
-                if (Request["gender"] == "masculino")
+                if (Request["gender"] == "m")
                 {
                     U.Sexo = 1;
-                }
-                if (Request["gender"] == "feminino")
+                }else
+                if (Request["gender"] == "f")
                 {
                     U.Sexo = 2;
                 }
