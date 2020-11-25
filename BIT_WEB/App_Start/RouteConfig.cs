@@ -15,8 +15,19 @@ namespace BIT_WEB
 
             routes.MapRoute(
               "Deposito",
-              "Deposito/Deposito",
-              new { controller = "Deposito", action = "Deposito" }
+              "Deposito/Deposito/{id}",
+              new { controller = "Deposito", action = "Deposito", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+              "DepositoBoleto",
+              "DepositoBoleto/{id}",
+              new { controller = "Deposito", action = "DepositoBoleto", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
+              "DepositoCartao",
+              "DepositoCartao/{id}",
+              new { controller = "Deposito", action = "DepositoCartao", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

@@ -15,18 +15,22 @@ namespace BIT_WEB.Controllers
     {
         private DepositoBLL repository = new DepositoBLL();
         // GET: Deposito
-        public ActionResult Deposito()
+        public ActionResult Deposito(int ID)
         {
+            var User = new UsuarioBLL();
+            var home = User.SelecionarPorID(ID);
+            ViewBag.Home = home;
             return View();
         }
 
         [HttpPost]
-        public void DepositoCartao(DepositoModel D)
+        public void DepositoCartao(int ID)
         {
             try
             {
+                var D = new DepositoModel();
                 var prot = new GerarProtocolo();
-                var userId = 1;
+                var userId = ID;
                 decimal valorDeposito = Convert.ToDecimal(Request["value-deposit"]);
 
                 D.Titular = Request["cardholder-name"];
@@ -41,23 +45,24 @@ namespace BIT_WEB.Controllers
                 D.Id = userId;
 
                 repository.depositoCartao(D);
-                TempData["Sucesso"] = "Protocolo gerado: " + D.Protocolo;
+                TempData["Sucesso01"] = "Protocolo gerado: " + D.Protocolo;
 
             }
             catch (Exception ex)
             {
                 TempData["erro"] = "Erro: " + ex;
             }
-            Response.Redirect("/Deposito/Deposito");
+            Response.Redirect("/Deposito/Deposito/"+ID);
         }
 
         [HttpPost]
-        public void DepositoBoleto(DepositoModel D)
+        public void DepositoBoleto(int ID)
         {
             try
             {
+                var D = new DepositoModel();
                 var prot = new GerarProtocolo();
-                var userId = 1;
+                var userId = ID;
                 decimal valorDeposito = Convert.ToDecimal(Request["value-deposit"]);
                 DateTime pag = Convert.ToDateTime(Request["date-payment"]);
 
@@ -72,7 +77,7 @@ namespace BIT_WEB.Controllers
                 D.Id = userId;
 
                 repository.depositoBoleto(D);
-                TempData["Sucesso"] = "Protocolo gerado: " + D.Protocolo;
+                TempData["Sucesso1"] = "Protocolo gerado: " + D.Protocolo;
                 TempData["Sucesso2"] = "Código de barras do boleto: " + D.NumBoleto;
 
             }
@@ -80,7 +85,7 @@ namespace BIT_WEB.Controllers
             {
                 TempData["erro"] = "Erro: " + ex;
             }
-            Response.Redirect("/Deposito/Deposito");
+            Response.Redirect("/Deposito/Deposito/" + ID);
         }
 
     }

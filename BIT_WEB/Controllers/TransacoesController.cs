@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BIT_BLL;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,14 @@ namespace BIT_WEB.Controllers
             ViewBag.CotBit = CotBit;
         }
 
-        public ActionResult Transacoes(int id)
+        public ActionResult Transacoes(int ID)
         {
-
+         
             //Listando as ultimas transações do usuário
-            ViewBag.Transacoes = new TransacaoBLL().ListaTodasTransacoes(id);
+            ViewBag.Transacoes = new TransacaoBLL().ListaTodasTransacoes(ID);
+            var User = new UsuarioBLL();
+            var home = User.SelecionarPorID(ID);
+            ViewBag.Home = home;
 
             return View();
         }

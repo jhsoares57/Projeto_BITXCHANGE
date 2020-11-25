@@ -70,7 +70,7 @@ namespace BIT_WEB.Controllers
                 if (Request["type-fcoin"] == "dolar")
                 {
 
-                    conversaoModel.IdUsurio = 1;
+                    conversaoModel.IdUsurio = ID;
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
                     conversaoModel.MoedaFim = 4;
@@ -85,7 +85,7 @@ namespace BIT_WEB.Controllers
                 }
                 else if (Request["type-fcoin"] == "real")
                 {
-                    conversaoModel.IdUsurio = 1;
+                    conversaoModel.IdUsurio = ID;
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
                     conversaoModel.MoedaFim = 2;
@@ -99,7 +99,7 @@ namespace BIT_WEB.Controllers
                 }
                 else if (Request["type-fcoin"] == "ethereum")
                 {
-                    conversaoModel.IdUsurio = 1;
+                    conversaoModel.IdUsurio = ID;
                     conversaoModel.MoedaOrigem = moedain;
                     conversaoModel.ValorInicio = Convert.ToDecimal(valorInicial);
                     conversaoModel.MoedaFim = 4;
