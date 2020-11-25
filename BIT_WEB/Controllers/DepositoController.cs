@@ -45,7 +45,7 @@ namespace BIT_WEB.Controllers
                 D.Id = userId;
 
                 repository.depositoCartao(D);
-                TempData["Sucesso01"] = "Protocolo gerado: " + D.Protocolo;
+                TempData["Sucesso1"] = "Protocolo gerado: " + D.Protocolo;
 
             }
             catch (Exception ex)

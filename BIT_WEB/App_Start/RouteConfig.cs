@@ -14,6 +14,12 @@ namespace BIT_WEB
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+              "Perfil",
+              "Profile/Perfil/{id}",
+              new { controller = "Profile", action = "Perfil", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
               "Deposito",
               "Deposito/Deposito/{id}",
               new { controller = "Deposito", action = "Deposito", id = UrlParameter.Optional }

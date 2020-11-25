@@ -1,0 +1,132 @@
+﻿
+@{
+
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
+    BIT_MODEL.UsuarioModel perfilDados = ViewBag.Perfil;
+
+}
+
+<script>
+
+    const masculino = 'Masculino'
+    const feminino = 'Feminino'
+    const outros = 'Outros'
+
+    window.onload = function sexo() {
+        if (@perfilDados.Sexo == '1') {
+            document.querySelector("[name='gender']").value = masculino;
+        }
+        else
+        if (@perfilDados.Sexo == '2') {
+            document.querySelector("[name='gender']").value = feminino;
+        }
+        else {
+            document.querySelector("[name='gender']").value = outros;
+        }
+    }
+
+</script>
+
+<link rel="stylesheet" href="" />
+
+@if (TempData["erro"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-danger">
+        <p size="3" align="center"><b>@TempData["erro"]</b></p>
+    </div>
+}
+
+@if (TempData["Sucesso1"] != null)
+{
+    <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+    <div class="notification is-warning">
+        <p size="3" align="center"><b>@TempData["Sucesso1"]</b></p>
+    </div>
+}
+
+<form action="@UsuarioDados.Id" method="post" id="att-form">
+    <div class="profile">
+        <div class="info">
+            Nome
+        </div>
+        <div class="input-block">
+            <input type="text" name="name" id="name" value="@perfilDados.Nome" disabled />
+        </div>
+
+        <div class="info">
+            CPF
+        </div>
+        <div class="input-block">
+            <input type="text" name="cpf" id="cpf" value="@perfilDados.Cpf" disabled />
+        </div>
+
+        <div class="info">
+            E-mail
+        </div>
+        <div class="input-block">
+            <input type="text" name="email" id="email" value="@perfilDados.Email" disabled />
+        </div>
+
+        <div class="info">
+            Data de Nascimento
+        </div>
+        <div class="input-block">
+            <input type="text" name="birth" id="birth" value="@perfilDados.DataNascimento" disabled />
+        </div>
+
+        <div class="info">
+            Gênero
+        </div>
+        <div class="input-block">
+            <input type="text" name="gender" id="gender" disabled />
+        </div>
+
+        <div class="info">
+            Senha
+        </div>
+        <div class="input-block">
+            <input type="password" name="password" id="password" value="@perfilDados.Senha" disabled />
+        </div>
+    </div>
+
+    <div class="input-block">
+        <input type="text" name="new-name" id="new-name" placeholder="Novo nome" />
+    </div>
+
+    <div class="input-block">
+        <input type="text" name="new-cpf" id="new-cpf" placeholder="Novo CPF" />
+    </div>
+
+    <div class="input-block">
+        <input type="text" name="new-email" id="new-email" placeholder="Novo e-mail" />
+    </div>
+
+    <div class="input-block">
+        <input type="date" name="new-birth" id="new-birth" placeholder="Data de nascimento" />
+    </div>
+
+    <div class="input-block">
+        <select name="new-gender" id="new-gender">
+            <option value="i" selected="true" disabled="disabled">Alterar gênero...</option>
+            <option value="m">Masculino</option>
+            <option value="f">Feminino</option>
+            <option value="o">Outros</option>
+        </select>
+    </div>
+
+    <div class="input-block">
+        <input type="password" name="new-pass" id="new-pass" placeholder="Nova senha" />
+    </div>
+
+    <div class="input-block">
+        <input type="password" name="vf-pass" id="vf-pass" placeholder="Confirme a sua nova senha" />
+    </div>
+
+    <div class="alter">
+        <button type="submit">Alterar Campos</button>
+    </div>
+</form>
+
+

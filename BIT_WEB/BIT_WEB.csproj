@@ -136,6 +136,7 @@
     <Compile Include="Controllers\DepositoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\RecuperacaoController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Controllers\TransacoesController.cs" />
@@ -359,6 +360,7 @@
     <Content Include="Scripts\bulma\sass\utilities\_all.sass" />
     <None Include="Properties\PublishProfiles\BITXCHANGE - Web Deploy.pubxml" />
     <Content Include="Views\Recuperacao\RecuperacaoSenha.cshtml" />
+    <Content Include="Views\Profile\Perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BIT_BACKUP\BIT_BACKUP.csproj">
