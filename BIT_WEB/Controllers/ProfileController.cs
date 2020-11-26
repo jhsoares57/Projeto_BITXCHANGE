@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BIT_MODEL;
+using BIT_CRIPTOGRAFIA;
 
 namespace BIT_WEB.Controllers
 {
@@ -90,7 +91,7 @@ namespace BIT_WEB.Controllers
 
                     if (senha != "" && vfsenha != "" && vfsenha == senha)
                     {
-                        usuModel.Senha = senha;
+                        usuModel.Senha = Criptografia.GerarMD5(senha);
                     }
                     else
                     {
