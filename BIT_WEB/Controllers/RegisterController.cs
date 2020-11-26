@@ -21,7 +21,7 @@ namespace BIT_WEB.Controllers
         }
 
         [HttpPost]
-        public ActionResult SignUp(UsuarioModel U)
+        public void SignUp(UsuarioModel U)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace BIT_WEB.Controllers
                 else
                 {
                     TempData["alerta"] = "Senhas não conferem!";
-                    return RedirectToRoute("Register");
+                    Response.Redirect("Register");
                 }
                 
                 U.Status = 1;
@@ -59,21 +59,13 @@ namespace BIT_WEB.Controllers
                     U.Sexo = 3;
                 }
 
-                if (ModelState.IsValid)
-                {
                     repository.Insert(U);
-                    return RedirectToRoute("SignIn");
-                }
-                else
-                {
-                    return RedirectToRoute("Register");
-                }
+                    Response.Redirect("/Login/SignIn");
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                TempData["erro"] = "Erro: " + ex;
             }
 
         }
