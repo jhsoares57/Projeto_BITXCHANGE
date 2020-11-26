@@ -5,12 +5,10 @@
 }
 @Styles.Render("~/Content/transaction.css")
 
-<link rel="stylesheet" href="~/Content/home.css" />
-<div class="last-transactions">
+<div class="header-transactions">
+    <p>Últimas Transações</p>
+</div>
     <div class="last-transactions">
-        <div class="header-transactions">
-            <p>Últimas Transações</p>
-        </div>
 
         <div class="legend-transaction">
             <div class="date-transaction">
@@ -37,12 +35,8 @@
                 <p>MOEDA</p>
             </div>
 
-            <div class="receiver-transaction">
-                <p>DESTINATÁRIO</p>
-            </div>
-
             <div class="observation">
-                <p>forma de pagamento</p>
+                <p>Observação</p>
             </div>
         </div>
 
@@ -75,73 +69,9 @@
                     <p>@t.Moeda</p>
                 </div>
 
-                <div class="receiver-transaction">
-                    <p>@t.Nome</p>
-                </div>
-
                 <div class="observation">
                     <p>@t.Obs</p>
                 </div>
             </div>
         }
-
-        @*<div class="info-transaction">
-                <div class="date-transaction">
-                    <p>31/05/2020</p>
-                </div>
-
-                <div class="protocol-transaction">
-                    <p>000000123456789</p>
-                </div>
-
-                <div class="type-transaction">
-                    <p>Transferência</p>
-                </div>
-
-                <div class="value-transaction payment">
-                    <p>50,00</p>
-                </div>
-
-                <div class="coin-transaction">
-                    <p>USD</p>
-                </div>
-            </div>*@
-
-        @*<div class="info-transaction">
-                <div class="date-transaction">
-                    <p>20/05/2020</p>
-                </div>
-
-                <div class="type-transaction">
-                    <p>Depósito</p>
-                </div>
-
-                <div class="value-transaction receivement">
-                    <p>650,00</p>
-                </div>
-
-                <div class="coin-transaction">
-                    <p>R$</p>
-                </div>
-            </div>
-
-            <div class="info-transaction">
-                <div class="date-transaction">
-                    <p>10/05/2020</p>
-                </div>
-
-                <div class="type-transaction">
-                    <p>Conversão</p>
-                </div>
-
-                <div class="value-transaction payment">
-                    <p>1,00</p>
-                </div>
-
-                <div class="coin-transaction">
-                    <p>ETH</p>
-                </div>
-            </div>*@
-
-
     </div>

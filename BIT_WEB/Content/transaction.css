@@ -1,6 +1,10 @@
-﻿.last-transactions {
-    padding: 2rem;
-    margin: 3.2rem 0;
+﻿
+.last-transactions {
+    margin: 3.2rem auto;
+    overflow-x: scroll;
+    max-width: 100%;
+    border: 0.1rem solid black;
+    width: 90%;
 }
 
 .header-transactions {
@@ -9,34 +13,30 @@
     font-size: 2.8rem;
     font-weight: bolder;
     margin-bottom: 6.4rem;
+    
 }
 
 .legend-transaction {
     display: grid;
-    grid-template-columns: 8rem 8rem 15rem 10rem 10rem 10rem 18rem 18rem;
-    justify-content: space-between;
-    padding: 3rem 2rem;
-    font-size: 1.6rem;
-    border: 0.1rem solid rgba(196, 196, 196, 0.6);
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+    padding: 3.2rem 3.2rem;
+    font-size: 1.8rem;
     text-transform: uppercase;
     color: black;
     font-weight: bold;
+    column-gap: 2.6rem;
+    border: 0.1rem solid black;
+    
 }
 
 .info-transaction {
     display: grid;
-    grid-template-columns: 8rem 8rem 15rem 10rem 10rem 10rem 18rem 18rem;
-    justify-content: space-between;
-    padding: 3rem 2rem;
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+    padding: 3rem 3.2rem;
     font-size: 1.6rem;
     text-transform: capitalize;
-    border-left: 0.1rem solid rgba(196, 196, 196, 0.6);
-    border-right: 0.1rem solid rgba(196, 196, 196, 0.6);
+    column-gap: 2.6rem;
 }
-
-    .info-transaction:last-child {
-        border-bottom: 0.1rem solid rgba(196, 196, 196, 0.6);
-    }
 
     .info-transaction .date-transaction {
         text-align: left;
@@ -79,4 +79,8 @@
 
 .observation {
     text-align: right;
+}
+
+@media(max-width: 425px) {
+    
 }

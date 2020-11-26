@@ -57,18 +57,18 @@
     <div class="first-row">
         <span>
             <p>Nome do Destinatário</p>
-            <input type="text" name="name-receiver" id="name-receiver" required>
+            <input type="text" name="name-receiver" id="name-receiver" required onfocus="ValorFInTransferencia()">
         </span>
 
         <span>
             <p>CPF do Destinatáiro</p>
-            <input name="document-receiver" id="document-receiver" required>
+            <input name="document-receiver" id="document-receiver" required onfocus="ValorFInTransferencia()">
         </span>
     </div>
 
     <div class="second-row">
         <p>Valor e moeda</p>
-        <input type="number" name="value-transfer" id="value" required>
+        <input type="number" name="value-transfer" id="value" required onfocus="ValorFInTransferencia()">
         <select name="type-coin" id="type-coin" required>
             <option value="3">Ethereum</option>
             <option value="4">Dóla</option>
@@ -76,7 +76,7 @@
             <option value="1">Bitcoin</option>
         </select>
         <p>Descrição</p>
-        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" required onfocus="ValorFInTransferencia()"></textarea>
     </div>
 
     <div class="third-row">
@@ -85,7 +85,7 @@
             <!-- valor final -->
             @*<input  name="Value-end" id="Value-end" required>*@
         @*</div>*@
-        <input name="Value-end" id="Value-end" class="final-value" required>
+        <input name="Value-end" id="Value-end" class="final-value" required onfocus="ValorFInTransferencia()">
         <p>*O custo de cada transação é equivalente a 1,5% do valor total</p>
     </div>
 
@@ -93,6 +93,6 @@
 </form>
 <script src="~/Scripts/menu-navbar.js"></script>
 <script src="~/Scripts/Confirmar-transferencia.js"></script>
-<script src="~/Scripts/toastr-mensagem-bit.js"></script>
+<script src="~/Scripts/simular-taxa-transferencia.js"></script>
 
 

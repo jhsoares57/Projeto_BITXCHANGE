@@ -31,6 +31,10 @@ namespace BIT_WEB.Controllers
         {
             return View();
         }
+        public ActionResult logout()
+        {
+            return RedirectToRoute("Login");
+        }
 
         [HttpGet]
         [ValidateInput (false)]

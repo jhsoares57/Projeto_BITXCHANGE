@@ -17,5 +17,10 @@ namespace BIT_MOBILE
             browser.Source = "http://bitxchange.azurewebsites.net/";
             Content = browser;
         }
+        protected override bool OnBackButtonPressed()
+        {
+            return true;
+            //return base.OnBackButtonPressed();
+        }
     }
 }

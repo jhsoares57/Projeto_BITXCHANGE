@@ -13,11 +13,6 @@ namespace BIT_WEB
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-              "Perfil",
-              "Profile/Perfil/{id}",
-              new { controller = "Profile", action = "Perfil", id = UrlParameter.Optional }
-            );
 
             routes.MapRoute(
               "Deposito",
@@ -100,6 +95,17 @@ namespace BIT_WEB
            "RecuperarSenha",
            new { controller = "Recuperacao", action = "alterarSenha" }
          );
+
+            routes.MapRoute(
+            "Logout",
+            "Logout",
+            new { controller = "Login", action = "logout", id = UrlParameter.Optional }
+         );
+            routes.MapRoute(
+          "Perfil",
+          "Profile/Perfil/{id}",
+          new { controller = "Profile", action = "Perfil", id = UrlParameter.Optional }
+        );
 
             routes.MapRoute(
                 name: "Default",

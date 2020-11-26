@@ -38,6 +38,54 @@ select {
     padding-left: 20px;
 }
 
+.warning-wrong-input {
+    display: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 6.4rem;
+    line-height: 6.4rem;
+    text-align: center;
+    background-color: yellow;
+}
+
+.warning-empty-input {
+    display: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 6.4rem;
+    line-height: 6.4rem;
+    text-align: center;
+    background-color: yellow;
+}
+
+.error {
+    display: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 6.4rem;
+    line-height: 6.4rem;
+    text-align: center;
+    background-color: red;
+}
+
+.success {
+    display: none;
+    border: 0.1rem solid rgba(0, 0, 0, 0.5);
+    width: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    height: 6.4rem;
+    line-height: 6.4rem;
+    text-align: center;
+    background-color: green;
+}
+
 input[type=number] {
     -moz-appearance: textfield;
 }
