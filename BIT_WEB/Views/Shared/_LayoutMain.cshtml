@@ -43,9 +43,23 @@
         </div>
     </nav>
     <script src="~/Scripts/menu-navbar.js"></script>
-    
-    
-    
+
+    <div class="warning-wrong-input">
+        <p>Verifique os campos preenchidos!</p>
+    </div>
+
+    <div class="warning-empty-input">
+        <p>Preencha todos campos!</p>
+    </div>
+
+    <div class="error">
+        <p>Opa, algo deu errado!</p>
+    </div>
+
+    <div class="success">
+        <p>Operação concluída!</p>
+    </div>
+
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

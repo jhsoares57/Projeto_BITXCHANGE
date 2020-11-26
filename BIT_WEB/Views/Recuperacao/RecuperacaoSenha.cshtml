@@ -1,60 +1,39 @@
 ﻿@{
     Layout = "~/Views/Shared/_LayoutSignInUp.cshtml";
 }
-@Styles.Render("~/Content/transaction.css")
+@Styles.Render("~/Content/recuperation.css")
 
 <div class="login-content">
     <div class="login-text">
         <strong>
             <p>Esqueceu sua senha?</p>
         </strong>
-        <p>Deseja voltar a tela de login? <strong><a href="/Login"> Voltar</a></strong></p>
         <p>Não possui uma conta? <strong><a href="~/Register/SignUp"> Cadastre-se</a></strong></p>
     </div>
 
-    <form action="RecuperarSenha" onsubmit="ValidaAlteracao(event)">
-        @if (TempData["UsuarioAlterado"] != null)
-        {
-            <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
-            <div class="notification is-success">
-                <p size="3" align="center"><b>@TempData["UsuarioAlterado"]</b></p>
-            </div>
-        }
-        @if (TempData["UsuarioNaoAletarado"] != null)
-        {
-            <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
-            <div class="notification is-danger">
-                <p size="3" align="center"><b>@TempData["UsuarioNaoAletarado"]</b></p>
-            </div>
-        }
-        @if (TempData["UsuarioErro"] != null)
-        {
-            <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
-            <div class="notification is-danger">
-                <p size="3" align="center"><b>@TempData["UsuarioErro"]</b></p>
-            </div>
-        }
+    <form>
         <div class="input-block">
             <fieldset>
                 <label for="email"></label>
-                <input type="text" name="email" class="input-text" id="email" placeholder="E-mail" required>
+                <input type="email" name="email" class="input-text" id="email" placeholder="E-mail">
             </fieldset>
         </div>
         <div class="input-block">
             <fieldset>
                 <label for="nova-senha"></label>
-                <input type="password" name="nova-senha" class="input-text" id="nova-senha" placeholder="Nova senha" required>
+                <input type="password" name="nova-senha" class="input-text" id="nova-senha" placeholder="Nova senha">
             </fieldset>
         </div>
         <div class="input-block">
             <fieldset>
                 <label for="conf-senha"></label>
-                <input type="password" name="conf-senha" class="input-text" id="conf-senha" placeholder="Confirme a nova senha" required>
+                <input type="password" name="conf-senha" class="input-text" id="conf-senha" placeholder="Confirme a nova senha">
             </fieldset>
         </div>
         <div class="bottom-content">
-            <button type="submit">Alterar</button>
+            <button type="submit">Acessar</button>
         </div>
     </form>
 </div>
+
 <script src="~/Scripts/Confirmar-AlteracaoSenha .js"></script>

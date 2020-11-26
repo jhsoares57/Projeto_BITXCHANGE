@@ -67,6 +67,7 @@ form {
         .page-header.desktop .logo-container img {
             width: 36rem;
             height: 8rem;
+            max-width: 90%;
         }
 
         .page-header.desktop .logo-container p {
