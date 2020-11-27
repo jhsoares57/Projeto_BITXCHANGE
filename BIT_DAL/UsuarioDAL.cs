@@ -253,6 +253,62 @@ namespace BIT_DAL
             }
         }
 
+        public bool ExisteCpf(string cpf)
+        {
+            string query = "SELECT COUNT(1) FROM TB_USUARIO WHERE USU_STR_CPF = @CPF";
+            //Connection Factory: Classe que gerencia o local da conexão, tendo o método responsável por obter a conexão
+            cf = new ConnectionFactory();
 
+            //CreateCommand: Inicializa o objeto SqlCommand associando o Comando com a conexão do Banco onde será executado
+            cf.Comando = cf.Conexao.CreateCommand();
+            // {
+
+            cf.Comando.Parameters.AddWithValue("@CPF", cpf);
+
+            cf.Comando.CommandText = query.ToString();
+
+            cf.Conexao.Open();
+
+
+                var result = cf.Comando.ExecuteScalar();
+
+                // Call Read before accessing data.
+                if (result != null)
+                {
+                    return (int)result > 0;
+                }
+
+                return false;
+            
+        }
+
+        public bool ExisteEmail(string email)
+        {
+            string query = "SELECT COUNT(1) FROM TB_USUARIO WHERE USU_STR_EMAIL = @EMAIL";
+            //Connection Factory: Classe que gerencia o local da conexão, tendo o método responsável por obter a conexão
+            cf = new ConnectionFactory();
+
+            //CreateCommand: Inicializa o objeto SqlCommand associando o Comando com a conexão do Banco onde será executado
+            cf.Comando = cf.Conexao.CreateCommand();
+            // {
+
+            cf.Comando.Parameters.AddWithValue("@EMAIL", email);
+
+            cf.Comando.CommandText = query.ToString();
+
+            cf.Conexao.Open();
+
+            var result = cf.Comando.ExecuteScalar();
+
+            // Call Read before accessing data.
+            if (result != null)
+            {
+               
+                return (int)result > 0;
+            }
+
+            return false;
+
+        }
     }
 }
