@@ -61,6 +61,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ScritpBanco\1_BIT_TABELAS.sql" />
+    <Content Include="ScritpBanco\2_Script_Procedures_e_trigger.sql" />
+    <Content Include="ScritpBanco\3_Script_Dados_Teste.sql" />
+    <Content Include="ScritpBanco\4_SCRIPT_Limpeza.sql" />
     <Content Include="ScritpBanco\SCRIPT_BANCO.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

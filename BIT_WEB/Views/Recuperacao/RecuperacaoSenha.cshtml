@@ -11,7 +11,32 @@
         <p>Não possui uma conta? <strong><a href="~/Register/SignUp"> Cadastre-se</a></strong></p>
     </div>
 
-    <form>
+    @if (TempData["UsuarioAlterado"] != null)
+    {
+        <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+        <div class="notification is-warning">
+            <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
+            <br />
+            <p size="3" align="center"><b>@TempData["UsuarioAlterado"]</b></p>
+        </div>
+    }
+    @if (TempData["UsuarioNaoAletarado"] != null)
+    {
+        <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+        <div class="notification is-danger">
+            <p size="3" align="center"><b>@TempData["UsuarioNaoAletarado"]</b></p>
+        </div>
+    }
+
+    @if (TempData["UsuarioErro"] != null)
+    {
+        <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
+        <div class="notification is-danger">
+            <p size="3" align="center"><b>@TempData["UsuarioErro"]</b></p>
+        </div>
+    }
+
+    <form id="form" action="RecuperarSenha" method="post" onsubmit="ValidaAlteracao(event)">
         <div class="input-block">
             <fieldset>
                 <label for="email"></label>

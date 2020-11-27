@@ -86,11 +86,12 @@ namespace BIT_BACKUP_SERVER
                         string diretorio = txtDiretorioBackup.Text;
                         int idUser = Convert.ToInt32(1);
                         backup.Backups(diretorio);
+                        tmBack.Enabled = false;
                         backup.GravarLogBackup(date, database, diretorio, "F", idUser);
 
                         MessageBox.Show("Backup realizado com sucesso!!!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        tmBack.Enabled = false;
+
                     }
                     else
                     {
@@ -140,10 +141,10 @@ namespace BIT_BACKUP_SERVER
                         string diretorio = txtDiretorioBackup.Text;
                         
                         restore.Restore(diretorio);
-                        
+                        tmBack.Enabled = false;
                         MessageBox.Show("Backup restaurado com sucesso!!!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        tmBack.Enabled = false;
+
                     }
                     else
                     {
