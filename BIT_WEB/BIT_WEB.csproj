@@ -151,6 +151,7 @@
     <Content Include="Content\global.css" />
     <Content Include="Content\home.css" />
     <Content Include="Content\main.css" />
+    <Content Include="Content\profile.css" />
     <Content Include="Content\recuperation.css" />
     <Content Include="Content\signIn.css" />
     <Content Include="Content\signUp.css" />
