@@ -1,13 +1,23 @@
 ﻿@{
-    Layout = "~/Views/Shared/_LayoutMain.cshtml";
-    BIT_MODEL.MoedaModel Dolar = ViewBag.CotDolar;
-    BIT_MODEL.MoedaModel Ethe = ViewBag.CotETH;
-    BIT_MODEL.MoedaModel Bit = ViewBag.CotBit;
-    BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
+                /**/
+
+                /**/
+
+                /**/
+
+                Layout = "~/Views/Shared/_LayoutMain.cshtml";
+                BIT_MODEL.MoedaModel Dolar = ViewBag.CotDolar;
+                BIT_MODEL.MoedaModel Ethe = ViewBag.CotETH;
+                BIT_MODEL.MoedaModel Bit = ViewBag.CotBit;
+                BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
 }
+
 
 @if (TempData["Sucesss"] != null)
 {
+    <br />
+    <br />
+    <br />
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-warning">
         <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
@@ -17,6 +27,8 @@
 }
 @if (TempData["err"] != null)
 {
+    <br />
+    <br />
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-danger">
         <p size="3" align="center"><b>Erro ao fazer conversão!</b></p>
@@ -26,15 +38,15 @@
 }
 
 <div id="cotacao" class="quote-bitcoin disable">
-    <h6 id="BitCot" disable>@Bit.Valor</h6>
-    <h6 id="EthCot" disable>@Ethe.Valor</h6>
-    <h6 id="DolarCot" disable>@Dolar.Valor</h6>
+    <h6 id="BitCot" >@Bit.Valor</h6>
+    <h6 id="EthCot" >@Ethe.Valor</h6>
+    <h6 id="DolarCot" >@Dolar.Valor</h6>
 </div>
 
 <form action="@UsuarioDados.Id/Cambio" method="post" onsubmit="ValidaTransferencia(event)" class="register-content">
 
 
-
+    <br />
     <link rel="stylesheet" href="~/Content/quotes.css">
     <span class="span-coin">
         <div class="coin-select">
@@ -48,10 +60,9 @@
         </div>
 
         <div class="coin-value">
-            <legend>Valor</legend>
+            <legend>Valor Inicial</legend>
             <input type="number" name="value" id="value" />
         </div>
-        <br />
         <div class="coin-select">
             <legend>Moeda Final</legend>
             <select name="type-fcoin" id="type-fcoin">
@@ -62,12 +73,11 @@
             </select>
         </div>
 
+        <input class="simulation" type="button" onclick="simular2()" value="Simular" />
         <div class="coin-fvalue">
-            <legend>Valor</legend>
-            <input  name="fvalue" id="fvalue" required />
+            <legend>Valor Final</legend>
+            <input type="number" name="fvalue" id="fvalue" required disabled />
         </div>
-        <br />
-        <input type="button" onclick="simular2()" value="Teste" />
         <button type="submit" id="converter">Converter</button>
 
 
