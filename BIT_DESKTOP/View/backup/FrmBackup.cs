@@ -82,11 +82,12 @@ namespace BIT_DESKTOP.View.backup
                         string diretorio = txtDiretorioBackup.Text;
                         int idUser = Convert.ToInt32(lblidUser.Text);
                         backup.Backups(diretorio);
+                        tmBack.Enabled = false;
                         backup.GravarLogBackup(date, database, diretorio, "F", idUser);
 
                         MessageBox.Show("Backup realizado com sucesso!!!", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        tmBack.Enabled = false;
+
                     }
                     else
                     {

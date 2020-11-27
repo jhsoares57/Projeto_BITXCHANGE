@@ -25,43 +25,56 @@ namespace BIT_WEB.Controllers
         {
             try
             {
+                var email = Request["email"];
+                var cpf = Request["number-doc"];
 
-                U.Nome = Request["name"] + " " + Request["last-name"];
-                U.Email = Request["email"];
-                U.Cpf = Request["number-doc"];
-                U.DataNascimento = Convert.ToDateTime(Request["birth"]);
-                //U.Sexo = Convert.ToInt32(Request["gender"]);
-                
-                if(Request["password"] == Request["vf-password"])
+                if (repository.ExisteCpf(cpf) == true)
                 {
-                    U.Senha = Criptografia.GerarMD5(Request["password"]);
+                    TempData["alerta"] = "CPF já cadastrado!";
+                    Response.Redirect("/Register/SignUp");
                 }
                 else
+                if (repository.ExisteEmail(email) == true)
+                {
+                    TempData["alerta"] = "E-mail já cadastrado!";
+                    Response.Redirect("/Register/SignUp");
+                }
+                else
+                if(Request["password"] != Request["vf-password"])
                 {
                     TempData["alerta"] = "Senhas não conferem!";
-                    Response.Redirect("Register");
-                }
-                
-                U.Status = 1;
-                U.Tipo = 2;
-                U.DataCadastro = DateTime.Now;
-
-                if (Request["gender"] == "m")
-                {
-                    U.Sexo = 1;
-                }else
-                if (Request["gender"] == "f")
-                {
-                    U.Sexo = 2;
+                    Response.Redirect("/Register/SignUp");
                 }
                 else
                 {
-                    U.Sexo = 3;
-                }
+                //if (Request["password"] == Request["vf-password"])
+               // {
+                    U.Senha = Criptografia.GerarMD5(Request["password"]);
+                    U.Nome = Request["name"] + " " + Request["last-name"];
+                    U.Email = Request["email"];
+                    U.Cpf = Request["number-doc"];
+                    U.DataNascimento = Convert.ToDateTime(Request["birth"]);
+                    U.Status = 1;
+                    U.Tipo = 2;
+                    U.DataCadastro = DateTime.Now;
+
+                    if (Request["gender"] == "m")
+                    {
+                        U.Sexo = 1;
+                    }
+                    else
+                    if (Request["gender"] == "f")
+                    {
+                        U.Sexo = 2;
+                    }
+                    else
+                    {
+                        U.Sexo = 3;
+                    }
 
                     repository.Insert(U);
                     Response.Redirect("/Login/SignIn");
-
+                }
             }
             catch (Exception ex)
             {

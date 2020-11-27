@@ -69,5 +69,15 @@ namespace BIT_BLL
             }
             return alterou;
         }
+
+        public bool ExisteCpf(string cpf )
+        {
+            return new UsuarioDAL().ExisteCpf(cpf);
+        }
+
+        public bool ExisteEmail(string email)
+        {
+            return new UsuarioDAL().ExisteEmail(email);
+        }
     }
 }
