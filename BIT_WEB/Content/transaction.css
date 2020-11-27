@@ -4,7 +4,6 @@
     overflow-x: scroll;
     border: 0.1rem solid black;
     width: 90%;
-    padding: 0rem 3.2rem;
 }
 
 .header-transactions {
@@ -18,23 +17,23 @@
 
 .legend-transaction {
     display: grid;
-    grid-template-columns: repeat(7, 150px);
-    padding: 3.2rem 0;
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+    padding: 3.2rem 3.2rem;
     font-size: 1.8rem;
     text-transform: uppercase;
     color: black;
     font-weight: bold;
-    /* column-gap: 2.6rem; */
+    column-gap: 2.6rem;
     border: 0.1rem solid black;
 }
 
 .info-transaction {
     display: grid;
-    grid-template-columns: repeat(7, 150px);
-    padding: 3.2rem 0;
+    grid-template-columns: 1fr 1fr 2fr 2fr 1fr 1fr 2fr;
+    padding: 3.2rem 3.2rem;
     font-size: 1.6rem;
     text-transform: capitalize;
-    /* column-gap: 2.6rem; */
+    column-gap: 2.6rem;
 }
 
     .info-transaction .date-transaction {
@@ -74,5 +73,12 @@
     .legend-transaction {
         border: none;
         width: 112rem;
+        column-gap: 0px;
+        grid-template-columns: repeat(7, 150px);
+    }
+
+    .info-transaction {
+        column-gap: 0px;
+        grid-template-columns: repeat(7, 150px);
     }
 }
