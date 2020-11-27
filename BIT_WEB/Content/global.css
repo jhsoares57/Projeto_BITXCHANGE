@@ -19,12 +19,21 @@ header {
     background-color: var(--color-primaria);
 }
 
+nav {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
+    margin-bottom: 7;
+}
+
 html, body {
     height: 100vh;
 }
 
 body {
     background: var(--color-background);
+    margin: 8rem 0;
 }
 
 input::-webkit-outer-spin-button,
@@ -104,6 +113,7 @@ input[type=number] {
 }
 
 nav {
+    position: fixed;
     background: var(--color-primaria);
     display: flex;
     flex-wrap: wrap;

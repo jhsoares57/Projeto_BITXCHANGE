@@ -74,7 +74,7 @@ body {
 
 .info-transaction {
     display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 2fr 1fr 1fr;
     justify-content: space-between;
     padding: 3rem 0;
     font-size: 1.6rem;
@@ -199,6 +199,18 @@ body {
         font-size: 1.8rem;
         line-height: 5rem;
     }
+
+@media(max-width: 425px) {
+    .last-transactions {
+        overflow-x: scroll;
+        max-width: 70rem;
+        width: 90%;
+    }
+
+    .info-transaction {
+        grid-gap: 6.4rem;
+    }
+}
 
 @media(min-width: 1100px) {
     body {
