@@ -43,9 +43,7 @@ namespace BIT_WEB.Controllers
         {
             try
             {
-
                 var loginNeg = new LoginNeg();
-
 
                 var Email = Request["email"];
                 var Senha = Request["senha"];
@@ -57,7 +55,6 @@ namespace BIT_WEB.Controllers
                 if(result.Tipo == 2)
                 {
                     return RedirectToRoute("principal", new { id = result.Id });
-                    
                 }
                 else
                 {
@@ -66,7 +63,6 @@ namespace BIT_WEB.Controllers
 
                     // Login
                 }
-
             }
             catch (Exception ex)
             {

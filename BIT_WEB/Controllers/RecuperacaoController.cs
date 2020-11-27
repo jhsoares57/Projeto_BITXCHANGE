@@ -26,19 +26,28 @@ namespace BIT_WEB.Controllers
 
                 var email = Request["email"];
                 var senha = Request["nova-senha"];
+                var vfsenha = Request["conf-senha"];
 
-                string senhaCript = Criptografia.GerarMD5(senha);
-
-                usuarioModel.Email = email;
-                usuarioModel.Senha = senhaCript;
-
-                if (usuarioBLL.alterarSenha(usuarioModel) == true)
+                if (senha != vfsenha)
                 {
-                    TempData["UsuarioAlterado"] = "Senha Alterada com sucesso";
+                    TempData["UsuarioErro"] = "Senhas não conferem!";
+                    Response.Redirect("/RecuperacaoSenha");
                 }
                 else
                 {
-                    TempData["UsuarioNaoAletarado"] = "Usuário não encontrato!";
+                    string senhaCript = Criptografia.GerarMD5(senha);
+
+                    usuarioModel.Email = email;
+                    usuarioModel.Senha = senhaCript;
+
+                    if (usuarioBLL.alterarSenha(usuarioModel) == true)
+                    {
+                        TempData["UsuarioAlterado"] = "Senha Alterada com sucesso";
+                    }
+                    else
+                    {
+                        TempData["UsuarioNaoAletarado"] = "Usuário não encontrato!";
+                    }
                 }
             }
             catch (Exception ex)
@@ -46,7 +55,7 @@ namespace BIT_WEB.Controllers
 
                 TempData["UsuarioErro"] = "erro: " + ex;
             }
-            Response.Redirect("/RecuperacaoSenha");
+            Response.Redirect("/Login/SignIn");
         }
     }
 }

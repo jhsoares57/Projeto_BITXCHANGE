@@ -1,7 +1,10 @@
-﻿function ValorFInTransferencia() {
+﻿const finalt = document.getElementById("Value-end")
 
-    ValorInicial = document.getElementById("value").value;
-    valorFin = (Number(1.5 / 100) * ValorInicial).toFixed(2);
-    document.getElementById("Value-end").innerHTML = valorFin;
+function taxaTrans()
+{
+    const valor_trans = document.getElementById("value").value
+    //var ValorInicial = document.getElementById("value").value;
+    var valorFin = (Number(1.5 / 100) * valor_trans)
+    finalt.value = valorFin.toFixed(2);
        
 }

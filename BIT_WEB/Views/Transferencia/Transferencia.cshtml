@@ -52,31 +52,31 @@
 }
 
 <legend>Insira os dados corretamente</legend>
-<form id="form" action="@UsuarioDados.Id/Transferir" method="post" onsubmit="ValidaTransferencia(event)">
+<form id="form" action="@UsuarioDados.Id/Transferir" method="post" onsubmit="taxaTrans(event)">
 
     <div class="first-row">
         <span>
             <p>Nome do Destinatário</p>
-            <input type="text" name="name-receiver" id="name-receiver" required onfocus="ValorFInTransferencia()">
+            <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" type="text" name="name-receiver" id="name-receiver" required onfocus="taxaTrans()">
         </span>
 
         <span>
             <p>CPF do Destinatáiro</p>
-            <input name="document-receiver" id="document-receiver" required onfocus="ValorFInTransferencia()">
+            <input pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$" type="text" name="document-receiver" id="document-receiver"  required onfocus="taxaTrans()">
         </span>
     </div>
 
     <div class="second-row">
         <p>Valor e moeda</p>
-        <input type="number" name="value-transfer" id="value" required onfocus="ValorFInTransferencia()">
+        <input type="number" name="value-transfer" id="value" required onfocus="taxaTrans()">
         <select name="type-coin" id="type-coin" required>
             <option value="3">Ethereum</option>
-            <option value="4">Dóla</option>
+            <option value="4">Dólar</option>
             <option value="2">Real</option>
             <option value="1">Bitcoin</option>
         </select>
         <p>Descrição</p>
-        <textarea name="description" id="description" cols="30" rows="10" required onfocus="ValorFInTransferencia()"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" required onfocus="taxaTrans()"></textarea>
     </div>
 
     <div class="third-row">
@@ -85,7 +85,7 @@
             <!-- valor final -->
             @*<input  name="Value-end" id="Value-end" required>*@
         @*</div>*@
-        <input name="Value-end" id="Value-end" class="final-value" required onfocus="ValorFInTransferencia()">
+        <input type="number" name="Value-end" id="Value-end" class="final-value" onfocus="taxaTrans()" disabled>
         <p>*O custo de cada transação é equivalente a 1,5% do valor total</p>
     </div>
 
