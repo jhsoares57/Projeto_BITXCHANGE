@@ -45,13 +45,13 @@ namespace BIT_WEB.Controllers
 
             if (nome == "" && email == "" && senha == "" && vfsenha == "" && genero == null) 
             {
-                TempData["erro"] = "Erro: Nenhum campo foi preenchido!";
+                TempData["erroPerfil"] = "Erro: Nenhum campo foi preenchido!";
                 Response.Redirect("/Profile/Perfil/" + ID);
             }
             else
             if(senha != vfsenha)
             {
-                TempData["erro"] = "Erro: Senhas não conferem!";
+                TempData["erroPerfil"] = "Erro: Senhas não conferem!";
                 Response.Redirect("/Profile/Perfil/" + ID);
             }
             else
@@ -117,13 +117,13 @@ namespace BIT_WEB.Controllers
                     
 
                     repository.AlterarUsuario(usuModel);
-                    TempData["Sucesso1"] = "Perfil atualizado com sucesso!";
+                    TempData["SucessoPerfil"] = "Perfil atualizado com sucesso!";
                     
 
                 }
                 catch (Exception ex)
                 {
-                    TempData["erro"] = "Erro: " + ex;
+                    TempData["erroPerfil"] = "Erro: " + ex;
                 }
                 Response.Redirect("/Profile/Perfil/" + ID);
             }

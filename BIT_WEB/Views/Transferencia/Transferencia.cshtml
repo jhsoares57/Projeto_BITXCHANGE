@@ -34,20 +34,20 @@
     </div>
 </header>
 
-@if (TempData["Sucesso_"] != null)
+@if (TempData["SucessoTrans"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-warning">
         <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
         <br />
-        <p size="3" align="center"><b>@TempData["Sucesso_"]</b></p>
+        <p size="3" align="center"><b>@TempData["SucessoTrans"]</b></p>
     </div>
 }
-@if (TempData["erro_"] != null)
+@if (TempData["Transerro"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-danger">
-        <p size="3" align="center"><b>@TempData["erro"]</b></p>
+        <p size="3" align="center"><b>@TempData["Transerro"]</b></p>
     </div>
 }
 
@@ -57,18 +57,18 @@
     <div class="first-row">
         <span>
             <p>Nome do Destinatário</p>
-            <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" type="text" name="name-receiver" id="name-receiver" required onfocus="taxaTrans()">
+            <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" placeholder="Ex: João Silva" type="text" name="name-receiver" id="name-receiver" required onfocus="taxaTrans()">
         </span>
 
         <span>
             <p>CPF do Destinatáiro</p>
-            <input pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$" type="text" name="document-receiver" id="document-receiver"  required onfocus="taxaTrans()">
+            <input pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$" title="Digite o cpf corretamente" placeholder="Ex: 888.888.888-88" type="text" name="document-receiver" id="document-receiver"  required onfocus="taxaTrans()">
         </span>
     </div>
 
     <div class="second-row">
         <p>Valor e moeda</p>
-        <input type="number" name="value-transfer" id="value" required onfocus="taxaTrans()">
+        <input type="number" placeholder="Ex: 500" name="value-transfer" id="value" required >
         <select name="type-coin" id="type-coin" required>
             <option value="3">Ethereum</option>
             <option value="4">Dólar</option>
@@ -94,5 +94,3 @@
 <script src="~/Scripts/menu-navbar.js"></script>
 <script src="~/Scripts/Confirmar-transferencia.js"></script>
 <script src="~/Scripts/simular-taxa-transferencia.js"></script>
-
-

@@ -30,19 +30,19 @@
 </script>
 
 
-@if (TempData["erro"] != null)
+@if (TempData["erroPerfil"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-danger">
-        <p size="3" align="center"><b>@TempData["erro"]</b></p>
+        <p size="3" align="center"><b>@TempData["erroPerfil"]</b></p>
     </div>
 }
 
-@if (TempData["Sucesso1"] != null)
+@if (TempData["SucessoPerfil"] != null)
 {
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-warning">
-        <p size="3" align="center"><b>@TempData["Sucesso1"]</b></p>
+        <p size="3" align="center"><b>@TempData["SucessoPerfil"]</b></p>
     </div>
 }
 
@@ -93,7 +93,7 @@
         <div class="first-row">
             <div class="input-block">
                 <h3>Novo nome</h3>
-                <input type="text" name="new-name" id="new-name" placeholder="Nome completo" />
+                <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" type="text" name="new-name" id="new-name" placeholder="Nome completo" />
             </div>
 
             <div class="input-block">

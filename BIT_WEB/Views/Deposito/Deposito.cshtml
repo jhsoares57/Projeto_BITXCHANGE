@@ -45,7 +45,7 @@
     <form action="/DepositoBoleto/@UsuarioDados.Id" method="post" id="boleto-form">
         <div class="fullname">
             <h2>Nome Completo</h2>
-            <input type="text" name="fullname" id="fullname" onfocus="taxa()" required>
+            <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" placeholder="Ex: João Silva" type="text" name="fullname" id="fullname" onfocus="taxa()" required>
         </div>
 
         <span>
@@ -56,12 +56,12 @@
 
             <div class="value-deposit">
                 <h2>Valor de Depósito</h2>
-                <input type="number" name="value-deposit" id="value-deposit" onfocus="taxa()" required>
+                <input type="number" placeholder="Ex: 500" name="value-deposit" id="value-deposit" onfocus="taxa()" required>
             </div>
         </span>
         <div class="billing-email">
             <h2>E-mail de Cobrança</h2>
-            <input type="text" name="billing-email" id="billing-email" onfocus="taxa()" required>
+            <input type="email" placeholder="Ex: exemplo@exemplo" name="billing-email" id="billing-email" onfocus="taxa()" required>
         </div>
 
         <div class="final-value">
@@ -80,12 +80,12 @@
 
             <div class="cardholder-name">
                 <h2>Nome do Titular</h2>
-                <input type="text" name="cardholder-name" id="cardholder-name" onfocus="taxa()" required>
+                <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" placeholder="Ex: João Silva" type="text" name="cardholder-name" id="cardholder-name" onfocus="taxa()" required>
             </div>
 
             <div class="card-number">
                 <h2>Número do Cartão</h2>
-                <input type="number" name="card-number" id="card-number" onfocus="taxa()" required>
+                <input maxlength="16" placeholder="Ex: 6666777788889999" title="Número de cartão inválido" type="number" name="card-number" id="card-number" onfocus="taxa()" required>
             </div>
 
         </span>
@@ -93,12 +93,12 @@
         <span class="second-row">
             <div class="deposit">
                 <h2>Valor de Depósito</h2>
-                <input type="number" name="value-deposit" id="value-card" onfocus="taxa()" required>
+                <input type="number" placeholder="Ex: 500" name="value-deposit" id="value-card" onfocus="taxa()" required>
             </div>
 
             <div class="cvv">
                 <h2>CVV/CVC</h2>
-                <input type="number" name="cvv" id="cvv" onfocus="taxa()" required>
+                <input type="number" placeholder="Ex: 888" name="cvv" id="cvv"  maxlength="3" onfocus="taxa()" required>
             </div>
         </span>
 

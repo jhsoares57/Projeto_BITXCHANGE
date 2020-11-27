@@ -12,12 +12,12 @@
         </div>
         <div class="first-row">
             <div class="input-block">
-                <input type="text" name="name" id="name" placeholder="Nome" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" type="text" name="name" id="name" placeholder="Nome" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
             </div>
 
             <div class="input-block">
-                <input type="text" name="last-name" id="last-name" placeholder="Sobrenome" required oninvalid="this.setCustomValidity('Campo obrigatório)"
+                <input pattern="^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+" type="text" name="last-name" id="last-name" placeholder="Sobrenome" required oninvalid="this.setCustomValidity('Campo obrigatório)"
                        onchange="try{setCustomValidity('')}catch(e){}">
             </div>
         </div>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="input-block">
-                <input type="number" min="0" max="9999999999999" name="number-doc" id="number-doc" placeholder="Nº do Documento" required oninvalid="this.setCustomValidity('Campo obrigatório')"
+                <input pattern="^(\d{3}\.\d{3}\.\d{3}-\d{2})|(\d{11})$" type="text" name="number-doc" id="number-doc" placeholder="Nº do Documento" required oninvalid="this.setCustomValidity('Campo obrigatório')"
                        onchange="try{setCustomValidity('')}catch(e){}">
             </div>
 

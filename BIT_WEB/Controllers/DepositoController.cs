@@ -28,31 +28,40 @@ namespace BIT_WEB.Controllers
         {
             try
             {
-                var D = new DepositoModel();
-                var prot = new GerarProtocolo();
-                var userId = ID;
-                decimal valorDeposito = Convert.ToDecimal(Request["value-deposit"]);
+                var cartao = Request["card-number"];
 
-                D.Titular = Request["cardholder-name"];
-                D.NumCartao = Request["card-number"];
-                D.Valor = valorDeposito;
-                D.Cvv = Request["cvv"];
-                D.DataVencimento = Convert.ToDateTime(Request["expiration-date"]);
-                D.DataPagamento = DateTime.Today;
-                D.Tipo = 2;
-                D.Status = "F";
-                D.Protocolo = prot.Protocolo();
-                D.Id = userId;
+                if (cartao.Length < 16)
+                {
+                    TempData["erro"] = "Erro: Número de cartão inválido";
+                    Response.Redirect("/Deposito/Deposito/" + ID);
+                }
+                else
+                {
+                    var D = new DepositoModel();
+                    var prot = new GerarProtocolo();
+                    var userId = ID;
+                    decimal valorDeposito = Convert.ToDecimal(Request["value-deposit"]);
 
-                repository.depositoCartao(D);
-                TempData["Sucesso1"] = "Protocolo gerado: " + D.Protocolo;
+                    D.Titular = Request["cardholder-name"];
+                    D.NumCartao = Request["card-number"];
+                    D.Valor = valorDeposito;
+                    D.Cvv = Request["cvv"];
+                    D.DataVencimento = Convert.ToDateTime(Request["expiration-date"]);
+                    D.DataPagamento = DateTime.Today;
+                    D.Tipo = 2;
+                    D.Status = "F";
+                    D.Protocolo = prot.Protocolo();
+                    D.Id = userId;
 
+                    repository.depositoCartao(D);
+                    TempData["Sucesso1"] = "Protocolo gerado: " + D.Protocolo;
+                    Response.Redirect("/Deposito/Deposito/" + ID);
+                }
             }
             catch (Exception ex)
             {
                 TempData["erro"] = "Erro: " + ex;
             }
-            Response.Redirect("/Deposito/Deposito/"+ID);
         }
 
         [HttpPost]

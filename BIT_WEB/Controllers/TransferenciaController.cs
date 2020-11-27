@@ -59,14 +59,14 @@ namespace BIT_WEB.Controllers
 
                 transacaoBLL.InserirTransaferencia(transferenciaModel);
 
-                TempData["Sucesso_"] = "Protocolo gerado: "+ transferenciaModel.Protocolo;
+                TempData["SucessoTrans"] = "Protocolo gerado: "+ transferenciaModel.Protocolo;
                 
 
             }
             catch (Exception ex)
             {
 
-                TempData["erro_"] = "Erro: " + ex;
+                TempData["Transerro"] = "Erro: " + ex;
             }
 
             Response.Redirect("/Transferencia/" + ID);
