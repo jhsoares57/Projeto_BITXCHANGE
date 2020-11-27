@@ -128,42 +128,57 @@ namespace BIT_DESKTOP.View
                 {
                     tipo = 2;
                 }
-                int cod = Convert.ToInt32(txtId.Text);
-                if (cod > 0)
+                if (UserBLL.ExisteCpf(txtCpf.Text) == true)
                 {
-                    userModel.Id = cod;
-                    userModel.Nome = txtNome.Text;
-                    userModel.Cpf = txtCpf.Text;
-                    userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
-                    userModel.Email = txtEmail.Text;
-                    userModel.Sexo = sexo;
-                    userModel.Status = status;
-                    userModel.Tipo = tipo;
-                    userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
-                    userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
+                    MessageBox.Show("CPF já cadastrado!", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                if (UserBLL.ExisteEmail(txtEmail.Text) == true)
+                {
+                    
+                    MessageBox.Show("E-mail já cadastrado!", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-
-                    UserBLL.AlterarUsuario(userModel);
-
-                    MessageBox.Show("Usuário atualizado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    userModel.Nome = txtNome.Text;
-                    userModel.Cpf = txtCpf.Text;
-                    userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
-                    userModel.Email = txtEmail.Text;
-                    userModel.Sexo = sexo;
-                    userModel.Status = status;
-                    userModel.Tipo = tipo;
-                    userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
-                    userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
+                    int cod = Convert.ToInt32(txtId.Text);
+                    if (cod > 0)
+                    {
+                        userModel.Id = cod;
+                        userModel.Nome = txtNome.Text;
+                        userModel.Cpf = txtCpf.Text;
+                        userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
+                        userModel.Email = txtEmail.Text;
+                        userModel.Sexo = sexo;
+                        userModel.Status = status;
+                        userModel.Tipo = tipo;
+                        userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
+                        userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
 
 
-                    UserBLL.Insert(userModel);
+                        UserBLL.AlterarUsuario(userModel);
 
-                    MessageBox.Show("Usuário cadastrado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Usuário atualizado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        userModel.Nome = txtNome.Text;
+                        userModel.Cpf = txtCpf.Text;
+                        userModel.DataNascimento = Convert.ToDateTime(txtNascimento.Text);
+                        userModel.Email = txtEmail.Text;
+                        userModel.Sexo = sexo;
+                        userModel.Status = status;
+                        userModel.Tipo = tipo;
+                        userModel.DataCadastro = Convert.ToDateTime(txtDataCadastro.Text);
+                        userModel.Senha = Criptografia.GerarMD5(txtSenha.Text);
+
+
+                        UserBLL.Insert(userModel);
+
+                        MessageBox.Show("Usuário cadastrado com sucesso", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
+                
 
             }
             catch (Exception ex)
