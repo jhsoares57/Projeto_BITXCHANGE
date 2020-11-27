@@ -34,18 +34,16 @@ namespace BIT_WEB.Controllers
         {
 
             var nome = Request["new-name"];
-            var cpf = Request["new-cpf"];
             var email = Request["new-email"];
             var senha = Request["new-pass"];
             var vfsenha = Request["vf-pass"];
-            var data = Request["new-birth"];
             var genero = Request["new-gender"];
 
             var perfilUser = new UsuarioBLL();
             ViewBag.perfil = perfilUser.SelecionarPorID(ID);
             BIT_MODEL.UsuarioModel perfilDados = ViewBag.Perfil;
 
-            if (nome == "" && email == "" && senha == "" && cpf == "" && data == "" && genero == null) 
+            if (nome == "" && email == "" && senha == "" && vfsenha == "" && genero == null) 
             {
                 TempData["erro"] = "Erro: Nenhum campo foi preenchido!";
                 Response.Redirect("/Profile/Perfil/" + ID);
@@ -61,6 +59,12 @@ namespace BIT_WEB.Controllers
                 try
                 {
                     usuModel.Id = ID;
+                    usuModel.DataCadastro = perfilDados.DataCadastro;
+                    usuModel.Status = perfilDados.Status;
+                    usuModel.Tipo = perfilDados.Tipo;
+                    usuModel.Cpf = perfilDados.Cpf;
+                    usuModel.DataNascimento = perfilDados.DataNascimento;
+
 
                     if (nome != "")
                     {
@@ -69,15 +73,6 @@ namespace BIT_WEB.Controllers
                     else
                     {
                         usuModel.Nome = perfilDados.Nome;
-                    }
-
-                    if(cpf != "")
-                    {
-                        usuModel.Cpf = cpf;
-                    }
-                    else
-                    {
-                        usuModel.Cpf = perfilDados.Cpf;
                     }
 
                     if (email != "")
@@ -96,15 +91,6 @@ namespace BIT_WEB.Controllers
                     else
                     {
                         usuModel.Senha = perfilDados.Senha;
-                    }
-
-                    if(data != "")
-                    {
-                        usuModel.DataNascimento = Convert.ToDateTime(data);
-                    }
-                    else
-                    {
-                        usuModel.DataNascimento = perfilDados.DataNascimento;
                     }
 
                     if(genero != null)
@@ -128,9 +114,7 @@ namespace BIT_WEB.Controllers
                         usuModel.Sexo = perfilDados.Sexo;
                     }
 
-                    usuModel.DataCadastro = perfilDados.DataCadastro;
-                    usuModel.Status = perfilDados.Status;
-                    usuModel.Tipo = perfilDados.Tipo;
+                    
 
                     repository.AlterarUsuario(usuModel);
                     TempData["Sucesso1"] = "Perfil atualizado com sucesso!";
