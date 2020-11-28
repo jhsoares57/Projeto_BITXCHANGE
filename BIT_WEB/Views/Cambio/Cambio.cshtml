@@ -1,15 +1,15 @@
 ﻿@{
-                /**/
+    /**/
 
-                /**/
+    /**/
 
-                /**/
+    /**/
 
-                Layout = "~/Views/Shared/_LayoutMain.cshtml";
-                BIT_MODEL.MoedaModel Dolar = ViewBag.CotDolar;
-                BIT_MODEL.MoedaModel Ethe = ViewBag.CotETH;
-                BIT_MODEL.MoedaModel Bit = ViewBag.CotBit;
-                BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+    BIT_MODEL.MoedaModel Dolar = ViewBag.CotDolar;
+    BIT_MODEL.MoedaModel Ethe = ViewBag.CotETH;
+    BIT_MODEL.MoedaModel Bit = ViewBag.CotBit;
+    BIT_MODEL.UsuarioModel UsuarioDados = ViewBag.Home;
 }
 
 
@@ -18,15 +18,22 @@
     <br />
     <br />
     <br />
+    <br />
+    <br />
+    <br />
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
     <div class="notification is-warning">
-        <p size="3" align="center"><b>Transferência realizada com sucesso!</b></p>
+        <p size="3" align="center"><b>Conversão realizada com sucesso!</b></p>
         <br />
         <p size="3" align="center"><b>@TempData["Sucesss"]</b></p>
     </div>
 }
 @if (TempData["err"] != null)
 {
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <link href="~/Scripts/bulma/css/bulma.css" rel="stylesheet" />
@@ -38,9 +45,9 @@
 }
 
 <div id="cotacao" class="quote-bitcoin disable">
-    <h6 id="BitCot" >@Bit.Valor</h6>
-    <h6 id="EthCot" >@Ethe.Valor</h6>
-    <h6 id="DolarCot" >@Dolar.Valor</h6>
+    <h6 id="BitCot">@Bit.Valor</h6>
+    <h6 id="EthCot">@Ethe.Valor</h6>
+    <h6 id="DolarCot">@Dolar.Valor</h6>
 </div>
 
 <form action="@UsuarioDados.Id/Cambio" method="post" onsubmit="ValidaTransferencia(event)" class="register-content">
@@ -61,7 +68,7 @@
 
         <div class="coin-value">
             <legend>Valor Inicial</legend>
-            <input type="number" name="value" id="value"/>
+            <input type="number" name="value" id="value" />
         </div>
         <div class="coin-select">
             <legend>Moeda Final</legend>

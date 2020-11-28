@@ -8,10 +8,10 @@
     --color-texto: black;
 }
 
-.notification.is-warning, .notification.is-danger{
+/*.notification.is-warning, .notification.is-danger{
     width: 100%;
 
-}
+}*/
 
 * {
     padding: 0;

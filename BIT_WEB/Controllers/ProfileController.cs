@@ -60,8 +60,8 @@ namespace BIT_WEB.Controllers
                 {
                     usuModel.Id = ID;
                     usuModel.DataCadastro = perfilDados.DataCadastro;
-                    usuModel.Status = perfilDados.Status;
-                    usuModel.Tipo = perfilDados.Tipo;
+                    usuModel.Status = 1;
+                    usuModel.Tipo = 2;
                     usuModel.Cpf = perfilDados.Cpf;
                     usuModel.DataNascimento = perfilDados.DataNascimento;
 
@@ -117,13 +117,13 @@ namespace BIT_WEB.Controllers
                     
 
                     repository.AlterarUsuario(usuModel);
-                    TempData["SucessoPerfil"] = "Perfil atualizado com sucesso!";
+                    TempData["SucessoPerfil_"] = "Perfil atualizado com sucesso!";
                     
 
                 }
                 catch (Exception ex)
                 {
-                    TempData["erroPerfil"] = "Erro: " + ex;
+                    TempData["erroPerfil_"] = "Erro: " + ex;
                 }
                 Response.Redirect("/Profile/Perfil/" + ID);
             }
